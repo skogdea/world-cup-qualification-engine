@@ -1,0 +1,2752 @@
+﻿{
+    "competition":  "FIFA World Cup 2026",
+    "stage":  "First Stage",
+    "source":  "FIFA api.fifa.com live Bookings + timelines (Type 2=Yellow, Type 3=Red)",
+    "classificationNotes":  [
+                                "yellowCards: standalone yellow bookings (incl. coach bookings)",
+                                "secondYellowRedCards: none in First Stage",
+                                "directRedCards: all 10 send-offs are straight reds",
+                                "Yellow+direct red (-5) did not occur in First Stage",
+                                "fairPlayScore = -(yellowCards*1 + secondYellowRedCards*3 + directRedCards*4)"
+                            ],
+    "totals":  {
+                   "matches":  72,
+                   "yellowCards":  180,
+                   "secondYellowRedCards":  0,
+                   "directRedCards":  10
+               },
+    "matches":  [
+                    {
+                        "matchNumber":  1,
+                        "group":  "Group A",
+                        "idMatch":  "400021443",
+                        "homeTeam":  "Mexico",
+                        "awayTeam":  "South Africa",
+                        "score":  "2-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  1,
+                                     "fairPlayScore":  -5
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  2,
+                                     "fairPlayScore":  -10
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Mexico",
+                                           "minute":  "23\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Brian GUTIERREZ"
+                                       },
+                                       {
+                                           "team":  "Mexico",
+                                           "minute":  "90\u0027+2\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Cesar MONTES"
+                                       },
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "17\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Teboho MOKOENA"
+                                       },
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "49\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Sphephelo SITHOLE"
+                                       },
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "74\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Nkosinathi SIBISI"
+                                       },
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "84\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Themba ZWANE"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  2,
+                        "group":  "Group A",
+                        "idMatch":  "400021441",
+                        "homeTeam":  "Korea Republic",
+                        "awayTeam":  "Czechia",
+                        "score":  "2-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Korea Republic",
+                                           "minute":  "90\u0027+6\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "LEE Gihyuk"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  3,
+                        "group":  "Group B",
+                        "idMatch":  "400021449",
+                        "homeTeam":  "Canada",
+                        "awayTeam":  "Bosnia and Herzegovina",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Canada",
+                                           "minute":  "11\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Alistair JOHNSTON"
+                                       },
+                                       {
+                                           "team":  "Canada",
+                                           "minute":  "53\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Luc DE FOUGEROLLES"
+                                       },
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "44\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ermedin DEMIROVIC"
+                                       },
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "45\u0027+1\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jovo LUKIC"
+                                       },
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Nikola KATIC"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  4,
+                        "group":  "Group D",
+                        "idMatch":  "400021458",
+                        "homeTeam":  "USA",
+                        "awayTeam":  "Paraguay",
+                        "score":  "4-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  5,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -5
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "USA",
+                                           "minute":  "59\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Tyler ADAMS"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "9\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Juan Jose CACERES"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "53\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Miguel ALMIRON"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "79\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Diego GOMEZ"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "88\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Alex ARCE"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Junior ALONSO"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  5,
+                        "group":  "Group C",
+                        "idMatch":  "400021453",
+                        "homeTeam":  "Haiti",
+                        "awayTeam":  "Scotland",
+                        "score":  "0-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "39\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jean-Ricner BELLEGARDE"
+                                       },
+                                       {
+                                           "team":  "Scotland",
+                                           "minute":  "46\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Aaron HICKEY"
+                                       },
+                                       {
+                                           "team":  "Scotland",
+                                           "minute":  "90\u0027+1\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Findlay CURTIS"
+                                       },
+                                       {
+                                           "team":  "Scotland",
+                                           "minute":  "90\u0027+5\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Kenny McLEAN"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  6,
+                        "group":  "Group D",
+                        "idMatch":  "400021463",
+                        "homeTeam":  "Australia",
+                        "awayTeam":  "Türkiye",
+                        "score":  "2-0",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Türkiye",
+                                           "minute":  "86\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Yunus AKGUN"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  7,
+                        "group":  "Group C",
+                        "idMatch":  "400021456",
+                        "homeTeam":  "Brazil",
+                        "awayTeam":  "Morocco",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Brazil",
+                                           "minute":  "37\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "CASEMIRO"
+                                       },
+                                       {
+                                           "team":  "Brazil",
+                                           "minute":  "43\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "ROGER IBANEZ"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  8,
+                        "group":  "Group B",
+                        "idMatch":  "400021447",
+                        "homeTeam":  "Qatar",
+                        "awayTeam":  "Switzerland",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Qatar",
+                                           "minute":  "13\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MAHMOUD ABUNADA"
+                                       },
+                                       {
+                                           "team":  "Qatar",
+                                           "minute":  "23\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "JASSEM GABER"
+                                       },
+                                       {
+                                           "team":  "Switzerland",
+                                           "minute":  "42\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Denis ZAKARIA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  9,
+                        "group":  "Group E",
+                        "idMatch":  "400021467",
+                        "homeTeam":  "Côte d\u0027Ivoire",
+                        "awayTeam":  "Ecuador",
+                        "score":  "1-0",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Côte d\u0027Ivoire",
+                                           "minute":  "28\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Seko FOFANA"
+                                       },
+                                       {
+                                           "team":  "Côte d\u0027Ivoire",
+                                           "minute":  "38\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Franck KESSIE"
+                                       },
+                                       {
+                                           "team":  "Côte d\u0027Ivoire",
+                                           "minute":  "40\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Guela DOUE"
+                                       },
+                                       {
+                                           "team":  "Ecuador",
+                                           "minute":  "73\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jackson POROZO"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  10,
+                        "group":  "Group E",
+                        "idMatch":  "400021464",
+                        "homeTeam":  "Germany",
+                        "awayTeam":  "Curaçao",
+                        "score":  "7-1",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  11,
+                        "group":  "Group F",
+                        "idMatch":  "400021470",
+                        "homeTeam":  "Netherlands",
+                        "awayTeam":  "Japan",
+                        "score":  "2-2",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Netherlands",
+                                           "minute":  "61\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Crysencio SUMMERVILLE"
+                                       },
+                                       {
+                                           "team":  "Netherlands",
+                                           "minute":  "83\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Memphis DEPAY"
+                                       },
+                                       {
+                                           "team":  "Netherlands",
+                                           "minute":  "90\u0027+1\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Micky VAN DE VEN"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  12,
+                        "group":  "Group F",
+                        "idMatch":  "400021474",
+                        "homeTeam":  "Sweden",
+                        "awayTeam":  "Tunisia",
+                        "score":  "5-1",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Tunisia",
+                                           "minute":  "54\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Rani KHEDIRA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  13,
+                        "group":  "Group H",
+                        "idMatch":  "400021486",
+                        "homeTeam":  "Saudi Arabia",
+                        "awayTeam":  "Uruguay",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Saudi Arabia",
+                                           "minute":  "44\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "ABDULELAH ALAMRI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  14,
+                        "group":  "Group H",
+                        "idMatch":  "400021482",
+                        "homeTeam":  "Spain",
+                        "awayTeam":  "Cabo Verde",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Spain",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "PEDRI"
+                                       },
+                                       {
+                                           "team":  "Cabo Verde",
+                                           "minute":  "16\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "SIDNY LOPES CABRAL"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  15,
+                        "group":  "Group G",
+                        "idMatch":  "400021476",
+                        "homeTeam":  "IR Iran",
+                        "awayTeam":  "New Zealand",
+                        "score":  "2-2",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "IR Iran",
+                                           "minute":  "89\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ehsan HAJISAFI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  16,
+                        "group":  "Group G",
+                        "idMatch":  "400021478",
+                        "homeTeam":  "Belgium",
+                        "awayTeam":  "Egypt",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Belgium",
+                                           "minute":  "14\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Timothy CASTAGNE"
+                                       },
+                                       {
+                                           "team":  "Belgium",
+                                           "minute":  "75\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Maxim DE CUYPER"
+                                       },
+                                       {
+                                           "team":  "Egypt",
+                                           "minute":  "13\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MARAWAN ATTIA"
+                                       },
+                                       {
+                                           "team":  "Egypt",
+                                           "minute":  "34\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "AHMED FATOUH"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  17,
+                        "group":  "Group I",
+                        "idMatch":  "400021490",
+                        "homeTeam":  "France",
+                        "awayTeam":  "Senegal",
+                        "score":  "3-1",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  18,
+                        "group":  "Group I",
+                        "idMatch":  "400021488",
+                        "homeTeam":  "Iraq",
+                        "awayTeam":  "Norway",
+                        "score":  "1-4",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Iraq",
+                                           "minute":  "86\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "ZAID TAHSEEN"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  19,
+                        "group":  "Group J",
+                        "idMatch":  "400021496",
+                        "homeTeam":  "Argentina",
+                        "awayTeam":  "Algeria",
+                        "score":  "3-0",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  20,
+                        "group":  "Group J",
+                        "idMatch":  "400021498",
+                        "homeTeam":  "Austria",
+                        "awayTeam":  "Jordan",
+                        "score":  "3-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Austria",
+                                           "minute":  "77\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Marcel SABITZER"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  21,
+                        "group":  "Group L",
+                        "idMatch":  "400021510",
+                        "homeTeam":  "Ghana",
+                        "awayTeam":  "Panama",
+                        "score":  "1-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Ghana",
+                                           "minute":  "16\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Caleb YIRENKYI"
+                                       },
+                                       {
+                                           "team":  "Panama",
+                                           "minute":  "72\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Cesar BLACKMAN"
+                                       },
+                                       {
+                                           "team":  "Panama",
+                                           "minute":  "90\u0027+9\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Carlos HARVEY"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  22,
+                        "group":  "Group L",
+                        "idMatch":  "400021507",
+                        "homeTeam":  "England",
+                        "awayTeam":  "Croatia",
+                        "score":  "4-2",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  23,
+                        "group":  "Group K",
+                        "idMatch":  "400021502",
+                        "homeTeam":  "Portugal",
+                        "awayTeam":  "Congo DR",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Portugal",
+                                           "minute":  "13\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "BERNARDO SILVA"
+                                       },
+                                       {
+                                           "team":  "Portugal",
+                                           "minute":  "88\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "NELSON SEMEDO"
+                                       },
+                                       {
+                                           "team":  "Portugal",
+                                           "minute":  "90\u0027+2\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "TOMAS ARAUJO"
+                                       },
+                                       {
+                                           "team":  "Congo DR",
+                                           "minute":  "32\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Chancel MBEMBA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  24,
+                        "group":  "Group K",
+                        "idMatch":  "400021504",
+                        "homeTeam":  "Uzbekistan",
+                        "awayTeam":  "Colombia",
+                        "score":  "1-3",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Uzbekistan",
+                                           "minute":  "34\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Abdukodir KHUSANOV"
+                                       },
+                                       {
+                                           "team":  "Colombia",
+                                           "minute":  "7\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Johan MOJICA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  25,
+                        "group":  "Group A",
+                        "idMatch":  "400021440",
+                        "homeTeam":  "Czechia",
+                        "awayTeam":  "South Africa",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Czechia",
+                                           "minute":  "75\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ladislav KREJCI"
+                                       },
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "33\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Teboho MOKOENA"
+                                       },
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "40\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Thalente MBATHA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  26,
+                        "group":  "Group B",
+                        "idMatch":  "400021446",
+                        "homeTeam":  "Switzerland",
+                        "awayTeam":  "Bosnia and Herzegovina",
+                        "score":  "4-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  1,
+                                     "fairPlayScore":  -6
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Switzerland",
+                                           "minute":  "65\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Nico ELVEDI"
+                                       },
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "59\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Amar DEDIC"
+                                       },
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "61\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Edin DZEKO"
+                                       },
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "80\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Tarik MUHAREMOVIC"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  27,
+                        "group":  "Group B",
+                        "idMatch":  "400021450",
+                        "homeTeam":  "Canada",
+                        "awayTeam":  "Qatar",
+                        "score":  "6-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  2,
+                                     "fairPlayScore":  -9
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Canada",
+                                           "minute":  "9\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Derek CORNELIUS"
+                                       },
+                                       {
+                                           "team":  "Qatar",
+                                           "minute":  "33\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "HOMAM AHMED"
+                                       },
+                                       {
+                                           "team":  "Qatar",
+                                           "minute":  "51\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "ASSIM MADIBO"
+                                       },
+                                       {
+                                           "team":  "Qatar",
+                                           "minute":  "62\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "AHMED FATHY"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  28,
+                        "group":  "Group A",
+                        "idMatch":  "400021442",
+                        "homeTeam":  "Mexico",
+                        "awayTeam":  "Korea Republic",
+                        "score":  "1-0",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Korea Republic",
+                                           "minute":  "4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "LEE Kangin"
+                                       },
+                                       {
+                                           "team":  "Korea Republic",
+                                           "minute":  "58\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "PAIK Seungho"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  29,
+                        "group":  "Group C",
+                        "idMatch":  "400021457",
+                        "homeTeam":  "Brazil",
+                        "awayTeam":  "Haiti",
+                        "score":  "3-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Brazil",
+                                           "minute":  "65\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "DOUGLAS SANTOS"
+                                       },
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Carlens ARCUS"
+                                       },
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "45\u0027+4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Frantzdy PIERROT"
+                                       },
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "72\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Danley JEAN JACQUES"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  30,
+                        "group":  "Group C",
+                        "idMatch":  "400021454",
+                        "homeTeam":  "Scotland",
+                        "awayTeam":  "Morocco",
+                        "score":  "0-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Scotland",
+                                           "minute":  "65\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Andy ROBERTSON"
+                                       },
+                                       {
+                                           "team":  "Morocco",
+                                           "minute":  "22\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Issa DIOP"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  31,
+                        "group":  "Group D",
+                        "idMatch":  "400021460",
+                        "homeTeam":  "Türkiye",
+                        "awayTeam":  "Paraguay",
+                        "score":  "0-1",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  1,
+                                     "fairPlayScore":  -6
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Türkiye",
+                                           "minute":  "63\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Vincenzo MONTELLA (coach)"
+                                       },
+                                       {
+                                           "team":  "Türkiye",
+                                           "minute":  "71\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Eren ELMALI"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Matias GALARZA"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "37\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Carlos GONZALEZ (coach)"
+                                       },
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "45\u0027+3\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Miguel ALMIRON"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  32,
+                        "group":  "Group D",
+                        "idMatch":  "400021462",
+                        "homeTeam":  "USA",
+                        "awayTeam":  "Australia",
+                        "score":  "2-0",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  4,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -4
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "USA",
+                                           "minute":  "56\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Antonee ROBINSON"
+                                       },
+                                       {
+                                           "team":  "USA",
+                                           "minute":  "89\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Folarin BALOGUN"
+                                       },
+                                       {
+                                           "team":  "USA",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Chris RICHARDS"
+                                       },
+                                       {
+                                           "team":  "Australia",
+                                           "minute":  "16\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jordan BOS"
+                                       },
+                                       {
+                                           "team":  "Australia",
+                                           "minute":  "32\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Alessandro CIRCATI"
+                                       },
+                                       {
+                                           "team":  "Australia",
+                                           "minute":  "89\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jacob ITALIANO"
+                                       },
+                                       {
+                                           "team":  "Australia",
+                                           "minute":  "89\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Harry SOUTTAR"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  33,
+                        "group":  "Group E",
+                        "idMatch":  "400021469",
+                        "homeTeam":  "Germany",
+                        "awayTeam":  "Côte d\u0027Ivoire",
+                        "score":  "2-1",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  34,
+                        "group":  "Group E",
+                        "idMatch":  "400021465",
+                        "homeTeam":  "Ecuador",
+                        "awayTeam":  "Curaçao",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  5,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -5
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Ecuador",
+                                           "minute":  "38\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jordy ALCIVAR"
+                                       },
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "39\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Leandro BACUNA"
+                                       },
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "53\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Juninho BACUNA"
+                                       },
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "56\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Livano COMENENCIA"
+                                       },
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "75\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jurien GAARI"
+                                       },
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "90\u0027+1\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Gervane KASTANEER"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  35,
+                        "group":  "Group F",
+                        "idMatch":  "400021472",
+                        "homeTeam":  "Netherlands",
+                        "awayTeam":  "Sweden",
+                        "score":  "5-1",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Sweden",
+                                           "minute":  "53\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Gabriel GUDMUNDSSON"
+                                       },
+                                       {
+                                           "team":  "Sweden",
+                                           "minute":  "75\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Yasin AYARI"
+                                       },
+                                       {
+                                           "team":  "Sweden",
+                                           "minute":  "80\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Lucas BERGVALL"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  36,
+                        "group":  "Group F",
+                        "idMatch":  "400021475",
+                        "homeTeam":  "Tunisia",
+                        "awayTeam":  "Japan",
+                        "score":  "0-4",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  37,
+                        "group":  "Group H",
+                        "idMatch":  "400021487",
+                        "homeTeam":  "Uruguay",
+                        "awayTeam":  "Cabo Verde",
+                        "score":  "2-2",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Uruguay",
+                                           "minute":  "20\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Rodrigo BENTANCUR"
+                                       },
+                                       {
+                                           "team":  "Uruguay",
+                                           "minute":  "58\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Mathias OLIVERA"
+                                       },
+                                       {
+                                           "team":  "Cabo Verde",
+                                           "minute":  "5\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "SIDNY LOPES CABRAL"
+                                       },
+                                       {
+                                           "team":  "Cabo Verde",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "DINEY BORGES"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  38,
+                        "group":  "Group H",
+                        "idMatch":  "400021483",
+                        "homeTeam":  "Spain",
+                        "awayTeam":  "Saudi Arabia",
+                        "score":  "4-0",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Saudi Arabia",
+                                           "minute":  "30\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "SALEM ALDAWSARI"
+                                       },
+                                       {
+                                           "team":  "Saudi Arabia",
+                                           "minute":  "60\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MOHAMED KANNO"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  39,
+                        "group":  "Group G",
+                        "idMatch":  "400021477",
+                        "homeTeam":  "Belgium",
+                        "awayTeam":  "IR Iran",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  1,
+                                     "fairPlayScore":  -5
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Belgium",
+                                           "minute":  "3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Romelu LUKAKU"
+                                       },
+                                       {
+                                           "team":  "Belgium",
+                                           "minute":  "66\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Nathan NGOY"
+                                       },
+                                       {
+                                           "team":  "IR Iran",
+                                           "minute":  "33\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Saeid EZATOLAHI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  40,
+                        "group":  "Group G",
+                        "idMatch":  "400021480",
+                        "homeTeam":  "New Zealand",
+                        "awayTeam":  "Egypt",
+                        "score":  "1-3",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "New Zealand",
+                                           "minute":  "20\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Sarpreet SINGH"
+                                       },
+                                       {
+                                           "team":  "New Zealand",
+                                           "minute":  "34\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Callum McCOWATT"
+                                       },
+                                       {
+                                           "team":  "Egypt",
+                                           "minute":  "17\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MOHANAD LASHIN"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  41,
+                        "group":  "Group I",
+                        "idMatch":  "400021491",
+                        "homeTeam":  "Norway",
+                        "awayTeam":  "Senegal",
+                        "score":  "3-2",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  42,
+                        "group":  "Group I",
+                        "idMatch":  "400021492",
+                        "homeTeam":  "France",
+                        "awayTeam":  "Iraq",
+                        "score":  "3-0",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Iraq",
+                                           "minute":  "6\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "AMIR ALAMMARI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  43,
+                        "group":  "Group J",
+                        "idMatch":  "400021494",
+                        "homeTeam":  "Argentina",
+                        "awayTeam":  "Austria",
+                        "score":  "2-0",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Argentina",
+                                           "minute":  "76\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Facundo MEDINA"
+                                       },
+                                       {
+                                           "team":  "Argentina",
+                                           "minute":  "90\u0027+2\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Leandro PAREDES"
+                                       },
+                                       {
+                                           "team":  "Austria",
+                                           "minute":  "40\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Stefan POSCH"
+                                       },
+                                       {
+                                           "team":  "Austria",
+                                           "minute":  "76\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Konrad LAIMER"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  44,
+                        "group":  "Group J",
+                        "idMatch":  "400021499",
+                        "homeTeam":  "Jordan",
+                        "awayTeam":  "Algeria",
+                        "score":  "1-2",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Jordan",
+                                           "minute":  "64\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "HUSAM ABUDAHAB"
+                                       },
+                                       {
+                                           "team":  "Algeria",
+                                           "minute":  "44\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ramiz ZERROUKI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  45,
+                        "group":  "Group L",
+                        "idMatch":  "400021506",
+                        "homeTeam":  "England",
+                        "awayTeam":  "Ghana",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "England",
+                                           "minute":  "41\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Declan RICE"
+                                       },
+                                       {
+                                           "team":  "Ghana",
+                                           "minute":  "60\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Inaki WILLIAMS"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  46,
+                        "group":  "Group L",
+                        "idMatch":  "400021511",
+                        "homeTeam":  "Panama",
+                        "awayTeam":  "Croatia",
+                        "score":  "0-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Panama",
+                                           "minute":  "61\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Edgar Yoel BARCENAS"
+                                       },
+                                       {
+                                           "team":  "Croatia",
+                                           "minute":  "90\u0027+2\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Petar SUCIC"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  47,
+                        "group":  "Group K",
+                        "idMatch":  "400021503",
+                        "homeTeam":  "Portugal",
+                        "awayTeam":  "Uzbekistan",
+                        "score":  "5-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Portugal",
+                                           "minute":  "68\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "RENATO VEIGA"
+                                       },
+                                       {
+                                           "team":  "Uzbekistan",
+                                           "minute":  "14\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Odiljon XAMROBEKOV"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  48,
+                        "group":  "Group K",
+                        "idMatch":  "400021501",
+                        "homeTeam":  "Colombia",
+                        "awayTeam":  "Congo DR",
+                        "score":  "1-0",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Colombia",
+                                           "minute":  "56\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jhon LUCUMI"
+                                       },
+                                       {
+                                           "team":  "Colombia",
+                                           "minute":  "90\u0027+4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jefferson LERMA"
+                                       },
+                                       {
+                                           "team":  "Congo DR",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Charles PICKEL"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  49,
+                        "group":  "Group C",
+                        "idMatch":  "400021455",
+                        "homeTeam":  "Scotland",
+                        "awayTeam":  "Brazil",
+                        "score":  "0-3",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Scotland",
+                                           "minute":  "89\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ryan CHRISTIE"
+                                       },
+                                       {
+                                           "team":  "Brazil",
+                                           "minute":  "62\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "DANILO"
+                                       },
+                                       {
+                                           "team":  "Brazil",
+                                           "minute":  "82\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "FABINHO"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  50,
+                        "group":  "Group C",
+                        "idMatch":  "400021452",
+                        "homeTeam":  "Morocco",
+                        "awayTeam":  "Haiti",
+                        "score":  "4-2",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "79\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Johny PLACIDE"
+                                       },
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "79\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Duckens NAZON"
+                                       },
+                                       {
+                                           "team":  "Haiti",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Josue CASIMIR"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  51,
+                        "group":  "Group B",
+                        "idMatch":  "400021451",
+                        "homeTeam":  "Switzerland",
+                        "awayTeam":  "Canada",
+                        "score":  "2-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Switzerland",
+                                           "minute":  "32\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Granit XHAKA"
+                                       },
+                                       {
+                                           "team":  "Canada",
+                                           "minute":  "32\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Cyle LARIN"
+                                       },
+                                       {
+                                           "team":  "Canada",
+                                           "minute":  "87\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Liam MILLAR"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  52,
+                        "group":  "Group B",
+                        "idMatch":  "400021448",
+                        "homeTeam":  "Bosnia and Herzegovina",
+                        "awayTeam":  "Qatar",
+                        "score":  "3-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Bosnia and Herzegovina",
+                                           "minute":  "82\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ermin MAHMIC"
+                                       },
+                                       {
+                                           "team":  "Qatar",
+                                           "minute":  "78\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "AHMED FATHY"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  53,
+                        "group":  "Group A",
+                        "idMatch":  "400021444",
+                        "homeTeam":  "Czechia",
+                        "awayTeam":  "Mexico",
+                        "score":  "0-3",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Mexico",
+                                           "minute":  "63\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Edson ALVAREZ"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  54,
+                        "group":  "Group A",
+                        "idMatch":  "400021445",
+                        "homeTeam":  "South Africa",
+                        "awayTeam":  "Korea Republic",
+                        "score":  "1-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "South Africa",
+                                           "minute":  "72\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Aubrey MODIBA"
+                                       },
+                                       {
+                                           "team":  "Korea Republic",
+                                           "minute":  "78\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "CHO Guesung"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  55,
+                        "group":  "Group E",
+                        "idMatch":  "400021468",
+                        "homeTeam":  "Curaçao",
+                        "awayTeam":  "Côte d\u0027Ivoire",
+                        "score":  "0-2",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "75\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Juninho BACUNA"
+                                       },
+                                       {
+                                           "team":  "Curaçao",
+                                           "minute":  "83\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Gervane KASTANEER"
+                                       },
+                                       {
+                                           "team":  "Côte d\u0027Ivoire",
+                                           "minute":  "34\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Nicolas PEPE"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  56,
+                        "group":  "Group E",
+                        "idMatch":  "400021466",
+                        "homeTeam":  "Ecuador",
+                        "awayTeam":  "Germany",
+                        "score":  "2-1",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Ecuador",
+                                           "minute":  "43\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Piero HINCAPIE"
+                                       },
+                                       {
+                                           "team":  "Ecuador",
+                                           "minute":  "50\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Alan FRANCO"
+                                       },
+                                       {
+                                           "team":  "Ecuador",
+                                           "minute":  "89\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Gonzalo PLATA"
+                                       },
+                                       {
+                                           "team":  "Germany",
+                                           "minute":  "44\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Aleksandar PAVLOVIC"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  57,
+                        "group":  "Group F",
+                        "idMatch":  "400021471",
+                        "homeTeam":  "Japan",
+                        "awayTeam":  "Sweden",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Japan",
+                                           "minute":  "77\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Shogo TANIGUCHI"
+                                       },
+                                       {
+                                           "team":  "Sweden",
+                                           "minute":  "32\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Isak HIEN"
+                                       },
+                                       {
+                                           "team":  "Sweden",
+                                           "minute":  "84\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Viktor GYOKERES"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  58,
+                        "group":  "Group F",
+                        "idMatch":  "400021473",
+                        "homeTeam":  "Tunisia",
+                        "awayTeam":  "Netherlands",
+                        "score":  "1-3",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+
+                                   ]
+                    },
+                    {
+                        "matchNumber":  59,
+                        "group":  "Group D",
+                        "idMatch":  "400021459",
+                        "homeTeam":  "Türkiye",
+                        "awayTeam":  "USA",
+                        "score":  "3-2",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "USA",
+                                           "minute":  "19\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Sebastian BERHALTER"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  60,
+                        "group":  "Group D",
+                        "idMatch":  "400021461",
+                        "homeTeam":  "Paraguay",
+                        "awayTeam":  "Australia",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Paraguay",
+                                           "minute":  "77\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Diego GOMEZ"
+                                       },
+                                       {
+                                           "team":  "Australia",
+                                           "minute":  "46\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jackson IRVINE"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  61,
+                        "group":  "Group I",
+                        "idMatch":  "400021489",
+                        "homeTeam":  "Norway",
+                        "awayTeam":  "France",
+                        "score":  "1-4",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Norway",
+                                           "minute":  "10\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Patrick BERG"
+                                       },
+                                       {
+                                           "team":  "France",
+                                           "minute":  "74\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Aurelien TCHOUAMENI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  62,
+                        "group":  "Group I",
+                        "idMatch":  "400021493",
+                        "homeTeam":  "Senegal",
+                        "awayTeam":  "Iraq",
+                        "score":  "5-0",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  1,
+                                     "fairPlayScore":  -6
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Senegal",
+                                           "minute":  "18\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Abdoulaye SECK"
+                                       },
+                                       {
+                                           "team":  "Senegal",
+                                           "minute":  "81\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Pape GUEYE"
+                                       },
+                                       {
+                                           "team":  "Iraq",
+                                           "minute":  "13\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "REBIN SULAKA"
+                                       },
+                                       {
+                                           "team":  "Iraq",
+                                           "minute":  "75\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "AMIR ALAMMARI"
+                                       },
+                                       {
+                                           "team":  "Iraq",
+                                           "minute":  "90\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MERCHAS DOSKI"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  63,
+                        "group":  "Group G",
+                        "idMatch":  "400021479",
+                        "homeTeam":  "Egypt",
+                        "awayTeam":  "IR Iran",
+                        "score":  "1-1",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  4,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -4
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Egypt",
+                                           "minute":  "19\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MAHMOUD SABER"
+                                       },
+                                       {
+                                           "team":  "Egypt",
+                                           "minute":  "41\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "YASSER IBRAHIM"
+                                       },
+                                       {
+                                           "team":  "Egypt",
+                                           "minute":  "90\u0027+2\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MOHANAD LASHIN"
+                                       },
+                                       {
+                                           "team":  "IR Iran",
+                                           "minute":  "18\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Hossein KANANI"
+                                       },
+                                       {
+                                           "team":  "IR Iran",
+                                           "minute":  "43\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ali NEMATI"
+                                       },
+                                       {
+                                           "team":  "IR Iran",
+                                           "minute":  "79\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Saeid EZATOLAHI"
+                                       },
+                                       {
+                                           "team":  "IR Iran",
+                                           "minute":  "90\u0027+4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Shoja KHALILZADEH"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  64,
+                        "group":  "Group G",
+                        "idMatch":  "400021481",
+                        "homeTeam":  "New Zealand",
+                        "awayTeam":  "Belgium",
+                        "score":  "1-5",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "New Zealand",
+                                           "minute":  "46\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Marko STAMENIC"
+                                       },
+                                       {
+                                           "team":  "New Zealand",
+                                           "minute":  "56\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Elijah JUST"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  65,
+                        "group":  "Group H",
+                        "idMatch":  "400021485",
+                        "homeTeam":  "Cabo Verde",
+                        "awayTeam":  "Saudi Arabia",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Cabo Verde",
+                                           "minute":  "8\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "WAGNER PINA"
+                                       },
+                                       {
+                                           "team":  "Saudi Arabia",
+                                           "minute":  "4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "SAUD ABDULHAMID"
+                                       },
+                                       {
+                                           "team":  "Saudi Arabia",
+                                           "minute":  "67\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "NASSER ALDAWSARI"
+                                       },
+                                       {
+                                           "team":  "Saudi Arabia",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "FERAS ALBRIKAN"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  66,
+                        "group":  "Group H",
+                        "idMatch":  "400021484",
+                        "homeTeam":  "Uruguay",
+                        "awayTeam":  "Spain",
+                        "score":  "0-1",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  1,
+                                     "fairPlayScore":  -7
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Uruguay",
+                                           "minute":  "54\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Juan Manuel SANABRIA"
+                                       },
+                                       {
+                                           "team":  "Uruguay",
+                                           "minute":  "58\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Guillermo VARELA"
+                                       },
+                                       {
+                                           "team":  "Uruguay",
+                                           "minute":  "90\u0027+3\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Nicolas DE LA CRUZ"
+                                       },
+                                       {
+                                           "team":  "Uruguay",
+                                           "minute":  "90\u0027+4\u0027",
+                                           "type":  "DIRECT_RED",
+                                           "player":  "Agustin CANOBBIO"
+                                       },
+                                       {
+                                           "team":  "Spain",
+                                           "minute":  "46\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Alex BAENA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  67,
+                        "group":  "Group L",
+                        "idMatch":  "400021508",
+                        "homeTeam":  "Panama",
+                        "awayTeam":  "England",
+                        "score":  "0-2",
+                        "home":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Panama",
+                                           "minute":  "53\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jose FAJARDO"
+                                       },
+                                       {
+                                           "team":  "Panama",
+                                           "minute":  "83\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Andres ANDRADE"
+                                       },
+                                       {
+                                           "team":  "England",
+                                           "minute":  "60\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Jarell QUANSAH"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  68,
+                        "group":  "Group L",
+                        "idMatch":  "400021509",
+                        "homeTeam":  "Croatia",
+                        "awayTeam":  "Ghana",
+                        "score":  "2-1",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Croatia",
+                                           "minute":  "68\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Ivan PERISIC"
+                                       },
+                                       {
+                                           "team":  "Ghana",
+                                           "minute":  "90\u0027+4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Kojo Peprah OPPONG"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  69,
+                        "group":  "Group J",
+                        "idMatch":  "400021497",
+                        "homeTeam":  "Algeria",
+                        "awayTeam":  "Austria",
+                        "score":  "3-3",
+                        "home":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "away":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Austria",
+                                           "minute":  "11\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Marko ARNAUTOVIC"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  70,
+                        "group":  "Group J",
+                        "idMatch":  "400021495",
+                        "homeTeam":  "Jordan",
+                        "awayTeam":  "Argentina",
+                        "score":  "1-3",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Jordan",
+                                           "minute":  "17\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MOHANNAD ABUTAHA"
+                                       },
+                                       {
+                                           "team":  "Jordan",
+                                           "minute":  "64\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "YAZAN ALARAB"
+                                       },
+                                       {
+                                           "team":  "Jordan",
+                                           "minute":  "90\u0027+4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "MOHAMMAD ABUZRAIQ"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  71,
+                        "group":  "Group K",
+                        "idMatch":  "400021505",
+                        "homeTeam":  "Colombia",
+                        "awayTeam":  "Portugal",
+                        "score":  "0-0",
+                        "home":  {
+                                     "yellowCards":  1,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -1
+                                 },
+                        "away":  {
+                                     "yellowCards":  0,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  0
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Colombia",
+                                           "minute":  "86\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Gustavo PUERTA"
+                                       }
+                                   ]
+                    },
+                    {
+                        "matchNumber":  72,
+                        "group":  "Group K",
+                        "idMatch":  "400021500",
+                        "homeTeam":  "Congo DR",
+                        "awayTeam":  "Uzbekistan",
+                        "score":  "3-1",
+                        "home":  {
+                                     "yellowCards":  3,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -3
+                                 },
+                        "away":  {
+                                     "yellowCards":  2,
+                                     "secondYellowRedCards":  0,
+                                     "directRedCards":  0,
+                                     "fairPlayScore":  -2
+                                 },
+                        "events":  [
+                                       {
+                                           "team":  "Congo DR",
+                                           "minute":  "21\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Noah SADIKI"
+                                       },
+                                       {
+                                           "team":  "Congo DR",
+                                           "minute":  "45\u0027+4\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Nathanael MBUKU"
+                                       },
+                                       {
+                                           "team":  "Congo DR",
+                                           "minute":  "62\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Samuel MOUTOUSSAMY"
+                                       },
+                                       {
+                                           "team":  "Uzbekistan",
+                                           "minute":  "43\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Abdukodir KHUSANOV"
+                                       },
+                                       {
+                                           "team":  "Uzbekistan",
+                                           "minute":  "47\u0027",
+                                           "type":  "YELLOW",
+                                           "player":  "Sherzod NASRULLAEV"
+                                       }
+                                   ]
+                    }
+                ]
+}
