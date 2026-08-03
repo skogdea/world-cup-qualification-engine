@@ -1,550 +1,550 @@
 {
     "competition":  "FIFA/Coca-Cola Men\u0027s World Ranking",
     "gender":  "men",
-    "lastOfficialUpdate":  "2026-07-20",
-    "nextOfficialUpdate":  "2026-10-07",
-    "rankingId":  "FRS_Male_Football_20260611",
+    "lastOfficialUpdate":  "2026-06-11",
+    "note":  "Official ranking at FIFA World Cup 2026 kickoff; used for group-stage and third-place tie-breakers.",
+    "rankingId":  "FRS_Male_Football_20260401",
     "rankings":  [
                      {
-                         "fifaCode":  "ESP",
-                         "points":  1995.88,
-                         "pointsDelta":  30.27,
-                         "rank":  1,
-                         "rankMovement":  1,
-                         "team":  "Spain"
-                     },
-                     {
                          "fifaCode":  "ARG",
-                         "points":  1970.37,
+                         "points":  1877.27,
                          "pointsDelta":  0,
-                         "rank":  2,
-                         "rankMovement":  1,
+                         "rank":  1,
+                         "rankMovement":  2,
                          "team":  "Argentina"
                      },
                      {
+                         "fifaCode":  "ESP",
+                         "points":  1874.71,
+                         "pointsDelta":  30.27,
+                         "rank":  2,
+                         "rankMovement":  0,
+                         "team":  "Spain"
+                     },
+                     {
                          "fifaCode":  "FRA",
-                         "points":  1948.97,
+                         "points":  1870.7,
                          "pointsDelta":  0,
                          "rank":  3,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "France"
                      },
                      {
                          "fifaCode":  "ENG",
-                         "points":  1922.83,
+                         "points":  1828.02,
                          "pointsDelta":  33.41,
                          "rank":  4,
                          "rankMovement":  0,
                          "team":  "England"
                      },
                      {
-                         "fifaCode":  "BRA",
-                         "points":  1804.92,
+                         "fifaCode":  "POR",
+                         "points":  1767.85,
                          "pointsDelta":  0,
                          "rank":  5,
-                         "rankMovement":  1,
+                         "rankMovement":  0,
+                         "team":  "Portugal"
+                     },
+                     {
+                         "fifaCode":  "BRA",
+                         "points":  1765.86,
+                         "pointsDelta":  0,
+                         "rank":  6,
+                         "rankMovement":  0,
                          "team":  "Brazil"
                      },
                      {
                          "fifaCode":  "MAR",
-                         "points":  1803.99,
+                         "points":  1755.1,
                          "pointsDelta":  0,
-                         "rank":  6,
+                         "rank":  7,
                          "rankMovement":  1,
                          "team":  "Morocco"
                      },
                      {
-                         "fifaCode":  "POR",
-                         "points":  1787.85,
-                         "pointsDelta":  0,
-                         "rank":  7,
-                         "rankMovement":  2,
-                         "team":  "Portugal"
-                     },
-                     {
-                         "fifaCode":  "BEL",
-                         "points":  1778.36,
-                         "pointsDelta":  0,
-                         "rank":  8,
-                         "rankMovement":  1,
-                         "team":  "Belgium"
-                     },
-                     {
                          "fifaCode":  "NED",
-                         "points":  1775.54,
+                         "points":  1753.57,
                          "pointsDelta":  0.04,
-                         "rank":  9,
+                         "rank":  8,
                          "rankMovement":  1,
                          "team":  "Netherlands"
                      },
                      {
-                         "fifaCode":  "MEX",
-                         "points":  1754.3,
+                         "fifaCode":  "BEL",
+                         "points":  1742.24,
                          "pointsDelta":  0,
-                         "rank":  10,
-                         "rankMovement":  4,
-                         "team":  "Mexico"
-                     },
-                     {
-                         "fifaCode":  "COL",
-                         "points":  1739.89,
-                         "pointsDelta":  0,
-                         "rank":  11,
-                         "rankMovement":  2,
-                         "team":  "Colombia"
+                         "rank":  9,
+                         "rankMovement":  0,
+                         "team":  "Belgium"
                      },
                      {
                          "fifaCode":  "GER",
-                         "points":  1726.22,
+                         "points":  1735.77,
                          "pointsDelta":  0,
-                         "rank":  12,
-                         "rankMovement":  2,
+                         "rank":  10,
+                         "rankMovement":  0,
                          "team":  "Germany"
                      },
                      {
                          "fifaCode":  "CRO",
-                         "points":  1723.05,
+                         "points":  1714.87,
                          "pointsDelta":  0,
-                         "rank":  13,
-                         "rankMovement":  2,
+                         "rank":  11,
+                         "rankMovement":  0,
                          "team":  "Croatia"
-                     },
-                     {
-                         "fifaCode":  "SUI",
-                         "points":  1710.88,
-                         "pointsDelta":  0,
-                         "rank":  14,
-                         "rankMovement":  5,
-                         "team":  "Switzerland"
                      },
                      {
                          "fifaCode":  "ITA",
                          "points":  1704.73,
-                         "pointsDelta":  0,
-                         "rank":  15,
-                         "rankMovement":  3,
+                         "pointsDelta":  2.96,
+                         "rank":  12,
+                         "rankMovement":  0,
                          "team":  "Italy"
                      },
                      {
-                         "fifaCode":  "USA",
-                         "points":  1690.33,
+                         "fifaCode":  "COL",
+                         "points":  1698.35,
                          "pointsDelta":  0,
+                         "rank":  13,
+                         "rankMovement":  0,
+                         "team":  "Colombia"
+                     },
+                     {
+                         "fifaCode":  "MEX",
+                         "points":  1687.48,
+                         "pointsDelta":  0,
+                         "rank":  14,
+                         "rankMovement":  1,
+                         "team":  "Mexico"
+                     },
+                     {
+                         "fifaCode":  "SEN",
+                         "points":  1684.07,
+                         "pointsDelta":  0,
+                         "rank":  15,
+                         "rankMovement":  1,
+                         "team":  "Senegal"
+                     },
+                     {
+                         "fifaCode":  "URU",
+                         "points":  1673.07,
+                         "pointsDelta":  -15.26,
                          "rank":  16,
+                         "rankMovement":  1,
+                         "team":  "Uruguay"
+                     },
+                     {
+                         "fifaCode":  "USA",
+                         "points":  1671.23,
+                         "pointsDelta":  0,
+                         "rank":  17,
                          "rankMovement":  1,
                          "team":  "USA"
                      },
                      {
                          "fifaCode":  "JPN",
-                         "points":  1673.68,
+                         "points":  1661.58,
                          "pointsDelta":  0,
-                         "rank":  17,
-                         "rankMovement":  1,
+                         "rank":  18,
+                         "rankMovement":  0,
                          "team":  "Japan"
                      },
                      {
-                         "fifaCode":  "SEN",
-                         "points":  1653.43,
-                         "pointsDelta":  0,
-                         "rank":  18,
-                         "rankMovement":  3,
-                         "team":  "Senegal"
-                     },
-                     {
-                         "fifaCode":  "NOR",
-                         "points":  1651.29,
+                         "fifaCode":  "SUI",
+                         "points":  1650.06,
                          "pointsDelta":  0,
                          "rank":  19,
-                         "rankMovement":  12,
-                         "team":  "Norway"
+                         "rankMovement":  0,
+                         "team":  "Switzerland"
                      },
                      {
-                         "fifaCode":  "URU",
-                         "points":  1634.7,
-                         "pointsDelta":  -15.26,
+                         "fifaCode":  "IRN",
+                         "points":  1619.58,
+                         "pointsDelta":  -1.33,
                          "rank":  20,
-                         "rankMovement":  4,
-                         "team":  "Uruguay"
+                         "rankMovement":  1,
+                         "team":  "IR Iran"
                      },
                      {
                          "fifaCode":  "DEN",
                          "points":  1619.47,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.33,
                          "rank":  21,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Denmark"
                      },
                      {
-                         "fifaCode":  "IRN",
-                         "points":  1609.85,
-                         "pointsDelta":  -1.33,
+                         "fifaCode":  "TUR",
+                         "points":  1605.73,
+                         "pointsDelta":  32.42,
                          "rank":  22,
-                         "rankMovement":  2,
-                         "team":  "IR Iran"
-                     },
-                     {
-                         "fifaCode":  "AUT",
-                         "points":  1598.82,
-                         "pointsDelta":  0,
-                         "rank":  23,
-                         "rankMovement":  1,
-                         "team":  "Austria"
-                     },
-                     {
-                         "fifaCode":  "EGY",
-                         "points":  1597.04,
-                         "pointsDelta":  0,
-                         "rank":  24,
-                         "rankMovement":  5,
-                         "team":  "Egypt"
+                         "rankMovement":  0,
+                         "team":  "Türkiye"
                      },
                      {
                          "fifaCode":  "ECU",
-                         "points":  1592.59,
+                         "points":  1598.52,
                          "pointsDelta":  0,
-                         "rank":  25,
-                         "rankMovement":  2,
+                         "rank":  23,
+                         "rankMovement":  0,
                          "team":  "Ecuador"
+                     },
+                     {
+                         "fifaCode":  "AUT",
+                         "points":  1597.4,
+                         "pointsDelta":  0,
+                         "rank":  24,
+                         "rankMovement":  0,
+                         "team":  "Austria"
+                     },
+                     {
+                         "fifaCode":  "KOR",
+                         "points":  1591.63,
+                         "pointsDelta":  -33.03,
+                         "rank":  25,
+                         "rankMovement":  0,
+                         "team":  "Korea Republic"
                      },
                      {
                          "fifaCode":  "NGA",
                          "points":  1585.02,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.67,
                          "rank":  26,
                          "rankMovement":  0,
                          "team":  "Nigeria"
                      },
                      {
-                         "fifaCode":  "TUR",
-                         "points":  1582.54,
-                         "pointsDelta":  32.42,
-                         "rank":  27,
-                         "rankMovement":  5,
-                         "team":  "Türkiye"
-                     },
-                     {
                          "fifaCode":  "AUS",
-                         "points":  1581.51,
+                         "points":  1579.34,
                          "pointsDelta":  0.16,
-                         "rank":  28,
-                         "rankMovement":  1,
+                         "rank":  27,
+                         "rankMovement":  0,
                          "team":  "Australia"
                      },
                      {
                          "fifaCode":  "ALG",
-                         "points":  1576.8,
+                         "points":  1571.03,
                          "pointsDelta":  0,
-                         "rank":  29,
-                         "rankMovement":  1,
+                         "rank":  28,
+                         "rankMovement":  0,
                          "team":  "Algeria"
                      },
                      {
+                         "fifaCode":  "EGY",
+                         "points":  1562.37,
+                         "pointsDelta":  0,
+                         "rank":  29,
+                         "rankMovement":  0,
+                         "team":  "Egypt"
+                     },
+                     {
                          "fifaCode":  "CAN",
-                         "points":  1571.34,
+                         "points":  1559.48,
                          "pointsDelta":  0,
                          "rank":  30,
                          "rankMovement":  0,
                          "team":  "Canada"
                      },
                      {
-                         "fifaCode":  "CIV",
-                         "points":  1565.47,
+                         "fifaCode":  "NOR",
+                         "points":  1557.44,
                          "pointsDelta":  0,
                          "rank":  31,
-                         "rankMovement":  2,
-                         "team":  "Côte d\u0027Ivoire"
-                     },
-                     {
-                         "fifaCode":  "KOR",
-                         "points":  1558.72,
-                         "pointsDelta":  -33.03,
-                         "rank":  32,
-                         "rankMovement":  7,
-                         "team":  "Korea Republic"
+                         "rankMovement":  0,
+                         "team":  "Norway"
                      },
                      {
                          "fifaCode":  "UKR",
                          "points":  1549.29,
-                         "pointsDelta":  0,
-                         "rank":  33,
-                         "rankMovement":  1,
+                         "pointsDelta":  2.41,
+                         "rank":  32,
+                         "rankMovement":  0,
                          "team":  "Ukraine"
                      },
                      {
-                         "fifaCode":  "PAR",
-                         "points":  1542.48,
+                         "fifaCode":  "CIV",
+                         "points":  1540.87,
                          "pointsDelta":  0,
+                         "rank":  33,
+                         "rankMovement":  1,
+                         "team":  "Côte d\u0027Ivoire"
+                     },
+                     {
+                         "fifaCode":  "PAN",
+                         "points":  1539.16,
+                         "pointsDelta":  -10.64,
                          "rank":  34,
-                         "rankMovement":  7,
-                         "team":  "Paraguay"
+                         "rankMovement":  1,
+                         "team":  "Panama"
                      },
                      {
                          "fifaCode":  "RUS",
                          "points":  1529.6,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.37,
                          "rank":  35,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Russia"
                      },
                      {
                          "fifaCode":  "POL",
                          "points":  1526.18,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.59,
                          "rank":  36,
-                         "rankMovement":  0,
-                         "team":  "Poland"
-                     },
-                     {
-                         "fifaCode":  "SWE",
-                         "points":  1525.58,
-                         "pointsDelta":  0,
-                         "rank":  37,
                          "rankMovement":  1,
-                         "team":  "Sweden"
+                         "team":  "Poland"
                      },
                      {
                          "fifaCode":  "WAL",
                          "points":  1516.95,
+                         "pointsDelta":  -5.69,
+                         "rank":  37,
+                         "rankMovement":  0,
+                         "team":  "Wales"
+                     },
+                     {
+                         "fifaCode":  "SWE",
+                         "points":  1509.79,
                          "pointsDelta":  0,
                          "rank":  38,
-                         "rankMovement":  1,
-                         "team":  "Wales"
+                         "rankMovement":  0,
+                         "team":  "Sweden"
                      },
                      {
                          "fifaCode":  "HUN",
                          "points":  1506.39,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.26,
                          "rank":  39,
-                         "rankMovement":  0,
+                         "rankMovement":  3,
                          "team":  "Hungary"
+                     },
+                     {
+                         "fifaCode":  "CZE",
+                         "points":  1505.74,
+                         "pointsDelta":  -14.23,
+                         "rank":  40,
+                         "rankMovement":  1,
+                         "team":  "Czechia"
+                     },
+                     {
+                         "fifaCode":  "PAR",
+                         "points":  1505.35,
+                         "pointsDelta":  0,
+                         "rank":  41,
+                         "rankMovement":  1,
+                         "team":  "Paraguay"
+                     },
+                     {
+                         "fifaCode":  "SCO",
+                         "points":  1503.34,
+                         "pointsDelta":  -13.18,
+                         "rank":  42,
+                         "rankMovement":  1,
+                         "team":  "Scotland"
                      },
                      {
                          "fifaCode":  "SRB",
                          "points":  1502.13,
-                         "pointsDelta":  0,
-                         "rank":  40,
-                         "rankMovement":  3,
+                         "pointsDelta":  -3.35,
+                         "rank":  43,
+                         "rankMovement":  4,
                          "team":  "Serbia"
-                     },
-                     {
-                         "fifaCode":  "COD",
-                         "points":  1495.48,
-                         "pointsDelta":  0,
-                         "rank":  41,
-                         "rankMovement":  5,
-                         "team":  "Congo DR"
-                     },
-                     {
-                         "fifaCode":  "SCO",
-                         "points":  1491.22,
-                         "pointsDelta":  -13.18,
-                         "rank":  42,
-                         "rankMovement":  0,
-                         "team":  "Scotland"
                      },
                      {
                          "fifaCode":  "CMR",
                          "points":  1481.24,
-                         "pointsDelta":  0,
-                         "rank":  43,
+                         "pointsDelta":  2.98,
+                         "rank":  44,
                          "rankMovement":  1,
                          "team":  "Cameroon"
                      },
                      {
-                         "fifaCode":  "PAN",
-                         "points":  1478.41,
-                         "pointsDelta":  -10.64,
-                         "rank":  44,
-                         "rankMovement":  10,
-                         "team":  "Panama"
+                         "fifaCode":  "TUN",
+                         "points":  1476.41,
+                         "pointsDelta":  -11.1,
+                         "rank":  45,
+                         "rankMovement":  1,
+                         "team":  "Tunisia"
+                     },
+                     {
+                         "fifaCode":  "COD",
+                         "points":  1474.43,
+                         "pointsDelta":  0,
+                         "rank":  46,
+                         "rankMovement":  0,
+                         "team":  "Congo DR"
                      },
                      {
                          "fifaCode":  "SVK",
                          "points":  1473.66,
-                         "pointsDelta":  0,
-                         "rank":  45,
-                         "rankMovement":  2,
+                         "pointsDelta":  -1.62,
+                         "rank":  47,
+                         "rankMovement":  1,
                          "team":  "Slovakia"
                      },
                      {
                          "fifaCode":  "GRE",
                          "points":  1473.19,
-                         "pointsDelta":  0,
-                         "rank":  46,
-                         "rankMovement":  2,
+                         "pointsDelta":  -2.96,
+                         "rank":  48,
+                         "rankMovement":  1,
                          "team":  "Greece"
                      },
                      {
                          "fifaCode":  "VEN",
                          "points":  1469.18,
-                         "pointsDelta":  0,
-                         "rank":  47,
-                         "rankMovement":  2,
+                         "pointsDelta":  4.87,
+                         "rank":  49,
+                         "rankMovement":  0,
                          "team":  "Venezuela"
                      },
                      {
-                         "fifaCode":  "CZE",
-                         "points":  1467.26,
-                         "pointsDelta":  -14.23,
-                         "rank":  48,
-                         "rankMovement":  8,
-                         "team":  "Czechia"
+                         "fifaCode":  "UZB",
+                         "points":  1458.73,
+                         "pointsDelta":  -23.11,
+                         "rank":  50,
+                         "rankMovement":  0,
+                         "team":  "Uzbekistan"
                      },
                      {
                          "fifaCode":  "CHI",
                          "points":  1458.2,
-                         "pointsDelta":  0,
-                         "rank":  49,
-                         "rankMovement":  2,
+                         "pointsDelta":  5.26,
+                         "rank":  51,
+                         "rankMovement":  3,
                          "team":  "Chile"
                      },
                      {
                          "fifaCode":  "PER",
                          "points":  1457.69,
-                         "pointsDelta":  0,
-                         "rank":  50,
-                         "rankMovement":  2,
+                         "pointsDelta":  -1.7,
+                         "rank":  52,
+                         "rankMovement":  1,
                          "team":  "Peru"
                      },
                      {
                          "fifaCode":  "CRC",
                          "points":  1456.03,
-                         "pointsDelta":  0,
-                         "rank":  51,
+                         "pointsDelta":  -0.97,
+                         "rank":  53,
                          "rankMovement":  2,
                          "team":  "Costa Rica"
                      },
                      {
                          "fifaCode":  "ROU",
                          "points":  1455.89,
-                         "pointsDelta":  0,
-                         "rank":  52,
+                         "pointsDelta":  5.69,
+                         "rank":  54,
                          "rankMovement":  2,
                          "team":  "Romania"
                      },
                      {
                          "fifaCode":  "MLI",
                          "points":  1455.59,
-                         "pointsDelta":  0,
-                         "rank":  53,
-                         "rankMovement":  2,
+                         "pointsDelta":  -3.54,
+                         "rank":  55,
+                         "rankMovement":  3,
                          "team":  "Mali"
                      },
                      {
-                         "fifaCode":  "RSA",
-                         "points":  1451.24,
-                         "pointsDelta":  0,
-                         "rank":  54,
-                         "rankMovement":  6,
-                         "team":  "South Africa"
+                         "fifaCode":  "QAT",
+                         "points":  1450.31,
+                         "pointsDelta":  -27.75,
+                         "rank":  56,
+                         "rankMovement":  1,
+                         "team":  "Qatar"
+                     },
+                     {
+                         "fifaCode":  "IRQ",
+                         "points":  1446.28,
+                         "pointsDelta":  -15.07,
+                         "rank":  57,
+                         "rankMovement":  0,
+                         "team":  "Iraq"
                      },
                      {
                          "fifaCode":  "IRL",
                          "points":  1441.1,
-                         "pointsDelta":  0,
-                         "rank":  55,
-                         "rankMovement":  3,
+                         "pointsDelta":  1.14,
+                         "rank":  58,
+                         "rankMovement":  1,
                          "team":  "Republic of Ireland"
                      },
                      {
                          "fifaCode":  "SVN",
                          "points":  1441.09,
-                         "pointsDelta":  0,
-                         "rank":  56,
-                         "rankMovement":  3,
+                         "pointsDelta":  -2.63,
+                         "rank":  59,
+                         "rankMovement":  1,
                          "team":  "Slovenia"
                      },
                      {
-                         "fifaCode":  "TUN",
-                         "points":  1426.58,
-                         "pointsDelta":  -11.1,
-                         "rank":  57,
-                         "rankMovement":  12,
-                         "team":  "Tunisia"
+                         "fifaCode":  "RSA",
+                         "points":  1428.38,
+                         "pointsDelta":  0,
+                         "rank":  60,
+                         "rankMovement":  0,
+                         "team":  "South Africa"
                      },
                      {
                          "fifaCode":  "KSA",
-                         "points":  1425.52,
+                         "points":  1423.88,
                          "pointsDelta":  -1.2,
-                         "rank":  58,
-                         "rankMovement":  3,
-                         "team":  "Saudi Arabia"
-                     },
-                     {
-                         "fifaCode":  "QAT",
-                         "points":  1411.06,
-                         "pointsDelta":  -27.75,
-                         "rank":  59,
-                         "rankMovement":  3,
-                         "team":  "Qatar"
-                     },
-                     {
-                         "fifaCode":  "UZB",
-                         "points":  1409.73,
-                         "pointsDelta":  -23.11,
-                         "rank":  60,
-                         "rankMovement":  10,
-                         "team":  "Uzbekistan"
-                     },
-                     {
-                         "fifaCode":  "BIH",
-                         "points":  1408.93,
-                         "pointsDelta":  0,
                          "rank":  61,
-                         "rankMovement":  3,
-                         "team":  "Bosnia and Herzegovina"
+                         "rankMovement":  0,
+                         "team":  "Saudi Arabia"
                      },
                      {
                          "fifaCode":  "BFA",
                          "points":  1406.99,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.55,
                          "rank":  62,
                          "rankMovement":  0,
                          "team":  "Burkina Faso"
                      },
                      {
-                         "fifaCode":  "IRQ",
-                         "points":  1404.17,
-                         "pointsDelta":  -15.07,
+                         "fifaCode":  "JOR",
+                         "points":  1387.74,
+                         "pointsDelta":  -5.48,
                          "rank":  63,
-                         "rankMovement":  6,
-                         "team":  "Iraq"
+                         "rankMovement":  0,
+                         "team":  "Jordan"
                      },
                      {
-                         "fifaCode":  "CPV",
-                         "points":  1402.97,
+                         "fifaCode":  "BIH",
+                         "points":  1387.22,
                          "pointsDelta":  0,
                          "rank":  64,
-                         "rankMovement":  3,
-                         "team":  "Cabo Verde"
-                     },
-                     {
-                         "fifaCode":  "GHA",
-                         "points":  1387,
-                         "pointsDelta":  0,
-                         "rank":  65,
-                         "rankMovement":  8,
-                         "team":  "Ghana"
+                         "rankMovement":  1,
+                         "team":  "Bosnia and Herzegovina"
                      },
                      {
                          "fifaCode":  "HON",
                          "points":  1378.97,
-                         "pointsDelta":  0,
-                         "rank":  66,
+                         "pointsDelta":  -1.3,
+                         "rank":  65,
                          "rankMovement":  1,
                          "team":  "Honduras"
                      },
                      {
                          "fifaCode":  "ALB",
                          "points":  1376.03,
+                         "pointsDelta":  -6.45,
+                         "rank":  66,
+                         "rankMovement":  2,
+                         "team":  "Albania"
+                     },
+                     {
+                         "fifaCode":  "CPV",
+                         "points":  1371.11,
                          "pointsDelta":  0,
                          "rank":  67,
-                         "rankMovement":  1,
-                         "team":  "Albania"
+                         "rankMovement":  2,
+                         "team":  "Cabo Verde"
                      },
                      {
                          "fifaCode":  "UAE",
                          "points":  1370.47,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.28,
                          "rank":  68,
                          "rankMovement":  0,
                          "team":  "United Arab Emirates"
@@ -552,15 +552,15 @@
                      {
                          "fifaCode":  "MKD",
                          "points":  1369.16,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.95,
                          "rank":  69,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "North Macedonia"
                      },
                      {
                          "fifaCode":  "NIR",
                          "points":  1365.3,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.27,
                          "rank":  70,
                          "rankMovement":  0,
                          "team":  "Northern Ireland"
@@ -568,7 +568,7 @@
                      {
                          "fifaCode":  "JAM",
                          "points":  1357.84,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.48,
                          "rank":  71,
                          "rankMovement":  0,
                          "team":  "Jamaica"
@@ -576,55 +576,55 @@
                      {
                          "fifaCode":  "GEO",
                          "points":  1355.26,
-                         "pointsDelta":  0,
+                         "pointsDelta":  4.12,
                          "rank":  72,
                          "rankMovement":  0,
                          "team":  "Georgia"
                      },
                      {
-                         "fifaCode":  "JOR",
-                         "points":  1350.41,
-                         "pointsDelta":  -5.48,
+                         "fifaCode":  "GHA",
+                         "points":  1346.88,
+                         "pointsDelta":  0,
                          "rank":  73,
-                         "rankMovement":  10,
-                         "team":  "Jordan"
+                         "rankMovement":  1,
+                         "team":  "Ghana"
                      },
                      {
                          "fifaCode":  "ISL",
                          "points":  1342.77,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.15,
                          "rank":  74,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Iceland"
                      },
                      {
                          "fifaCode":  "FIN",
                          "points":  1341.92,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.55,
                          "rank":  75,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Finland"
                      },
                      {
                          "fifaCode":  "ISR",
                          "points":  1333.9,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.57,
                          "rank":  76,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Israel"
                      },
                      {
                          "fifaCode":  "BOL",
                          "points":  1326,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.42,
                          "rank":  77,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Bolivia"
                      },
                      {
                          "fifaCode":  "KOS",
                          "points":  1319.12,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.95,
                          "rank":  78,
                          "rankMovement":  0,
                          "team":  "Kosovo"
@@ -632,7 +632,7 @@
                      {
                          "fifaCode":  "OMA",
                          "points":  1306.9,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -6.56,
                          "rank":  79,
                          "rankMovement":  0,
                          "team":  "Oman"
@@ -640,119 +640,119 @@
                      {
                          "fifaCode":  "MNE",
                          "points":  1301.98,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.62,
                          "rank":  80,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Montenegro"
                      },
                      {
                          "fifaCode":  "GUI",
                          "points":  1295.6,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.41,
                          "rank":  81,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Guinea"
                      },
                      {
                          "fifaCode":  "CUW",
-                         "points":  1285.64,
+                         "points":  1294.77,
                          "pointsDelta":  -13.76,
                          "rank":  82,
                          "rankMovement":  0,
                          "team":  "Curaçao"
                      },
                      {
+                         "fifaCode":  "HAI",
+                         "points":  1293.1,
+                         "pointsDelta":  -6.42,
+                         "rank":  83,
+                         "rankMovement":  0,
+                         "team":  "Haiti"
+                     },
+                     {
                          "fifaCode":  "SYR",
                          "points":  1283.05,
-                         "pointsDelta":  0,
-                         "rank":  83,
-                         "rankMovement":  1,
+                         "pointsDelta":  -5.5,
+                         "rank":  84,
+                         "rankMovement":  0,
                          "team":  "Syria"
+                     },
+                     {
+                         "fifaCode":  "NZL",
+                         "points":  1275.58,
+                         "pointsDelta":  -7.54,
+                         "rank":  85,
+                         "rankMovement":  0,
+                         "team":  "New Zealand"
                      },
                      {
                          "fifaCode":  "GAB",
                          "points":  1272.51,
-                         "pointsDelta":  0,
-                         "rank":  84,
-                         "rankMovement":  2,
+                         "pointsDelta":  -0.48,
+                         "rank":  86,
+                         "rankMovement":  1,
                          "team":  "Gabon"
                      },
                      {
                          "fifaCode":  "BUL",
                          "points":  1271.68,
-                         "pointsDelta":  0,
-                         "rank":  85,
-                         "rankMovement":  2,
-                         "team":  "Bulgaria"
-                     },
-                     {
-                         "fifaCode":  "NZL",
-                         "points":  1269.8,
-                         "pointsDelta":  -7.54,
-                         "rank":  86,
+                         "pointsDelta":  -2.38,
+                         "rank":  87,
                          "rankMovement":  1,
-                         "team":  "New Zealand"
+                         "team":  "Bulgaria"
                      },
                      {
                          "fifaCode":  "ANG",
                          "points":  1265.58,
-                         "pointsDelta":  0,
-                         "rank":  87,
+                         "pointsDelta":  3.36,
+                         "rank":  88,
                          "rankMovement":  1,
                          "team":  "Angola"
                      },
                      {
-                         "fifaCode":  "HAI",
-                         "points":  1264.58,
-                         "pointsDelta":  -6.42,
-                         "rank":  88,
-                         "rankMovement":  5,
-                         "team":  "Haiti"
-                     },
-                     {
                          "fifaCode":  "UGA",
                          "points":  1264.09,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -9.59,
                          "rank":  89,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Uganda"
                      },
                      {
                          "fifaCode":  "ZAM",
                          "points":  1255.82,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.86,
                          "rank":  90,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Zambia"
                      },
                      {
                          "fifaCode":  "CHN",
                          "points":  1254.81,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.04,
                          "rank":  91,
-                         "rankMovement":  0,
+                         "rankMovement":  3,
                          "team":  "China PR"
                      },
                      {
                          "fifaCode":  "BHR",
                          "points":  1254.41,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.12,
                          "rank":  92,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Bahrain"
                      },
                      {
                          "fifaCode":  "BEN",
                          "points":  1252.17,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -6.05,
                          "rank":  93,
-                         "rankMovement":  0,
+                         "rankMovement":  3,
                          "team":  "Benin"
                      },
                      {
                          "fifaCode":  "PLE",
                          "points":  1243.71,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.5,
                          "rank":  95,
                          "rankMovement":  0,
                          "team":  "Palestine"
@@ -760,23 +760,23 @@
                      {
                          "fifaCode":  "BLR",
                          "points":  1242.88,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.55,
                          "rank":  96,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Belarus"
                      },
                      {
                          "fifaCode":  "GUA",
                          "points":  1238.74,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.03,
                          "rank":  97,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Guatemala"
                      },
                      {
                          "fifaCode":  "LUX",
                          "points":  1232.82,
-                         "pointsDelta":  0,
+                         "pointsDelta":  6.45,
                          "rank":  98,
                          "rankMovement":  0,
                          "team":  "Luxembourg"
@@ -784,7 +784,7 @@
                      {
                          "fifaCode":  "SLV",
                          "points":  1225.34,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.07,
                          "rank":  100,
                          "rankMovement":  0,
                          "team":  "El Salvador"
@@ -792,15 +792,15 @@
                      {
                          "fifaCode":  "TJK",
                          "points":  1224.19,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.33,
                          "rank":  101,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Tajikistan"
                      },
                      {
                          "fifaCode":  "TRI",
                          "points":  1219.59,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.37,
                          "rank":  102,
                          "rankMovement":  0,
                          "team":  "Trinidad and Tobago"
@@ -808,15 +808,15 @@
                      {
                          "fifaCode":  "MOZ",
                          "points":  1218.62,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.69,
                          "rank":  103,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Mozambique"
                      },
                      {
                          "fifaCode":  "MAD",
                          "points":  1202.69,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.07,
                          "rank":  104,
                          "rankMovement":  0,
                          "team":  "Madagascar"
@@ -824,7 +824,7 @@
                      {
                          "fifaCode":  "EQG",
                          "points":  1195.2,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.08,
                          "rank":  105,
                          "rankMovement":  0,
                          "team":  "Equatorial Guinea"
@@ -832,71 +832,71 @@
                      {
                          "fifaCode":  "KGZ",
                          "points":  1192.16,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.5,
                          "rank":  106,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Kyrgyz Republic"
                      },
                      {
                          "fifaCode":  "ARM",
                          "points":  1189.63,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.7,
                          "rank":  107,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Armenia"
                      },
                      {
                          "fifaCode":  "COM",
                          "points":  1187.91,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.15,
                          "rank":  108,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Comoros"
                      },
                      {
                          "fifaCode":  "KEN",
                          "points":  1185.08,
-                         "pointsDelta":  0,
+                         "pointsDelta":  3.93,
                          "rank":  109,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Kenya"
                      },
                      {
                          "fifaCode":  "LBY",
                          "points":  1182.08,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.99,
                          "rank":  110,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Libya"
                      },
                      {
                          "fifaCode":  "KAZ",
                          "points":  1180.78,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.26,
                          "rank":  111,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Kazakhstan"
                      },
                      {
                          "fifaCode":  "TAN",
                          "points":  1180.27,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.28,
                          "rank":  112,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Tanzania"
                      },
                      {
                          "fifaCode":  "MTN",
                          "points":  1176.68,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.08,
                          "rank":  113,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Mauritania"
                      },
                      {
                          "fifaCode":  "NIG",
                          "points":  1175.33,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.08,
                          "rank":  114,
                          "rankMovement":  0,
                          "team":  "Niger"
@@ -904,15 +904,15 @@
                      {
                          "fifaCode":  "LBN",
                          "points":  1172.22,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -15.75,
                          "rank":  115,
-                         "rankMovement":  0,
+                         "rankMovement":  7,
                          "team":  "Lebanon"
                      },
                      {
                          "fifaCode":  "GAM",
                          "points":  1159.64,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.74,
                          "rank":  116,
                          "rankMovement":  0,
                          "team":  "The Gambia"
@@ -928,39 +928,39 @@
                      {
                          "fifaCode":  "TOG",
                          "points":  1152.76,
-                         "pointsDelta":  0,
+                         "pointsDelta":  6.05,
                          "rank":  119,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Togo"
                      },
                      {
                          "fifaCode":  "PRK",
                          "points":  1151.05,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.58,
                          "rank":  120,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "DPR Korea"
                      },
                      {
                          "fifaCode":  "NAM",
                          "points":  1148.84,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.43,
                          "rank":  121,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Namibia"
                      },
                      {
                          "fifaCode":  "SLE",
                          "points":  1147.56,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.75,
                          "rank":  122,
-                         "rankMovement":  0,
+                         "rankMovement":  3,
                          "team":  "Sierra Leone"
                      },
                      {
                          "fifaCode":  "FRO",
                          "points":  1136.59,
-                         "pointsDelta":  0,
+                         "pointsDelta":  4.6,
                          "rank":  123,
                          "rankMovement":  0,
                          "team":  "Faroe Islands"
@@ -968,15 +968,15 @@
                      {
                          "fifaCode":  "CYP",
                          "points":  1133.25,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.19,
                          "rank":  124,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Cyprus"
                      },
                      {
                          "fifaCode":  "SUR",
                          "points":  1132.43,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -8.11,
                          "rank":  125,
                          "rankMovement":  0,
                          "team":  "Suriname"
@@ -984,23 +984,23 @@
                      {
                          "fifaCode":  "AZE",
                          "points":  1132,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.73,
                          "rank":  126,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Azerbaijan"
                      },
                      {
                          "fifaCode":  "EST",
                          "points":  1130.64,
-                         "pointsDelta":  0,
+                         "pointsDelta":  4.38,
                          "rank":  127,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Estonia"
                      },
                      {
                          "fifaCode":  "RWA",
                          "points":  1126.62,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.04,
                          "rank":  128,
                          "rankMovement":  0,
                          "team":  "Rwanda"
@@ -1008,15 +1008,15 @@
                      {
                          "fifaCode":  "MWI",
                          "points":  1122.05,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.43,
                          "rank":  129,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Malawi"
                      },
                      {
                          "fifaCode":  "ZIM",
                          "points":  1119.78,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.37,
                          "rank":  130,
                          "rankMovement":  0,
                          "team":  "Zimbabwe"
@@ -1024,7 +1024,7 @@
                      {
                          "fifaCode":  "NCA",
                          "points":  1114.63,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.85,
                          "rank":  131,
                          "rankMovement":  0,
                          "team":  "Nicaragua"
@@ -1032,7 +1032,7 @@
                      {
                          "fifaCode":  "GNB",
                          "points":  1108.38,
-                         "pointsDelta":  0,
+                         "pointsDelta":  2.66,
                          "rank":  132,
                          "rankMovement":  0,
                          "team":  "Guinea-Bissau"
@@ -1040,23 +1040,23 @@
                      {
                          "fifaCode":  "KUW",
                          "points":  1106.47,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.37,
                          "rank":  133,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Kuwait"
                      },
                      {
                          "fifaCode":  "CGO",
                          "points":  1105.96,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.28,
                          "rank":  134,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Congo"
                      },
                      {
                          "fifaCode":  "LVA",
                          "points":  1085.66,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.6,
                          "rank":  137,
                          "rankMovement":  0,
                          "team":  "Latvia"
@@ -1064,15 +1064,15 @@
                      {
                          "fifaCode":  "IND",
                          "points":  1084.93,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.33,
                          "rank":  138,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "India"
                      },
                      {
                          "fifaCode":  "CTA",
                          "points":  1080.82,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.36,
                          "rank":  139,
                          "rankMovement":  0,
                          "team":  "Central African Republic"
@@ -1080,7 +1080,7 @@
                      {
                          "fifaCode":  "LBR",
                          "points":  1080.44,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.75,
                          "rank":  140,
                          "rankMovement":  0,
                          "team":  "Liberia"
@@ -1088,7 +1088,7 @@
                      {
                          "fifaCode":  "TKM",
                          "points":  1078.65,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -8.87,
                          "rank":  141,
                          "rankMovement":  0,
                          "team":  "Turkmenistan"
@@ -1096,7 +1096,7 @@
                      {
                          "fifaCode":  "BDI",
                          "points":  1078.01,
-                         "pointsDelta":  0,
+                         "pointsDelta":  8.7,
                          "rank":  142,
                          "rankMovement":  0,
                          "team":  "Burundi"
@@ -1104,55 +1104,55 @@
                      {
                          "fifaCode":  "ETH",
                          "points":  1077.52,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.43,
                          "rank":  143,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Ethiopia"
                      },
                      {
                          "fifaCode":  "DOM",
                          "points":  1076.5,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.46,
                          "rank":  144,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Dominican Republic"
                      },
                      {
                          "fifaCode":  "YEM",
                          "points":  1065.24,
-                         "pointsDelta":  0,
+                         "pointsDelta":  15.75,
                          "rank":  145,
-                         "rankMovement":  0,
+                         "rankMovement":  4,
                          "team":  "Yemen"
                      },
                      {
                          "fifaCode":  "LES",
                          "points":  1064.29,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.93,
                          "rank":  146,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Lesotho"
                      },
                      {
                          "fifaCode":  "BOT",
                          "points":  1063.63,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.72,
                          "rank":  147,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Botswana"
                      },
                      {
                          "fifaCode":  "LTU",
                          "points":  1056.85,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.38,
                          "rank":  149,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Lithuania"
                      },
                      {
                          "fifaCode":  "GUY",
                          "points":  1049.32,
-                         "pointsDelta":  0,
+                         "pointsDelta":  3.73,
                          "rank":  150,
                          "rankMovement":  0,
                          "team":  "Guyana"
@@ -1160,7 +1160,7 @@
                      {
                          "fifaCode":  "NCL",
                          "points":  1036.95,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.67,
                          "rank":  151,
                          "rankMovement":  0,
                          "team":  "New Caledonia"
@@ -1168,7 +1168,7 @@
                      {
                          "fifaCode":  "SKN",
                          "points":  1036.33,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.05,
                          "rank":  152,
                          "rankMovement":  0,
                          "team":  "St. Kitts and Nevis"
@@ -1176,7 +1176,7 @@
                      {
                          "fifaCode":  "SOL",
                          "points":  1031.89,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.05,
                          "rank":  153,
                          "rankMovement":  0,
                          "team":  "Solomon Islands"
@@ -1184,31 +1184,31 @@
                      {
                          "fifaCode":  "PUR",
                          "points":  1024.3,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.81,
                          "rank":  154,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Puerto Rico"
                      },
                      {
                          "fifaCode":  "FIJ",
                          "points":  1024.17,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.21,
                          "rank":  155,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Fiji"
                      },
                      {
                          "fifaCode":  "HKG",
                          "points":  1024.16,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -6.08,
                          "rank":  156,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Hong Kong"
                      },
                      {
                          "fifaCode":  "TAH",
                          "points":  1019.04,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -12.43,
                          "rank":  157,
                          "rankMovement":  0,
                          "team":  "Tahiti"
@@ -1216,7 +1216,7 @@
                      {
                          "fifaCode":  "MDA",
                          "points":  1008.24,
-                         "pointsDelta":  0,
+                         "pointsDelta":  1.7,
                          "rank":  159,
                          "rankMovement":  0,
                          "team":  "Moldova"
@@ -1224,7 +1224,7 @@
                      {
                          "fifaCode":  "VAN",
                          "points":  1002.53,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.21,
                          "rank":  160,
                          "rankMovement":  0,
                          "team":  "Vanuatu"
@@ -1232,7 +1232,7 @@
                      {
                          "fifaCode":  "MLT",
                          "points":  992.79,
-                         "pointsDelta":  0,
+                         "pointsDelta":  6.4,
                          "rank":  161,
                          "rankMovement":  0,
                          "team":  "Malta"
@@ -1240,7 +1240,7 @@
                      {
                          "fifaCode":  "ATG",
                          "points":  986.58,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.56,
                          "rank":  162,
                          "rankMovement":  0,
                          "team":  "Antigua and Barbuda"
@@ -1248,7 +1248,7 @@
                      {
                          "fifaCode":  "GRN",
                          "points":  981.82,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -0.74,
                          "rank":  163,
                          "rankMovement":  0,
                          "team":  "Grenada"
@@ -1256,7 +1256,7 @@
                      {
                          "fifaCode":  "CUB",
                          "points":  981.42,
-                         "pointsDelta":  0,
+                         "pointsDelta":  0.93,
                          "rank":  164,
                          "rankMovement":  0,
                          "team":  "Cuba"
@@ -1264,7 +1264,7 @@
                      {
                          "fifaCode":  "SWZ",
                          "points":  979.01,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -15.39,
                          "rank":  165,
                          "rankMovement":  0,
                          "team":  "Eswatini"
@@ -1272,23 +1272,23 @@
                      {
                          "fifaCode":  "LCA",
                          "points":  976.71,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.58,
                          "rank":  166,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "St. Lucia"
                      },
                      {
                          "fifaCode":  "BER",
                          "points":  975.05,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.82,
                          "rank":  167,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Bermuda"
                      },
                      {
                          "fifaCode":  "PNG",
                          "points":  974.9,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.73,
                          "rank":  168,
                          "rankMovement":  0,
                          "team":  "Papua New Guinea"
@@ -1296,47 +1296,47 @@
                      {
                          "fifaCode":  "SSD",
                          "points":  970.94,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -15.99,
                          "rank":  169,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "South Sudan"
                      },
                      {
                          "fifaCode":  "VIN",
                          "points":  968.27,
-                         "pointsDelta":  0,
+                         "pointsDelta":  4.53,
                          "rank":  170,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "St. Vincent / Grenadines"
                      },
                      {
                          "fifaCode":  "AFG",
                          "points":  968.07,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.13,
                          "rank":  171,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Afghanistan"
                      },
                      {
                          "fifaCode":  "AND",
                          "points":  946.43,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.95,
                          "rank":  172,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Andorra"
                      },
                      {
                          "fifaCode":  "MDV",
                          "points":  943.92,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -6.18,
                          "rank":  173,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Maldives"
                      },
                      {
                          "fifaCode":  "TPE",
                          "points":  923.78,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -14.42,
                          "rank":  174,
                          "rankMovement":  0,
                          "team":  "Chinese Taipei"
@@ -1344,23 +1344,23 @@
                      {
                          "fifaCode":  "MSR",
                          "points":  916.75,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -10.12,
                          "rank":  176,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Montserrat"
                      },
                      {
                          "fifaCode":  "NEP",
                          "points":  914.54,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -13.87,
                          "rank":  177,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Nepal"
                      },
                      {
                          "fifaCode":  "MRI",
                          "points":  911.49,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.96,
                          "rank":  178,
                          "rankMovement":  0,
                          "team":  "Mauritius"
@@ -1368,7 +1368,7 @@
                      {
                          "fifaCode":  "BRB",
                          "points":  909.89,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.53,
                          "rank":  179,
                          "rankMovement":  0,
                          "team":  "Barbados"
@@ -1376,7 +1376,7 @@
                      {
                          "fifaCode":  "BLZ",
                          "points":  907,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.73,
                          "rank":  180,
                          "rankMovement":  0,
                          "team":  "Belize"
@@ -1384,7 +1384,7 @@
                      {
                          "fifaCode":  "BAN",
                          "points":  902.93,
-                         "pointsDelta":  0,
+                         "pointsDelta":  3.4,
                          "rank":  181,
                          "rankMovement":  0,
                          "team":  "Bangladesh"
@@ -1392,7 +1392,7 @@
                      {
                          "fifaCode":  "DMA",
                          "points":  897.69,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.68,
                          "rank":  182,
                          "rankMovement":  0,
                          "team":  "Dominica"
@@ -1400,7 +1400,7 @@
                      {
                          "fifaCode":  "CHA",
                          "points":  896.85,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -8.7,
                          "rank":  183,
                          "rankMovement":  0,
                          "team":  "Chad"
@@ -1408,7 +1408,7 @@
                      {
                          "fifaCode":  "ERI",
                          "points":  887.06,
-                         "pointsDelta":  0,
+                         "pointsDelta":  15.39,
                          "rank":  184,
                          "rankMovement":  0,
                          "team":  "Eritrea"
@@ -1416,31 +1416,31 @@
                      {
                          "fifaCode":  "COK",
                          "points":  877.53,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.05,
                          "rank":  186,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Cook Islands"
                      },
                      {
                          "fifaCode":  "SRI",
                          "points":  876.86,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.04,
                          "rank":  187,
-                         "rankMovement":  0,
+                         "rankMovement":  4,
                          "team":  "Sri Lanka"
                      },
                      {
                          "fifaCode":  "SAM",
                          "points":  876.41,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.66,
                          "rank":  188,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Samoa"
                      },
                      {
                          "fifaCode":  "ARU",
                          "points":  875.61,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.69,
                          "rank":  189,
                          "rankMovement":  0,
                          "team":  "Aruba"
@@ -1448,111 +1448,111 @@
                      {
                          "fifaCode":  "MNG",
                          "points":  874.47,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.61,
                          "rank":  190,
-                         "rankMovement":  0,
+                         "rankMovement":  3,
                          "team":  "Mongolia"
                      },
                      {
                          "fifaCode":  "ASA",
                          "points":  871.61,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.55,
                          "rank":  191,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "American Samoa"
                      },
                      {
                          "fifaCode":  "BHU",
                          "points":  870.81,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.04,
                          "rank":  192,
-                         "rankMovement":  0,
+                         "rankMovement":  6,
                          "team":  "Bhutan"
                      },
                      {
                          "fifaCode":  "MAC",
                          "points":  858.03,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.28,
                          "rank":  193,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Macau"
                      },
                      {
                          "fifaCode":  "BRU",
                          "points":  857.73,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.36,
                          "rank":  194,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Brunei"
                      },
                      {
                          "fifaCode":  "STP",
                          "points":  855.44,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -7.92,
                          "rank":  195,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "São Tomé and Príncipe"
                      },
                      {
                          "fifaCode":  "DJI",
                          "points":  853.58,
-                         "pointsDelta":  0,
+                         "pointsDelta":  15.99,
                          "rank":  196,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Djibouti"
                      },
                      {
                          "fifaCode":  "CAY",
                          "points":  850.06,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.39,
                          "rank":  197,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Cayman Islands"
                      },
                      {
                          "fifaCode":  "PAK",
                          "points":  840.28,
-                         "pointsDelta":  0,
+                         "pointsDelta":  3.13,
                          "rank":  198,
-                         "rankMovement":  0,
+                         "rankMovement":  4,
                          "team":  "Pakistan"
                      },
                      {
                          "fifaCode":  "SOM",
                          "points":  839.17,
-                         "pointsDelta":  0,
+                         "pointsDelta":  8.21,
                          "rank":  199,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Somalia"
                      },
                      {
                          "fifaCode":  "TGA",
                          "points":  835.64,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -11.49,
                          "rank":  200,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Tonga"
                      },
                      {
                          "fifaCode":  "GIB",
                          "points":  820.26,
-                         "pointsDelta":  0,
+                         "pointsDelta":  5.39,
                          "rank":  202,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "Gibraltar"
                      },
                      {
                          "fifaCode":  "GUM",
                          "points":  819.54,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -3.26,
                          "rank":  203,
-                         "rankMovement":  0,
+                         "rankMovement":  2,
                          "team":  "Guam"
                      },
                      {
                          "fifaCode":  "SEY",
                          "points":  804.16,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -6.94,
                          "rank":  204,
                          "rankMovement":  0,
                          "team":  "Seychelles"
@@ -1560,7 +1560,7 @@
                      {
                          "fifaCode":  "TCA",
                          "points":  803.98,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -5.95,
                          "rank":  205,
                          "rankMovement":  0,
                          "team":  "Turks and Caicos Islands"
@@ -1568,7 +1568,7 @@
                      {
                          "fifaCode":  "LIE",
                          "points":  797.7,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.19,
                          "rank":  206,
                          "rankMovement":  0,
                          "team":  "Liechtenstein"
@@ -1576,7 +1576,7 @@
                      {
                          "fifaCode":  "BAH",
                          "points":  786.82,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.43,
                          "rank":  207,
                          "rankMovement":  0,
                          "team":  "Bahamas"
@@ -1584,23 +1584,23 @@
                      {
                          "fifaCode":  "VIR",
                          "points":  779.76,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -2.84,
                          "rank":  208,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "US Virgin Islands"
                      },
                      {
                          "fifaCode":  "VGB",
                          "points":  777.41,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.73,
                          "rank":  209,
-                         "rankMovement":  0,
+                         "rankMovement":  1,
                          "team":  "British Virgin Islands"
                      },
                      {
                          "fifaCode":  "AIA",
                          "points":  760.25,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -4.88,
                          "rank":  210,
                          "rankMovement":  0,
                          "team":  "Anguilla"
@@ -1608,12 +1608,12 @@
                      {
                          "fifaCode":  "SMR",
                          "points":  721.2,
-                         "pointsDelta":  0,
+                         "pointsDelta":  -1.73,
                          "rank":  211,
                          "rankMovement":  0,
                          "team":  "San Marino"
                      }
                  ],
-    "source":  "https://inside.fifa.com/fifa-rankings/world-ranking/men",
+    "source":  "https://inside.fifa.com/fifa-rankings/world-ranking/men?dateId=FRS_Male_Football_20260401",
     "totalRankedTeams":  201
 }
