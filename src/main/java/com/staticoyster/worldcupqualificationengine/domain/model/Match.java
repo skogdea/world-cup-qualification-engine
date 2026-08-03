@@ -13,17 +13,10 @@ public class Match {
 	private int homeScore;
 	private int awayScore;
 	private MatchStatus matchStatus;
+	private TeamMatchStats homeStats;
+	private TeamMatchStats awayStats;
 
 	public Match() {
-	}
-
-	private Match(Builder builder) {
-		this.matchId = builder.matchId;
-		this.home = builder.home;
-		this.away = builder.away;
-		this.homeScore = builder.homeScore;
-		this.awayScore = builder.awayScore;
-		this.matchStatus = builder.matchStatus;
 	}
 
 	public String getMatchId() {
@@ -74,6 +67,33 @@ public class Match {
 		this.matchStatus = matchStatus;
 	}
 
+	public TeamMatchStats getHomeStats() {
+		return homeStats;
+	}
+
+	public void setHomeStats(TeamMatchStats homeStats) {
+		this.homeStats = homeStats;
+	}
+
+	public TeamMatchStats getAwayStats() {
+		return awayStats;
+	}
+
+	public void setAwayStats(TeamMatchStats awayStats) {
+		this.awayStats = awayStats;
+	}
+
+	private Match(Builder builder) {
+		this.matchId = builder.matchId;
+		this.home = builder.home;
+		this.away = builder.away;
+		this.homeScore = builder.homeScore;
+		this.awayScore = builder.awayScore;
+		this.matchStatus = builder.matchStatus;
+		this.homeStats = builder.homeStats;
+		this.awayStats = builder.awayStats;
+	}
+
 	public static final class Builder {
 
 		private String matchId;
@@ -82,6 +102,8 @@ public class Match {
 		private int homeScore;
 		private int awayScore;
 		private MatchStatus matchStatus;
+		private TeamMatchStats homeStats;
+		private TeamMatchStats awayStats;
 
 		private Builder() {
 		}
@@ -120,6 +142,16 @@ public class Match {
 			return this;
 		}
 
+		public Builder withHomeStats(TeamMatchStats val) {
+			homeStats = val;
+			return this;
+		}
+
+		public Builder withAwayStats(TeamMatchStats val) {
+			awayStats = val;
+			return this;
+		}
+
 		public Match build() {
 			return new Match(this);
 		}
@@ -135,6 +167,8 @@ public class Match {
 				+ ", homeScore=" + homeScore
 				+ ", awayScore=" + awayScore
 				+ ", matchStatus=" + matchStatus
+				+ ", homeStats=" + homeStats
+				+ ", awayStats=" + awayStats
 				+ '}';
 	}
 
@@ -152,11 +186,13 @@ public class Match {
 				&& Objects.equals(matchId, match.matchId)
 				&& home == match.home
 				&& away == match.away
-				&& matchStatus == match.matchStatus;
+				&& matchStatus == match.matchStatus
+				&& Objects.equals(homeStats, match.homeStats)
+				&& Objects.equals(awayStats, match.awayStats);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(matchId, home, away, homeScore, awayScore, matchStatus);
+		return Objects.hash(matchId, home, away, homeScore, awayScore, matchStatus, homeStats, awayStats);
 	}
 }
