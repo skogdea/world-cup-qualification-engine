@@ -1,12 +1,18 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamMatchStatsDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.TeamMatchStatsDto;
 import com.staticoyster.worldcupqualificationengine.domain.model.Match;
+import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MatchService {
@@ -17,7 +23,17 @@ public class MatchService {
 		this.matchRepository = matchRepository;
 	}
 
-	public void updateMatchResult(Team home, Team away, int homeScore, int awayScore) {
+	public List<MatchDto> getAllMatches() {
+		return matchRepository.findAll().stream()
+				.map(this::convertToMatchDto)
+				.toList();
+	}
+
+	public Optional<MatchDto> findMatch(String matchId) {
+		return matchRepository.findById(matchId).map(this::convertToMatchDto);
+	}
+
+	public MatchDto updateMatchResult(Team home, Team away, int homeScore, int awayScore) {
 		if (home == null || away == null) {
 			throw new IllegalArgumentException("home and away teams are required");
 		}
@@ -36,27 +52,57 @@ public class MatchService {
 		match.setAwayScore(awayScore);
 		match.setMatchStatus(MatchStatus.PAST);
 		matchRepository.save(match);
+		return convertToMatchDto(match);
 	}
 
 	public MatchDto convertToMatchDto(Match model) {
-		return ImmutableMatchDto.builder()
+		ImmutableMatchDto.Builder builder = ImmutableMatchDto.builder()
 				.matchId(model.getMatchId())
 				.home(model.getHome())
 				.away(model.getAway())
 				.homeScore(model.getHomeScore())
 				.awayScore(model.getAwayScore())
-				.matchStatus(model.getMatchStatus())
-				.build();
+				.matchStatus(model.getMatchStatus());
+		if (model.getHomeStats() != null) {
+			builder.homeStats(convertToTeamMatchStatsDto(model.getHomeStats()));
+		}
+		if (model.getAwayStats() != null) {
+			builder.awayStats(convertToTeamMatchStatsDto(model.getAwayStats()));
+		}
+		return builder.build();
 	}
 
 	public Match convertToMatch(MatchDto dto) {
-		return Match.Builder.newBuilder()
+		Match.Builder builder = Match.Builder.newBuilder()
 				.withMatchId(dto.getMatchId())
 				.withHome(dto.getHome())
 				.withAway(dto.getAway())
 				.withHomeScore(dto.getHomeScore())
 				.withAwayScore(dto.getAwayScore())
-				.withMatchStatus(dto.getMatchStatus())
+				.withMatchStatus(dto.getMatchStatus());
+		if (dto.getHomeStats() != null) {
+			builder.withHomeStats(convertToTeamMatchStats(dto.getHomeStats()));
+		}
+		if (dto.getAwayStats() != null) {
+			builder.withAwayStats(convertToTeamMatchStats(dto.getAwayStats()));
+		}
+		return builder.build();
+	}
+
+	public TeamMatchStatsDto convertToTeamMatchStatsDto(TeamMatchStats model) {
+		return ImmutableTeamMatchStatsDto.builder()
+				.yellowCards(model.getYellowCards())
+				.secondYellowReds(model.getSecondYellowReds())
+				.directReds(model.getDirectReds())
+				.fairPlayScore(model.getFairPlayScore())
+				.build();
+	}
+
+	public TeamMatchStats convertToTeamMatchStats(TeamMatchStatsDto dto) {
+		return TeamMatchStats.Builder.newBuilder()
+				.withYellowCards(dto.getYellowCards())
+				.withSecondYellowReds(dto.getSecondYellowReds())
+				.withDirectReds(dto.getDirectReds())
 				.build();
 	}
 
