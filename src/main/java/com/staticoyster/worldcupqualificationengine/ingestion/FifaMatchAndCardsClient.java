@@ -1,27 +1,31 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
-import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
+import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
+import com.staticoyster.worldcupqualificationengine.service.MatchService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 
-	private final MatchRepository matchRepository;
+	private final MatchService matchService;
 
-	public FifaMatchAndCardsClient(MatchRepository matchRepository) {
-		this.matchRepository = matchRepository;
+	public FifaMatchAndCardsClient(MatchService matchService) {
+        this.matchService = matchService;
 	}
 
 	@Override
-	public Match ingest(Match match) {
-		if (match == null) {
-			throw new IllegalArgumentException("match is required");
-		}
-		if (match.getMatchId() == null || match.getMatchId().isBlank()) {
-			throw new IllegalArgumentException("matchId is required");
-		}
-		return matchRepository.save(match);
+	public MatchDto ingest(MatchDto matchDto) {
+		validate(matchDto);
+		return matchService.updateMatchResult(matchDto);
 	}
 
+	private void validate(MatchDto matchDto) {
+		if (matchDto == null) {
+			throw new IllegalArgumentException("match is required");
+		}
+		String matchId = matchDto.getMatchId();
+		if (matchId == null || matchId.isBlank()) {
+			throw new IllegalArgumentException("matchId is required");
+		}
+	}
 }

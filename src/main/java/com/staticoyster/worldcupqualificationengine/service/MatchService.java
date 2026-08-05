@@ -33,7 +33,9 @@ public class MatchService {
 		return matchRepository.findById(matchId).map(this::convertToMatchDto);
 	}
 
-	public MatchDto updateMatchResult(Team home, Team away, int homeScore, int awayScore) {
+	public MatchDto updateMatchResult(MatchDto matchDto) {
+		Team home = matchDto.getHome();
+		Team away = matchDto.getAway();
 		if (home == null || away == null) {
 			throw new IllegalArgumentException("home and away teams are required");
 		}
@@ -42,14 +44,14 @@ public class MatchService {
 		}
 
 		Match match = matchRepository.findByHomeAndAway(home, away)
-				.orElseGet(() -> Match.Builder.newBuilder()
+				.orElseGet(() -> Match.Builder.newBuilder() // Lazy execution, find-or-create pattern
 						.withMatchId(home.name() + "_vs_" + away.name())
 						.withHome(home)
 						.withAway(away)
 						.build());
 
-		match.setHomeScore(homeScore);
-		match.setAwayScore(awayScore);
+		match.setHomeScore(matchDto.getHomeScore());
+		match.setAwayScore(matchDto.getAwayScore());
 		match.setMatchStatus(MatchStatus.PAST);
 		matchRepository.save(match);
 		return convertToMatchDto(match);
