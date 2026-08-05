@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import org.immutables.value.Value;
+import org.springframework.lang.Nullable;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableMatchDto.class)
@@ -31,5 +32,13 @@ public interface MatchDto {
 
 	@JsonProperty("match_status")
 	MatchStatus getMatchStatus();
+
+	@Nullable
+	@JsonProperty("home_stats")
+	TeamMatchStatsDto getHomeStats();
+
+	@Nullable
+	@JsonProperty("away_stats")
+	TeamMatchStatsDto getAwayStats();
 
 }
