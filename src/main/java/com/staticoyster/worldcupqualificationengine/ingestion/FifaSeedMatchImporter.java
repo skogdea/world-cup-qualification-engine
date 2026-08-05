@@ -1,17 +1,22 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
+import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamMatchStatsDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.TeamMatchStatsDto;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
-import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * This class is the seed loader or parser.
+ */
 @Component
 public class FifaSeedMatchImporter {
 
@@ -38,7 +43,7 @@ public class FifaSeedMatchImporter {
 
 			int imported = 0;
 			for (JsonNode matchNode : matches) {
-				fifaMatchAndCardsClient.ingest(toMatch(matchNode));
+				fifaMatchAndCardsClient.ingest(toMatchDto(matchNode));
 				imported++;
 			}
 			return imported;
@@ -48,28 +53,29 @@ public class FifaSeedMatchImporter {
 		}
 	}
 
-	private Match toMatch(JsonNode matchNode) {
+	private MatchDto toMatchDto(JsonNode matchNode) {
 		int[] score = parseScore(matchNode.path("score").stringValue());
 		Team home = resolveTeam(matchNode.path("homeTeam").stringValue());
 		Team away = resolveTeam(matchNode.path("awayTeam").stringValue());
 
-		return Match.Builder.newBuilder()
-				.withMatchId(matchNode.path("idMatch").stringValue())
-				.withHome(home)
-				.withAway(away)
-				.withHomeScore(score[0])
-				.withAwayScore(score[1])
-				.withMatchStatus(MatchStatus.PAST)
-				.withHomeStats(toStats(matchNode.path("home")))
-				.withAwayStats(toStats(matchNode.path("away")))
+		return ImmutableMatchDto.builder()
+				.matchId(matchNode.path("idMatch").stringValue())
+				.home(home)
+				.away(away)
+				.homeScore(score[0])
+				.awayScore(score[1])
+				.matchStatus(MatchStatus.PAST)
+				.homeStats(toStatsDto(matchNode.path("home")))
+				.awayStats(toStatsDto(matchNode.path("away")))
 				.build();
 	}
 
-	private TeamMatchStats toStats(JsonNode statsNode) {
-		return TeamMatchStats.Builder.newBuilder()
-				.withYellowCards(statsNode.path("yellowCards").intValue())
-				.withSecondYellowReds(statsNode.path("secondYellowRedCards").intValue())
-				.withDirectReds(statsNode.path("directRedCards").intValue())
+	private TeamMatchStatsDto toStatsDto(JsonNode statsNode) {
+		return ImmutableTeamMatchStatsDto.builder()
+				.yellowCards(statsNode.path("yellowCards").intValue())
+				.secondYellowReds(statsNode.path("secondYellowRedCards").intValue())
+				.directReds(statsNode.path("directRedCards").intValue())
+				.fairPlayScore(statsNode.path("fairPlayScore").intValue())
 				.build();
 	}
 

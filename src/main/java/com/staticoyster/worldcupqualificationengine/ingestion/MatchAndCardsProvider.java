@@ -1,15 +1,15 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
+import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
 
 /**
- * Port for ingesting match results and per-side card stats into the shared match store.
+ * Port for ingesting match results and per-side card stats.
  */
 public interface MatchAndCardsProvider {
 
 	/**
-	 * Persists a match with scores and optional {@code homeStats} / {@code awayStats}.
+	 * Ingest a match result and cards.
 	 */
-	Match ingest(Match match);
+	MatchDto ingest(MatchDto matchDto);
 
 }

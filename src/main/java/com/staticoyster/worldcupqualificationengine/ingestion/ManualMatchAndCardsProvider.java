@@ -1,37 +1,42 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
-import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
+import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.service.MatchService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ManualMatchAndCardsProvider implements MatchAndCardsProvider {
 
-	private final MatchRepository matchRepository;
+	private final MatchService matchService;
 
-	public ManualMatchAndCardsProvider(MatchRepository matchRepository) {
-		this.matchRepository = matchRepository;
+    public ManualMatchAndCardsProvider(MatchService matchService) {
+        this.matchService = matchService;
+    }
+
+    @Override
+	public MatchDto ingest(MatchDto matchDto) {
+		validate(matchDto);
+		return matchService.updateMatchResult(matchDto);
 	}
 
-	@Override
-	public Match ingest(Match match) {
-		validate(match);
-		return matchRepository.save(match);
-	}
-
-	private void validate(Match match) {
-		if (match == null) {
+	private void validate(MatchDto matchDto) {
+		if (matchDto == null) {
 			throw new IllegalArgumentException("match is required");
 		}
-		if (match.getMatchId() == null || match.getMatchId().isBlank()) {
+
+		String matchId = matchDto.getMatchId();
+		if (matchId == null || matchId.isBlank()) {
 			throw new IllegalArgumentException("matchId is required");
 		}
-		if (match.getHome() == null || match.getAway() == null) {
+
+		Team home = matchDto.getHome();
+		Team away = matchDto.getAway();
+		if (home == null || away == null) {
 			throw new IllegalArgumentException("home and away teams are required");
 		}
-		if (match.getHome().getGroup() != match.getAway().getGroup()) {
+		if (home.getGroup() != away.getGroup()) {
 			throw new IllegalArgumentException("home and away must be in the same group");
 		}
 	}
-
 }
