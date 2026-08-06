@@ -1,6 +1,7 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
@@ -14,23 +15,30 @@ import java.util.Map;
 @Service
 public class QualificationCalculator {
 
-	private static final int BEST_THIRD_PLACE_SLOTS = 8;
+	private static final int BEST_THIRD_PLACE_SLOTS = 8; // Todo: a constant class?
 
 	private final GroupStageStandingsService groupStageStandingsService;
+	private final DomainDtoConverter domainDtoConverter;
+	private final FifaWorldRankingService fifaWorldRankingService;
 
-	public QualificationCalculator(GroupStageStandingsService groupStageStandingsService) {
+	public QualificationCalculator(
+			GroupStageStandingsService groupStageStandingsService,
+			DomainDtoConverter domainDtoConverter,
+			FifaWorldRankingService fifaWorldRankingService) {
 		this.groupStageStandingsService = groupStageStandingsService;
+		this.domainDtoConverter = domainDtoConverter;
+		this.fifaWorldRankingService = fifaWorldRankingService;
 	}
 
-	public QualificationResult calculateQualification() {
-		Map<Group, List<Standing>> standingsByGroup = groupStageStandingsService.calculateAllGroupStandings();
+	public QualificationResultDto calculateQualification() {
+		Map<Group, List<StandingDto>> standingsDtoByGroup = groupStageStandingsService.calculateAllGroupStandingsDto();
 
 		List<Team> groupWinners = new ArrayList<>();
 		List<Team> runnersUp = new ArrayList<>();
-		List<Standing> thirdPlaceStandings = new ArrayList<>();
+		List<StandingDto> thirdPlaceStandings = new ArrayList<>();
 
-		for (List<Standing> groupStandings : standingsByGroup.values()) {
-			if (groupStandings.size() >= 1) {
+		for (List<StandingDto> groupStandings : standingsDtoByGroup.values()) {
+			if (groupStandings.size() >= 1) { // Todo: don't understand
 				groupWinners.add(groupStandings.get(0).getTeam());
 			}
 			if (groupStandings.size() >= 2) {
@@ -41,26 +49,27 @@ public class QualificationCalculator {
 			}
 		}
 
-		List<Standing> bestThirds = rankThirdPlaceTeams(thirdPlaceStandings).stream()
+		List<StandingDto> bestThirds = rankThirdPlaceTeams(thirdPlaceStandings).stream()
 				.limit(BEST_THIRD_PLACE_SLOTS)
 				.toList();
 
-		return new QualificationResult(groupWinners, runnersUp, bestThirds);
+		// QualificationResult (domain model) still holds Standing; convert only at that boundary.
+		return domainDtoConverter.toQualificationResultDto(
+				new QualificationResult(groupWinners, runnersUp, domainDtoConverter.toStandings(bestThirds)));
 	}
 
 	/**
 	 * FIFA ranking of third-placed teams across groups:
-	 * points → goal difference → goals scored → team conduct score.
-	 * FIFA World Ranking is not modeled yet; team FIFA code is the final deterministic fallback.
+	 * points → goal difference → goals scored → team conduct score → FIFA world ranking.
 	 */
-	private List<Standing> rankThirdPlaceTeams(List<Standing> thirdPlaceStandings) {
-		List<Standing> ranked = new ArrayList<>(thirdPlaceStandings);
+	private List<StandingDto> rankThirdPlaceTeams(List<StandingDto> thirdPlaceStandings) {
+		List<StandingDto> ranked = new ArrayList<>(thirdPlaceStandings);
 		ranked.sort(Comparator
-				.comparingInt(Standing::getPoints).reversed()
-				.thenComparing(Standing::getGoalDifference, Comparator.reverseOrder())
-				.thenComparing(Standing::getGoalsFor, Comparator.reverseOrder())
-				.thenComparing(Standing::getTeamConductScore, Comparator.reverseOrder())
-				.thenComparing(standing -> standing.getTeam().getCode()));
+				.comparingInt(StandingDto::getPoints).reversed()
+				.thenComparing(StandingDto::getGoalDifference, Comparator.reverseOrder())
+				.thenComparing(StandingDto::getGoalsFor, Comparator.reverseOrder())
+				.thenComparing(StandingDto::getTeamConductScore, Comparator.reverseOrder())
+				.thenComparing(StandingDto::getTeam, fifaWorldRankingService::compare));
 		return ranked;
 	}
 

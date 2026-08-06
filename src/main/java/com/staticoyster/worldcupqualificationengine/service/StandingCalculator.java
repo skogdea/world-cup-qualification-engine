@@ -1,11 +1,12 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
-import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
+import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchPoints;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.domain.model.Match;
+import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,16 +23,25 @@ import java.util.stream.Collectors;
 public class StandingCalculator {
 
 	private final MatchRepository matchRepository;
+	private final DomainDtoConverter domainDtoConverter;
+	private final FifaWorldRankingService fifaWorldRankingService;
 
-	public StandingCalculator(MatchRepository matchRepository) {
+	public StandingCalculator(
+			MatchRepository matchRepository,
+			DomainDtoConverter domainDtoConverter,
+			FifaWorldRankingService fifaWorldRankingService) {
 		this.matchRepository = matchRepository;
+		this.domainDtoConverter = domainDtoConverter;
+		this.fifaWorldRankingService = fifaWorldRankingService;
 	}
 
+	// Mutable models for accumulation; StandingDto is immutable. Convert at the public boundary.
 	public List<Match> retrieveAllPastMatchesInCurrentGroup(Group group) {
 		return matchRepository.findByGroupAndStatus(group, MatchStatus.PAST);
 	}
 
-	public List<Standing> calculateStandingsInCurrentGroup(Group group) {
+	public List<StandingDto> calculateStandingsDtoInCurrentGroup(Group group) {
+		// Mutable models for accumulation; StandingDto is immutable. Convert at the public boundary.
 		List<Match> pastMatches = retrieveAllPastMatchesInCurrentGroup(group);
 		Map<Team, Standing> standingsByTeam = initializeStandings(group);
 
@@ -44,7 +54,7 @@ public class StandingCalculator {
 			// TCS stays 0 until card events can be sourced; Match is the only persisted entity.
 		}
 
-		return rankStandings(new ArrayList<>(standingsByTeam.values()), pastMatches);
+		return domainDtoConverter.toStandingDtos(rankStandings(new ArrayList<>(standingsByTeam.values()), pastMatches));
 	}
 
 	private Map<Team, Standing> initializeStandings(Group group) {
@@ -119,10 +129,13 @@ public class StandingCalculator {
 		for (Match match : miniMatches) {
 			int[] homeStats = h2h.get(match.getHome());
 			int[] awayStats = h2h.get(match.getAway());
+			// GF:
 			homeStats[2] += match.getHomeScore();
 			awayStats[2] += match.getAwayScore();
+			// GD:
 			homeStats[1] += match.getHomeScore() - match.getAwayScore();
 			awayStats[1] += match.getAwayScore() - match.getHomeScore();
+			// Pts:
 			if (match.getHomeScore() > match.getAwayScore()) {
 				homeStats[0] += MatchPoints.WIN.getValue();
 			}
@@ -139,35 +152,41 @@ public class StandingCalculator {
 		// H2H Pts → H2H GD → H2H GF → overall GD → overall GF → TCS → FIFA ranking
 		// https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/groups-how-teams-qualify-tie-breakers
 		List<Standing> sorted = new ArrayList<>(tied);
-		sorted.sort((left, right) -> {
+		sorted.sort((left, right) -> { // Todo: .sort(a, b)
 			int[] leftH2h = h2h.get(left.getTeam());
 			int[] rightH2h = h2h.get(right.getTeam());
+			// Compare H2H Pts:
 			int cmp = Integer.compare(rightH2h[0], leftH2h[0]);
 			if (cmp != 0) {
 				return cmp;
 			}
+			// Compare H2H GD:
 			cmp = Integer.compare(rightH2h[1], leftH2h[1]);
 			if (cmp != 0) {
 				return cmp;
 			}
+			// Compare H2H GF:
 			cmp = Integer.compare(rightH2h[2], leftH2h[2]);
 			if (cmp != 0) {
 				return cmp;
 			}
+			// Compare overall GD:
 			cmp = Integer.compare(right.getGoalDifference(), left.getGoalDifference());
 			if (cmp != 0) {
 				return cmp;
 			}
+			// Compare overall GF:
 			cmp = Integer.compare(right.getGoalsFor(), left.getGoalsFor());
 			if (cmp != 0) {
 				return cmp;
 			}
+			// Compare TCS:
 			cmp = Integer.compare(right.getTeamConductScore(), left.getTeamConductScore());
 			if (cmp != 0) {
 				return cmp;
 			}
-			// FIFA ranking not modeled yet; deterministic fallback by team code.
-			return left.getTeam().getCode().compareTo(right.getTeam().getCode());
+			// FIFA ranking (lower rank number is better); team FIFA code fallback if ranks are equal/unknown.
+			return fifaWorldRankingService.compare(left.getTeam(), right.getTeam());
 		});
 		return sorted;
 	}
