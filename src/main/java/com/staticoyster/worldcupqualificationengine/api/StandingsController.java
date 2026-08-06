@@ -28,7 +28,7 @@ public class StandingsController {
 
 	@GetMapping("/groups/{group}")
 	public List<StandingDto> getGroupStandings(@PathVariable("group") Group group) {
-		return groupStageStandingsService.getGroupStandingsDtos(group);
+		return groupStageStandingsService.getGroupStandingsDtoInCurrentGroup(group);
 	}
 
 }
