@@ -48,7 +48,7 @@ public class MatchService {
 
 		match.setHomeScore(matchDto.getHomeScore());
 		match.setAwayScore(matchDto.getAwayScore());
-		match.setMatchStatus(matchDto.getMatchStatus());
+		match.setMatchStatus(MatchStatus.PAST);
 		if (matchDto.getHomeStats() != null) {
 			match.setHomeStats(domainDtoConverter.toTeamMatchStats(matchDto.getHomeStats()));
 		}
