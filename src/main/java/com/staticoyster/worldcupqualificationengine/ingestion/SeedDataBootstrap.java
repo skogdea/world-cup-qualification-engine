@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+/**
+ * Dev bootstrap: prefer live FIFA; when FIFA is unavailable, load seed via the manual adapter → MatchService.
+ */
 @Component
 @Profile("dev")
 @ConditionalOnProperty(prefix = "app.seed", name = "enabled", havingValue = "true")
@@ -15,16 +18,27 @@ public class SeedDataBootstrap implements ApplicationRunner {
 
 	private static final Logger log = LoggerFactory.getLogger(SeedDataBootstrap.class);
 
+	private final FifaMatchAndCardsClient fifaMatchAndCardsClient;
 	private final FifaSeedMatchImporter seedMatchImporter;
 
-	public SeedDataBootstrap(FifaSeedMatchImporter seedMatchImporter) {
+	public SeedDataBootstrap(
+			FifaMatchAndCardsClient fifaMatchAndCardsClient,
+			FifaSeedMatchImporter seedMatchImporter) {
+		this.fifaMatchAndCardsClient = fifaMatchAndCardsClient;
 		this.seedMatchImporter = seedMatchImporter;
 	}
 
 	@Override
 	public void run(ApplicationArguments args) {
-		int imported = seedMatchImporter.importDefaultSeed();
-		log.info("Imported {} matches from FIFA seed data", imported);
+		try {
+			int imported = fifaMatchAndCardsClient.importFirstStageResults();
+			log.info("Imported {} matches from live FIFA", imported);
+		}
+		catch (RuntimeException exception) {
+			log.warn("FIFA unavailable ({}); falling back to seed via manual adapter", exception.getMessage());
+			int imported = seedMatchImporter.importDefaultSeed();
+			log.info("Imported {} matches from FIFA seed data", imported);
+		}
 	}
 
 }
