@@ -15,8 +15,6 @@ import java.util.Map;
 @Service
 public class QualificationCalculator {
 
-	private static final int BEST_THIRD_PLACE_SLOTS = 8; // Todo: a constant class?
-
 	private final GroupStageStandingsService groupStageStandingsService;
 	private final DomainDtoConverter domainDtoConverter;
 	private final FifaWorldRankingService fifaWorldRankingService;
@@ -50,7 +48,7 @@ public class QualificationCalculator {
 		}
 
 		List<StandingDto> bestThirds = rankThirdPlaceTeams(thirdPlaceStandings).stream()
-				.limit(BEST_THIRD_PLACE_SLOTS)
+				.limit(TournamentConstants.BEST_THIRD_PLACE_SLOTS)
 				.toList();
 
 		// QualificationResult (domain model) still holds Standing; convert only at that boundary.

@@ -51,7 +51,6 @@ public class StandingCalculator {
 
 		for (Standing standing : standingsByTeam.values()) {
 			standing.setGoalDifference(standing.getGoalsFor() - standing.getGoalsAgainst());
-			// TCS stays 0 until card events can be sourced; Match is the only persisted entity.
 		}
 
 		return domainDtoConverter.toStandingDtos(rankStandings(new ArrayList<>(standingsByTeam.values()), pastMatches));
@@ -84,6 +83,13 @@ public class StandingCalculator {
 		home.setGoalsAgainst(home.getGoalsAgainst() + match.getAwayScore());
 		away.setGoalsFor(away.getGoalsFor() + match.getAwayScore());
 		away.setGoalsAgainst(away.getGoalsAgainst() + match.getHomeScore());
+
+		if (match.getHomeStats() != null) {
+			home.setTeamConductScore(home.getTeamConductScore() + match.getHomeStats().getFairPlayScore());
+		}
+		if (match.getAwayStats() != null) {
+			away.setTeamConductScore(away.getTeamConductScore() + match.getAwayStats().getFairPlayScore());
+		}
 
 		if (match.getHomeScore() > match.getAwayScore()) {
 			home.setPoints(home.getPoints() + MatchPoints.WIN.getValue());
