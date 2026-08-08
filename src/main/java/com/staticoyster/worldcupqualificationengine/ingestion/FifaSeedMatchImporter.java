@@ -23,11 +23,11 @@ public class FifaSeedMatchImporter {
 	static final String DEFAULT_RESOURCE = "seed/fifa/wc2026_first_stage_discipline_stats.json";
 
 	private final JsonMapper jsonMapper;
-	private final FifaMatchAndCardsClient fifaMatchAndCardsClient;
+	private final ManualMatchAndCardsProvider manualMatchAndCardsProvider;
 
-	public FifaSeedMatchImporter(JsonMapper jsonMapper, FifaMatchAndCardsClient fifaMatchAndCardsClient) {
+	public FifaSeedMatchImporter(JsonMapper jsonMapper, ManualMatchAndCardsProvider manualMatchAndCardsProvider) {
 		this.jsonMapper = jsonMapper;
-		this.fifaMatchAndCardsClient = fifaMatchAndCardsClient;
+		this.manualMatchAndCardsProvider = manualMatchAndCardsProvider;
 	}
 
 	public int importDefaultSeed() {
@@ -43,7 +43,8 @@ public class FifaSeedMatchImporter {
 
 			int imported = 0;
 			for (JsonNode matchNode : matches) {
-				fifaMatchAndCardsClient.ingest(toMatchDto(matchNode));
+				// Offline seed path: manual adapter → MatchService (not live FIFA HTTP).
+				manualMatchAndCardsProvider.ingest(toMatchDto(matchNode));
 				imported++;
 			}
 			return imported;

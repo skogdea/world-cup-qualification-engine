@@ -1,0 +1,93 @@
+{
+  "IdMatch": "400021443",
+  "IdStage": "289273",
+  "MatchStatus": 0,
+  "HomeTeam": {
+    "Score": 2,
+    "IdCountry": "MEX",
+    "Abbreviation": "MEX",
+    "ShortClubName": "Mexico",
+    "Bookings": [
+      {
+        "Card": 1,
+        "Period": 3,
+        "IdEvent": null,
+        "EventNumber": null,
+        "IdPlayer": "464533",
+        "IdCoach": null,
+        "IdStaff": null,
+        "IdTeam": "43911",
+        "Minute": "23'",
+        "Reason": null
+      },
+      {
+        "Card": 2,
+        "Period": 5,
+        "IdEvent": null,
+        "EventNumber": null,
+        "IdPlayer": "395516",
+        "IdCoach": null,
+        "IdStaff": null,
+        "IdTeam": "43911",
+        "Minute": "90'+2'",
+        "Reason": null
+      }
+    ]
+  },
+  "AwayTeam": {
+    "Score": 0,
+    "IdCountry": "RSA",
+    "Abbreviation": "RSA",
+    "ShortClubName": "South Africa",
+    "Bookings": [
+      {
+        "Card": 1,
+        "Period": 3,
+        "IdEvent": null,
+        "EventNumber": null,
+        "IdPlayer": "403616",
+        "IdCoach": null,
+        "IdStaff": null,
+        "IdTeam": "43883",
+        "Minute": "17'",
+        "Reason": null
+      },
+      {
+        "Card": 2,
+        "Period": 5,
+        "IdEvent": null,
+        "EventNumber": null,
+        "IdPlayer": "390475",
+        "IdCoach": null,
+        "IdStaff": null,
+        "IdTeam": "43883",
+        "Minute": "49'",
+        "Reason": null
+      },
+      {
+        "Card": 1,
+        "Period": 5,
+        "IdEvent": null,
+        "EventNumber": null,
+        "IdPlayer": "463221",
+        "IdCoach": null,
+        "IdStaff": null,
+        "IdTeam": "43883",
+        "Minute": "74'",
+        "Reason": null
+      },
+      {
+        "Card": 2,
+        "Period": 5,
+        "IdEvent": null,
+        "EventNumber": null,
+        "IdPlayer": "395984",
+        "IdCoach": null,
+        "IdStaff": null,
+        "IdTeam": "43883",
+        "Minute": "84'",
+        "Reason": null
+      }
+    ]
+  }
+}
