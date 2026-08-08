@@ -7,6 +7,7 @@ import com.staticoyster.worldcupqualificationengine.domain.dto.TeamMatchStatsDto
 import com.staticoyster.worldcupqualificationengine.domain.enums.FairPlayEvent;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
 import com.staticoyster.worldcupqualificationengine.service.MatchService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;

@@ -1,11 +1,13 @@
-package com.staticoyster.worldcupqualificationengine.ingestion;
+package com.staticoyster.worldcupqualificationengine.ingestion.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
  * FIFA public API settings for the live match + bookings adapter.
- * Kept in {@code ingestion} (not {@code domain.model}) — this is adapter config, not a domain entity.
+ *
+ * <p>Stays as a Spring {@link ConfigurationProperties} bean (fields + getters/setters + no-arg ctor).
+ * Domain-style Builder/withers are intentionally not used — Boot binds {@code app.fifa.*} via setters.
  */
 @Component
 @ConfigurationProperties(prefix = "app.fifa")
@@ -30,6 +32,9 @@ public class FifaApiProperties {
 	 * First-stage (group stage) {@code IdStage} used when bulk-importing calendar matches.
 	 */
 	private String idStageFirst = "289273";
+
+	public FifaApiProperties() {
+	}
 
 	public String getBaseUrl() {
 		return baseUrl;

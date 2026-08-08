@@ -3,6 +3,7 @@ package com.staticoyster.worldcupqualificationengine.ingestion;
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
