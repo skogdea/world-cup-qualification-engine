@@ -9,6 +9,8 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
 import com.staticoyster.worldcupqualificationengine.service.MatchService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
@@ -35,6 +37,8 @@ import tools.jackson.databind.json.JsonMapper;
  */
 @Component
 public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
+
+	private static final Logger log = LoggerFactory.getLogger(FifaMatchAndCardsClient.class);
 
 	private final RestClient restClient;
 	private final JsonMapper jsonMapper;
@@ -74,19 +78,31 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 		}
 
 		int imported = 0;
+		int failed = 0;
 		for (JsonNode calendarMatch : results) {
 			if (!isFinishedFirstStage(calendarMatch)) {
 				continue;
 			}
 			String matchId = stringOrNull(calendarMatch.path("IdMatch"));
 			if (matchId == null) {
+				failed++;
+				log.warn("Skipping finished first-stage calendar row with missing IdMatch: {}", calendarMatch);
 				continue;
 			}
-			matchService.updateMatchResult(fetchAndMap(matchId));
-			imported++;
+			try {
+				matchService.updateMatchResult(fetchAndMap(matchId));
+				imported++;
+			}
+			catch (RuntimeException exception) {
+				failed++;
+				log.warn("Skipping FIFA match {}: {}", matchId, exception.getMessage());
+			}
 		}
 		if (imported == 0) {
 			throw new IllegalStateException("FIFA calendar had no finished first-stage matches");
+		}
+		if (failed > 0) {
+			log.warn("Imported {} first-stage matches from live FIFA; skipped {}", imported, failed);
 		}
 		return imported;
 	}
@@ -120,7 +136,10 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 	}
 
 	MatchDto toMatchDto(JsonNode root) {
-		String matchId = root.path("IdMatch").stringValue();
+		String matchId = stringOrNull(root.path("IdMatch"));
+		if (matchId == null) {
+			throw new IllegalStateException("FIFA match payload missing IdMatch");
+		}
 		JsonNode statusNode = root.path("MatchStatus");
 		if (statusNode.isMissingNode() || !statusNode.isNumber()
 				|| !MatchStatus.PAST.matchesFifaCode(statusNode.intValue())) {
@@ -238,11 +257,15 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				"Unknown FIFA team (code=" + code + ", name=" + name + ")");
 	}
 
-	private static String stringOrNull(JsonNode node) {
+	/**
+	 * Coerces JSON string <em>or number</em> scalars to text. FIFA sometimes emits {@code IdMatch}/
+	 * {@code IdStage} as numbers; {@link JsonNode#stringValue()} does not coerce and fails those rows.
+	 */
+	static String stringOrNull(JsonNode node) {
 		if (node == null || node.isMissingNode() || node.isNull()) {
 			return null;
 		}
-		String value = node.stringValue();
+		String value = node.asString(null);
 		return value == null || value.isBlank() ? null : value;
 	}
 
