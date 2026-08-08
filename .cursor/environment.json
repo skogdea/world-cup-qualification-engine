@@ -1,0 +1,17 @@
+{
+  "name": "World Cup Qualification Engine",
+  "install": "./gradlew build -x test --no-daemon",
+  "terminals": [
+    {
+      "name": "app",
+      "command": "./gradlew bootRun --args='--spring.profiles.active=dev' --no-daemon",
+      "description": "Spring Boot REST API on http://localhost:8080. Dev profile ingests live FIFA results and falls back to the bundled seed data when FIFA is unreachable."
+    }
+  ],
+  "ports": [
+    {
+      "name": "api",
+      "port": 8080
+    }
+  ]
+}
