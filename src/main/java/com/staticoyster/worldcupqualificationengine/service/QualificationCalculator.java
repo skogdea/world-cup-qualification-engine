@@ -1,5 +1,6 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import com.staticoyster.worldcupqualificationengine.domain.constants.QualificationConstants;
 import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
@@ -14,8 +15,6 @@ import java.util.Map;
 
 @Service
 public class QualificationCalculator {
-
-	private static final int BEST_THIRD_PLACE_SLOTS = 8; // Todo: a constant class?
 
 	private final GroupStageStandingsService groupStageStandingsService;
 	private final DomainDtoConverter domainDtoConverter;
@@ -50,7 +49,7 @@ public class QualificationCalculator {
 		}
 
 		List<StandingDto> bestThirds = rankThirdPlaceTeams(thirdPlaceStandings).stream()
-				.limit(BEST_THIRD_PLACE_SLOTS)
+				.limit(QualificationConstants.BEST_THIRD_PLACE_SLOTS)
 				.toList();
 
 		// QualificationResult (domain model) still holds Standing; convert only at that boundary.
