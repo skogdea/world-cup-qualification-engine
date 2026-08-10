@@ -1,4 +1,4 @@
-package com.staticoyster.worldcupqualificationengine.service;
+package com.staticoyster.worldcupqualificationengine.service.config;
 
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationResultDto;
