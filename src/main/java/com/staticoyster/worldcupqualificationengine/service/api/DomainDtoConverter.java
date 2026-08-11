@@ -1,4 +1,4 @@
-package com.staticoyster.worldcupqualificationengine.service.config;
+package com.staticoyster.worldcupqualificationengine.service.api;
 
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationResultDto;
@@ -63,23 +63,33 @@ public class DomainDtoConverter {
 
 	public StandingDto toStandingDto(Standing model) {
 		return ImmutableStandingDto.builder()
+				.group(model.getGroup())
 				.team(model.getTeam())
-				.points(model.getPoints())
+				.played(model.getPlayed())
+				.won(model.getWon())
+				.drawn(model.getDrawn())
+				.lost(model.getLost())
 				.goalsFor(model.getGoalsFor())
 				.goalsAgainst(model.getGoalsAgainst())
 				.goalDifference(model.getGoalDifference())
 				.teamConductScore(model.getTeamConductScore())
+				.points(model.getPoints())
 				.build();
 	}
 
 	public Standing toStanding(StandingDto dto) {
 		return Standing.Builder.newBuilder()
+				.withGroup(dto.getGroup())
 				.withTeam(dto.getTeam())
-				.withPoints(dto.getPoints())
+				.withPlayed(dto.getPlayed())
+				.withWon(dto.getWon())
+				.withDrawn(dto.getDrawn())
+				.withLost(dto.getLost())
 				.withGoalsFor(dto.getGoalsFor())
 				.withGoalsAgainst(dto.getGoalsAgainst())
 				.withGoalDifference(dto.getGoalDifference())
 				.withTeamConductScore(dto.getTeamConductScore())
+				.withPoints(dto.getPoints())
 				.build();
 	}
 

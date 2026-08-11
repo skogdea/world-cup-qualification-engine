@@ -32,4 +32,9 @@ public class RoundOf32Service {
 		return getQualificationSnapshotDto().getBestThirdPlaceStandings();
 	}
 
+	/** All third-placed teams ranked by FIFA criteria (may be more than the advancing eight). */
+	public List<StandingDto> getRankedThirdPlaceStandingsDtos() {
+		return qualificationCalculator.getRankedThirdPlaceStandings();
+	}
+
 }

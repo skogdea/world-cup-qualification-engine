@@ -6,6 +6,7 @@ import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
+import com.staticoyster.worldcupqualificationengine.service.api.DomainDtoConverter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -55,6 +56,18 @@ public class QualificationCalculator {
 		// QualificationResult (domain model) still holds Standing; convert only at that boundary.
 		return domainDtoConverter.toQualificationResultDto(
 				new QualificationResult(groupWinners, runnersUp, domainDtoConverter.toStandings(bestThirds)));
+	}
+
+	/** All third-placed teams, ranked by FIFA third-place criteria (not limited to advancing slots). */
+	public List<StandingDto> getRankedThirdPlaceStandings() {
+		Map<Group, List<StandingDto>> standingsDtoByGroup = groupStageStandingsService.calculateAllGroupStandingsDto();
+		List<StandingDto> thirdPlaceStandings = new ArrayList<>();
+		for (List<StandingDto> groupStandings : standingsDtoByGroup.values()) {
+			if (groupStandings.size() >= 3) {
+				thirdPlaceStandings.add(groupStandings.get(2));
+			}
+		}
+		return rankThirdPlaceTeams(thirdPlaceStandings);
 	}
 
 	/**
