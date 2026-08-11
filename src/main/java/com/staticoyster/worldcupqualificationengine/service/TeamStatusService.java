@@ -30,7 +30,8 @@ public class TeamStatusService {
 
 	/**
 	 * Group-stage status from current standings ({@link Standing} stays the stats source).
-	 * Rank 1–2 → QUALIFIED; rank 4 → ELIMINATED; otherwise (typically 3rd) → STILL_ALIVE.
+	 * Rank 1–2 → QUALIFIED; rank 4 → ELIMINATED; rank 3 among the advancing best thirds →
+	 * STILL_ALIVE; rank 3 outside those slots ({@code bestThirdPlaceRank} null) → ELIMINATED.
 	 */
 	public TeamStatusDto getTeamStatus(Team team) {
 		List<StandingDto> groupStandings =
@@ -50,22 +51,23 @@ public class TeamStatusService {
 		}
 
 		Standing standing = domainDtoConverter.toStanding(standingDto);
+		Integer bestThirdPlaceRank = resolveBestThirdPlaceRank(team, currentRank);
 		TeamStatusModel model = TeamStatusModel.Builder.newBuilder()
 				.withGroup(standing.getGroup())
 				.withTeam(standing.getTeam())
 				.withCurrentRank(currentRank)
-				.withBestThirdPlaceRank(resolveBestThirdPlaceRank(team, currentRank))
-				.withTeamStatus(resolveStatus(currentRank))
+				.withBestThirdPlaceRank(bestThirdPlaceRank)
+				.withTeamStatus(resolveStatus(currentRank, bestThirdPlaceRank))
 				.build();
 
 		return domainDtoConverter.toTeamStatusDto(standing, model);
 	}
 
-	private static TeamStatus resolveStatus(int currentRank) {
+	private static TeamStatus resolveStatus(int currentRank, Integer bestThirdPlaceRank) {
 		if (currentRank == 1 || currentRank == 2) {
 			return TeamStatus.QUALIFIED;
 		}
-		if (currentRank == 4) {
+		if (currentRank == 4 || (currentRank == 3 && bestThirdPlaceRank == null)) {
 			return TeamStatus.ELIMINATED;
 		}
 		return TeamStatus.STILL_ALIVE;
