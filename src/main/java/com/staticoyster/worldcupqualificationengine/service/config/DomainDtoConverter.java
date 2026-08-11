@@ -1,4 +1,4 @@
-package com.staticoyster.worldcupqualificationengine.service.api;
+package com.staticoyster.worldcupqualificationengine.service.config;
 
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationResultDto;
@@ -104,8 +104,8 @@ public class DomainDtoConverter {
 		return dtos.stream().map(this::toStanding).toList();
 	}
 
-	/** API view: exhaustive {@link StandingDto} line plus slim {@link TeamStatusModel} fields. */
-	public TeamStatusDto toTeamStatusDto(StandingDto standing, TeamStatusModel model) {
+	/** API view: exhaustive {@link Standing} line plus slim {@link TeamStatusModel} fields. */
+	public TeamStatusDto toTeamStatusDto(Standing standing, TeamStatusModel model) {
 		ImmutableTeamStatusDto.Builder builder = ImmutableTeamStatusDto.builder()
 				.group(standing.getGroup())
 				.team(standing.getTeam())
@@ -119,9 +119,9 @@ public class DomainDtoConverter {
 				.goalDifference(standing.getGoalDifference())
 				.teamConductScore(standing.getTeamConductScore())
 				.points(standing.getPoints())
-				.status(model.getTeamStatus());
-		if (model.getBestThirdPlaceSlot() != null) {
-			builder.bestThirdPlaceSlot(model.getBestThirdPlaceSlot());
+				.teamStatus(model.getTeamStatus());
+		if (model.getBestThirdPlaceRank() != null) {
+			builder.bestThirdPlaceRank(model.getBestThirdPlaceRank());
 		}
 		return builder.build();
 	}
@@ -131,8 +131,8 @@ public class DomainDtoConverter {
 				.withGroup(dto.getGroup())
 				.withTeam(dto.getTeam())
 				.withCurrentRank(dto.getCurrentRank())
-				.withBestThirdPlaceSlot(dto.getBestThirdPlaceSlot())
-				.withTeamStatus(dto.getStatus())
+				.withBestThirdPlaceRank(dto.getBestThirdPlaceRank())
+				.withTeamStatus(dto.getTeamStatus())
 				.build();
 	}
 
