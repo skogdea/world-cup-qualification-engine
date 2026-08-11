@@ -6,19 +6,24 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus;
 import org.immutables.value.Value;
+import org.springframework.lang.Nullable;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableStandingDto.class)
-@JsonDeserialize(as = ImmutableStandingDto.class)
+@JsonSerialize(as = ImmutableTeamStatusDto.class)
+@JsonDeserialize(as = ImmutableTeamStatusDto.class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public interface StandingDto {
+public interface TeamStatusDto {
 
 	@JsonProperty("group")
 	Group getGroup();
 
 	@JsonProperty("team")
 	Team getTeam();
+
+	@JsonProperty("current_rank")
+	int getCurrentRank();
 
 	@JsonProperty("played")
 	int getPlayed();
@@ -46,5 +51,13 @@ public interface StandingDto {
 
 	@JsonProperty("points")
 	int getPoints();
+
+	/** 1-based rank among all third-placed teams; {@code null} when the team is not 3rd. */
+	@Nullable
+	@JsonProperty("best_third_place_slot")
+	Integer getBestThirdPlaceSlot();
+
+	@JsonProperty("status")
+	TeamStatus getStatus();
 
 }
