@@ -5,26 +5,30 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
 import java.util.Objects;
 
-public class Standing {
+public class TeamStatus {
 
 	private Group group;
 	private Team team;
-	private int played; // P
-	private int won; // W
-	private int drawn; // D
-	private int lost; // L
-	private int goalsFor; // GF
-	private int goalsAgainst; // GA
-	private int goalDifference; // GD
-	private int teamConductScore; // TCS
-	private int points; // Pts
+	private int currentRank;
+	private int played;
+	private int won;
+	private int drawn;
+	private int lost;
+	private int goalsFor;
+	private int goalsAgainst;
+	private int goalDifference;
+	private int teamConductScore;
+	private int points;
+	private Integer bestThirdPlaceSlot;
+	private com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus status;
 
-	public Standing() {
+	public TeamStatus() {
 	}
 
-	private Standing(Builder builder) {
+	private TeamStatus(Builder builder) {
 		this.group = builder.group;
 		this.team = builder.team;
+		this.currentRank = builder.currentRank;
 		this.played = builder.played;
 		this.won = builder.won;
 		this.drawn = builder.drawn;
@@ -34,6 +38,8 @@ public class Standing {
 		this.goalDifference = builder.goalDifference;
 		this.teamConductScore = builder.teamConductScore;
 		this.points = builder.points;
+		this.bestThirdPlaceSlot = builder.bestThirdPlaceSlot;
+		this.status = builder.status;
 	}
 
 	public Group getGroup() {
@@ -50,6 +56,14 @@ public class Standing {
 
 	public void setTeam(Team team) {
 		this.team = team;
+	}
+
+	public int getCurrentRank() {
+		return currentRank;
+	}
+
+	public void setCurrentRank(int currentRank) {
+		this.currentRank = currentRank;
 	}
 
 	public int getPlayed() {
@@ -124,10 +138,27 @@ public class Standing {
 		this.points = points;
 	}
 
+	public Integer getBestThirdPlaceSlot() {
+		return bestThirdPlaceSlot;
+	}
+
+	public void setBestThirdPlaceSlot(Integer bestThirdPlaceSlot) {
+		this.bestThirdPlaceSlot = bestThirdPlaceSlot;
+	}
+
+	public com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus status) {
+		this.status = status;
+	}
+
 	public static final class Builder {
 
 		private Group group;
 		private Team team;
+		private int currentRank;
 		private int played;
 		private int won;
 		private int drawn;
@@ -137,6 +168,8 @@ public class Standing {
 		private int goalDifference;
 		private int teamConductScore;
 		private int points;
+		private Integer bestThirdPlaceSlot;
+		private com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus status;
 
 		private Builder() {
 		}
@@ -152,6 +185,11 @@ public class Standing {
 
 		public Builder withTeam(Team val) {
 			team = val;
+			return this;
+		}
+
+		public Builder withCurrentRank(int val) {
+			currentRank = val;
 			return this;
 		}
 
@@ -200,17 +238,28 @@ public class Standing {
 			return this;
 		}
 
-		public Standing build() {
-			return new Standing(this);
+		public Builder withBestThirdPlaceSlot(Integer val) {
+			bestThirdPlaceSlot = val;
+			return this;
+		}
+
+		public Builder withStatus(com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus val) {
+			status = val;
+			return this;
+		}
+
+		public TeamStatus build() {
+			return new TeamStatus(this);
 		}
 
 	}
 
 	@Override
 	public String toString() {
-		return "Standing{"
+		return "TeamStatus{"
 				+ "group=" + group
 				+ ", team=" + team
+				+ ", currentRank=" + currentRank
 				+ ", played=" + played
 				+ ", won=" + won
 				+ ", drawn=" + drawn
@@ -220,6 +269,8 @@ public class Standing {
 				+ ", goalDifference=" + goalDifference
 				+ ", teamConductScore=" + teamConductScore
 				+ ", points=" + points
+				+ ", bestThirdPlaceSlot=" + bestThirdPlaceSlot
+				+ ", status=" + status
 				+ '}';
 	}
 
@@ -231,25 +282,29 @@ public class Standing {
 		if (object == null || getClass() != object.getClass()) {
 			return false;
 		}
-		Standing standing = (Standing) object;
-		return played == standing.played
-				&& won == standing.won
-				&& drawn == standing.drawn
-				&& lost == standing.lost
-				&& goalsFor == standing.goalsFor
-				&& goalsAgainst == standing.goalsAgainst
-				&& goalDifference == standing.goalDifference
-				&& teamConductScore == standing.teamConductScore
-				&& points == standing.points
-				&& group == standing.group
-				&& team == standing.team;
+		TeamStatus that = (TeamStatus) object;
+		return currentRank == that.currentRank
+				&& played == that.played
+				&& won == that.won
+				&& drawn == that.drawn
+				&& lost == that.lost
+				&& goalsFor == that.goalsFor
+				&& goalsAgainst == that.goalsAgainst
+				&& goalDifference == that.goalDifference
+				&& teamConductScore == that.teamConductScore
+				&& points == that.points
+				&& group == that.group
+				&& team == that.team
+				&& Objects.equals(bestThirdPlaceSlot, that.bestThirdPlaceSlot)
+				&& status == that.status;
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(
-				group, team, played, won, drawn, lost,
-				goalsFor, goalsAgainst, goalDifference, teamConductScore, points);
+				group, team, currentRank, played, won, drawn, lost,
+				goalsFor, goalsAgainst, goalDifference, teamConductScore, points,
+				bestThirdPlaceSlot, status);
 	}
 
 }
