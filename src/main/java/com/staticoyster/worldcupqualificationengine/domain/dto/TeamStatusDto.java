@@ -53,14 +53,14 @@ public interface TeamStatusDto {
 	int getPoints();
 
 	/**
-	 * 1-based advancing best-third slot (at most {@code BEST_THIRD_PLACE_SLOTS});
+	 * 1-based advancing best-third rank (at most {@code BEST_THIRD_PLACE_SLOTS});
 	 * {@code null} when the team is not among the advancing thirds.
 	 */
 	@Nullable
-	@JsonProperty("best_third_place_slot")
-	Integer getBestThirdPlaceSlot();
+	@JsonProperty("best_third_place_rank")
+	Integer getBestThirdPlaceRank();
 
-	@JsonProperty("status")
-	TeamStatus getStatus();
+	@JsonProperty("team_status")
+	TeamStatus getTeamStatus();
 
 }
