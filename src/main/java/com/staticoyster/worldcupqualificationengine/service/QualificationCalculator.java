@@ -6,7 +6,7 @@ import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
-import com.staticoyster.worldcupqualificationengine.service.api.DomainDtoConverter;
+import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

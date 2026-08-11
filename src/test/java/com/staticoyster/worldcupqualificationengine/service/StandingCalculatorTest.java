@@ -7,7 +7,7 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
 import com.staticoyster.worldcupqualificationengine.repository.InMemoryMatchRepository;
-import com.staticoyster.worldcupqualificationengine.service.api.DomainDtoConverter;
+import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tools.jackson.databind.json.JsonMapper;
