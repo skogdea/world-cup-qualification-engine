@@ -1,9 +1,11 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import com.staticoyster.worldcupqualificationengine.domain.constants.QualificationConstants;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatus;
+import com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus;
+import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatusModel;
 import com.staticoyster.worldcupqualificationengine.service.api.DomainDtoConverter;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +28,7 @@ public class TeamStatusService {
 	}
 
 	/**
-	 * Group-stage status from current standings.
+	 * Group-stage status from current standings ({@link StandingDto} stays the stats source).
 	 * Rank 1–2 → QUALIFIED; rank 4 → ELIMINATED; otherwise (typically 3rd) → STILL_ALIVE.
 	 */
 	public TeamStatusDto getTeamStatus(Team team) {
@@ -46,37 +48,31 @@ public class TeamStatusService {
 			throw new IllegalStateException("No standings row for team: " + team.getCode());
 		}
 
-		TeamStatus model = TeamStatus.Builder.newBuilder()
+		TeamStatusModel model = TeamStatusModel.Builder.newBuilder()
 				.withGroup(standing.getGroup())
 				.withTeam(standing.getTeam())
 				.withCurrentRank(currentRank)
-				.withPlayed(standing.getPlayed())
-				.withWon(standing.getWon())
-				.withDrawn(standing.getDrawn())
-				.withLost(standing.getLost())
-				.withGoalsFor(standing.getGoalsFor())
-				.withGoalsAgainst(standing.getGoalsAgainst())
-				.withGoalDifference(standing.getGoalDifference())
-				.withTeamConductScore(standing.getTeamConductScore())
-				.withPoints(standing.getPoints())
 				.withBestThirdPlaceSlot(resolveBestThirdPlaceSlot(team, currentRank))
-				.withStatus(resolveStatus(currentRank))
+				.withTeamStatus(resolveStatus(currentRank))
 				.build();
 
-		return domainDtoConverter.toTeamStatusDto(model);
+		return domainDtoConverter.toTeamStatusDto(standing, model);
 	}
 
-	private static com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus resolveStatus(
-			int currentRank) {
+	private static TeamStatus resolveStatus(int currentRank) {
 		if (currentRank == 1 || currentRank == 2) {
-			return com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus.QUALIFIED;
+			return TeamStatus.QUALIFIED;
 		}
 		if (currentRank == 4) {
-			return com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus.ELIMINATED;
+			return TeamStatus.ELIMINATED;
 		}
-		return com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus.STILL_ALIVE;
+		return TeamStatus.STILL_ALIVE;
 	}
 
+	/**
+	 * 1-based slot only when the team is 3rd and ranked within
+	 * {@link QualificationConstants#BEST_THIRD_PLACE_SLOTS} among third-placed teams.
+	 */
 	private Integer resolveBestThirdPlaceSlot(Team team, int currentRank) {
 		if (currentRank != 3) {
 			return null;
@@ -84,7 +80,8 @@ public class TeamStatusService {
 		List<StandingDto> rankedThirds = roundOf32Service.getRankedThirdPlaceStandingsDtos();
 		for (int i = 0; i < rankedThirds.size(); i++) {
 			if (rankedThirds.get(i).getTeam() == team) {
-				return i + 1;
+				int slot = i + 1;
+				return slot <= QualificationConstants.BEST_THIRD_PLACE_SLOTS ? slot : null;
 			}
 		}
 		return null;

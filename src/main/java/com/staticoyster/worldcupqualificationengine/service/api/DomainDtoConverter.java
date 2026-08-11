@@ -14,7 +14,7 @@ import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
-import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatus;
+import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatusModel;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -104,43 +104,35 @@ public class DomainDtoConverter {
 		return dtos.stream().map(this::toStanding).toList();
 	}
 
-	public TeamStatusDto toTeamStatusDto(TeamStatus model) {
+	/** API view: exhaustive {@link StandingDto} line plus slim {@link TeamStatusModel} fields. */
+	public TeamStatusDto toTeamStatusDto(StandingDto standing, TeamStatusModel model) {
 		ImmutableTeamStatusDto.Builder builder = ImmutableTeamStatusDto.builder()
-				.group(model.getGroup())
-				.team(model.getTeam())
+				.group(standing.getGroup())
+				.team(standing.getTeam())
 				.currentRank(model.getCurrentRank())
-				.played(model.getPlayed())
-				.won(model.getWon())
-				.drawn(model.getDrawn())
-				.lost(model.getLost())
-				.goalsFor(model.getGoalsFor())
-				.goalsAgainst(model.getGoalsAgainst())
-				.goalDifference(model.getGoalDifference())
-				.teamConductScore(model.getTeamConductScore())
-				.points(model.getPoints())
-				.status(model.getStatus());
+				.played(standing.getPlayed())
+				.won(standing.getWon())
+				.drawn(standing.getDrawn())
+				.lost(standing.getLost())
+				.goalsFor(standing.getGoalsFor())
+				.goalsAgainst(standing.getGoalsAgainst())
+				.goalDifference(standing.getGoalDifference())
+				.teamConductScore(standing.getTeamConductScore())
+				.points(standing.getPoints())
+				.status(model.getTeamStatus());
 		if (model.getBestThirdPlaceSlot() != null) {
 			builder.bestThirdPlaceSlot(model.getBestThirdPlaceSlot());
 		}
 		return builder.build();
 	}
 
-	public TeamStatus toTeamStatus(TeamStatusDto dto) {
-		return TeamStatus.Builder.newBuilder()
+	public TeamStatusModel toTeamStatusModel(TeamStatusDto dto) {
+		return TeamStatusModel.Builder.newBuilder()
 				.withGroup(dto.getGroup())
 				.withTeam(dto.getTeam())
 				.withCurrentRank(dto.getCurrentRank())
-				.withPlayed(dto.getPlayed())
-				.withWon(dto.getWon())
-				.withDrawn(dto.getDrawn())
-				.withLost(dto.getLost())
-				.withGoalsFor(dto.getGoalsFor())
-				.withGoalsAgainst(dto.getGoalsAgainst())
-				.withGoalDifference(dto.getGoalDifference())
-				.withTeamConductScore(dto.getTeamConductScore())
-				.withPoints(dto.getPoints())
 				.withBestThirdPlaceSlot(dto.getBestThirdPlaceSlot())
-				.withStatus(dto.getStatus())
+				.withTeamStatus(dto.getStatus())
 				.build();
 	}
 
