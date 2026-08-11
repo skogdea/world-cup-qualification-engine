@@ -1,17 +1,20 @@
-package com.staticoyster.worldcupqualificationengine.service;
+package com.staticoyster.worldcupqualificationengine.service.config;
 
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationResultDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableStandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamMatchStatsDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamMatchStatsDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.TeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
+import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatusModel;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -63,23 +66,33 @@ public class DomainDtoConverter {
 
 	public StandingDto toStandingDto(Standing model) {
 		return ImmutableStandingDto.builder()
+				.group(model.getGroup())
 				.team(model.getTeam())
-				.points(model.getPoints())
+				.played(model.getPlayed())
+				.won(model.getWon())
+				.drawn(model.getDrawn())
+				.lost(model.getLost())
 				.goalsFor(model.getGoalsFor())
 				.goalsAgainst(model.getGoalsAgainst())
 				.goalDifference(model.getGoalDifference())
 				.teamConductScore(model.getTeamConductScore())
+				.points(model.getPoints())
 				.build();
 	}
 
 	public Standing toStanding(StandingDto dto) {
 		return Standing.Builder.newBuilder()
+				.withGroup(dto.getGroup())
 				.withTeam(dto.getTeam())
-				.withPoints(dto.getPoints())
+				.withPlayed(dto.getPlayed())
+				.withWon(dto.getWon())
+				.withDrawn(dto.getDrawn())
+				.withLost(dto.getLost())
 				.withGoalsFor(dto.getGoalsFor())
 				.withGoalsAgainst(dto.getGoalsAgainst())
 				.withGoalDifference(dto.getGoalDifference())
 				.withTeamConductScore(dto.getTeamConductScore())
+				.withPoints(dto.getPoints())
 				.build();
 	}
 
@@ -89,6 +102,38 @@ public class DomainDtoConverter {
 
 	public List<Standing> toStandings(List<StandingDto> dtos) {
 		return dtos.stream().map(this::toStanding).toList();
+	}
+
+	/** API view: exhaustive {@link Standing} line plus slim {@link TeamStatusModel} fields. */
+	public TeamStatusDto toTeamStatusDto(Standing standing, TeamStatusModel model) {
+		ImmutableTeamStatusDto.Builder builder = ImmutableTeamStatusDto.builder()
+				.group(standing.getGroup())
+				.team(standing.getTeam())
+				.currentRank(model.getCurrentRank())
+				.played(standing.getPlayed())
+				.won(standing.getWon())
+				.drawn(standing.getDrawn())
+				.lost(standing.getLost())
+				.goalsFor(standing.getGoalsFor())
+				.goalsAgainst(standing.getGoalsAgainst())
+				.goalDifference(standing.getGoalDifference())
+				.teamConductScore(standing.getTeamConductScore())
+				.points(standing.getPoints())
+				.teamStatus(model.getTeamStatus());
+		if (model.getBestThirdPlaceRank() != null) {
+			builder.bestThirdPlaceRank(model.getBestThirdPlaceRank());
+		}
+		return builder.build();
+	}
+
+	public TeamStatusModel toTeamStatusModel(TeamStatusDto dto) {
+		return TeamStatusModel.Builder.newBuilder()
+				.withGroup(dto.getGroup())
+				.withTeam(dto.getTeam())
+				.withCurrentRank(dto.getCurrentRank())
+				.withBestThirdPlaceRank(dto.getBestThirdPlaceRank())
+				.withTeamStatus(dto.getTeamStatus())
+				.build();
 	}
 
 	public TeamMatchStatsDto toTeamMatchStatsDto(TeamMatchStats model) {

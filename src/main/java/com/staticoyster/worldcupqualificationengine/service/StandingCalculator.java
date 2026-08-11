@@ -8,6 +8,7 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
+import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -60,12 +61,17 @@ public class StandingCalculator {
 		Map<Team, Standing> standingsByTeam = new EnumMap<>(Team.class);
 		for (Team team : teamsInGroup(group)) {
 			standingsByTeam.put(team, Standing.Builder.newBuilder()
+					.withGroup(group)
 					.withTeam(team)
-					.withPoints(0)
+					.withPlayed(0)
+					.withWon(0)
+					.withDrawn(0)
+					.withLost(0)
 					.withGoalsFor(0)
 					.withGoalsAgainst(0)
 					.withGoalDifference(0)
 					.withTeamConductScore(0)
+					.withPoints(0)
 					.build());
 		}
 		return standingsByTeam;
@@ -79,6 +85,9 @@ public class StandingCalculator {
 		}
 
 		// Accumulate goals across all past matches in the group (running totals).
+		home.setPlayed(home.getPlayed() + 1);
+		away.setPlayed(away.getPlayed() + 1);
+
 		home.setGoalsFor(home.getGoalsFor() + match.getHomeScore());
 		home.setGoalsAgainst(home.getGoalsAgainst() + match.getAwayScore());
 		away.setGoalsFor(away.getGoalsFor() + match.getAwayScore());
@@ -93,12 +102,18 @@ public class StandingCalculator {
 		}
 
 		if (match.getHomeScore() > match.getAwayScore()) {
+			home.setWon(home.getWon() + 1);
+			away.setLost(away.getLost() + 1);
 			home.setPoints(home.getPoints() + MatchPoints.WIN.getValue());
 		}
 		else if (match.getHomeScore() < match.getAwayScore()) {
+			away.setWon(away.getWon() + 1);
+			home.setLost(home.getLost() + 1);
 			away.setPoints(away.getPoints() + MatchPoints.WIN.getValue());
 		}
 		else {
+			home.setDrawn(home.getDrawn() + 1);
+			away.setDrawn(away.getDrawn() + 1);
 			home.setPoints(home.getPoints() + MatchPoints.DRAW.getValue());
 			away.setPoints(away.getPoints() + MatchPoints.DRAW.getValue());
 		}
