@@ -15,7 +15,7 @@ public class TeamStatusModel {
 	private Group group;
 	private Team team;
 	private int currentRank;
-	private Integer bestThirdPlaceSlot;
+	private Integer bestThirdPlaceRank;
 	private TeamStatus teamStatus;
 
 	public TeamStatusModel() {
@@ -25,7 +25,7 @@ public class TeamStatusModel {
 		this.group = builder.group;
 		this.team = builder.team;
 		this.currentRank = builder.currentRank;
-		this.bestThirdPlaceSlot = builder.bestThirdPlaceSlot;
+		this.bestThirdPlaceRank = builder.bestThirdPlaceRank;
 		this.teamStatus = builder.teamStatus;
 	}
 
@@ -53,12 +53,12 @@ public class TeamStatusModel {
 		this.currentRank = currentRank;
 	}
 
-	public Integer getBestThirdPlaceSlot() {
-		return bestThirdPlaceSlot;
+	public Integer getBestThirdPlaceRank() {
+		return bestThirdPlaceRank;
 	}
 
-	public void setBestThirdPlaceSlot(Integer bestThirdPlaceSlot) {
-		this.bestThirdPlaceSlot = bestThirdPlaceSlot;
+	public void setBestThirdPlaceRank(Integer bestThirdPlaceRank) {
+		this.bestThirdPlaceRank = bestThirdPlaceRank;
 	}
 
 	public TeamStatus getTeamStatus() {
@@ -74,7 +74,7 @@ public class TeamStatusModel {
 		private Group group;
 		private Team team;
 		private int currentRank;
-		private Integer bestThirdPlaceSlot;
+		private Integer bestThirdPlaceRank;
 		private TeamStatus teamStatus;
 
 		private Builder() {
@@ -99,8 +99,8 @@ public class TeamStatusModel {
 			return this;
 		}
 
-		public Builder withBestThirdPlaceSlot(Integer val) {
-			bestThirdPlaceSlot = val;
+		public Builder withBestThirdPlaceRank(Integer val) {
+			bestThirdPlaceRank = val;
 			return this;
 		}
 
@@ -121,7 +121,7 @@ public class TeamStatusModel {
 				+ "group=" + group
 				+ ", team=" + team
 				+ ", currentRank=" + currentRank
-				+ ", bestThirdPlaceSlot=" + bestThirdPlaceSlot
+				+ ", bestThirdPlaceRank=" + bestThirdPlaceRank
 				+ ", teamStatus=" + teamStatus
 				+ '}';
 	}
@@ -138,13 +138,13 @@ public class TeamStatusModel {
 		return currentRank == that.currentRank
 				&& group == that.group
 				&& team == that.team
-				&& Objects.equals(bestThirdPlaceSlot, that.bestThirdPlaceSlot)
+				&& Objects.equals(bestThirdPlaceRank, that.bestThirdPlaceRank)
 				&& teamStatus == that.teamStatus;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(group, team, currentRank, bestThirdPlaceSlot, teamStatus);
+		return Objects.hash(group, team, currentRank, bestThirdPlaceRank, teamStatus);
 	}
 
 }
