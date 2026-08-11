@@ -1,10 +1,10 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus;
+import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatus;
+import com.staticoyster.worldcupqualificationengine.service.api.DomainDtoConverter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,17 +14,20 @@ public class TeamStatusService {
 
 	private final GroupStageStandingsService groupStageStandingsService;
 	private final RoundOf32Service roundOf32Service;
+	private final DomainDtoConverter domainDtoConverter;
 
 	public TeamStatusService(
 			GroupStageStandingsService groupStageStandingsService,
-			RoundOf32Service roundOf32Service) {
+			RoundOf32Service roundOf32Service,
+			DomainDtoConverter domainDtoConverter) {
 		this.groupStageStandingsService = groupStageStandingsService;
 		this.roundOf32Service = roundOf32Service;
+		this.domainDtoConverter = domainDtoConverter;
 	}
 
 	/**
-	 * Provisional group-stage status from current standings and Round of 32 derivation.
-	 * Priority: {@link TeamStatus#QUALIFIED} → {@link TeamStatus#ELIMINATED} (4th) → {@link TeamStatus#STILL_ALIVE}.
+	 * Group-stage status from current standings.
+	 * Rank 1–2 → QUALIFIED; rank 4 → ELIMINATED; otherwise (typically 3rd) → STILL_ALIVE.
 	 */
 	public TeamStatusDto getTeamStatus(Team team) {
 		List<StandingDto> groupStandings =
@@ -43,36 +46,35 @@ public class TeamStatusService {
 			throw new IllegalStateException("No standings row for team: " + team.getCode());
 		}
 
-		boolean qualified = roundOf32Service.getQualifiedTeams().contains(team);
-		TeamStatus status = resolveStatus(qualified, currentRank);
-		Integer bestThirdPlaceSlot = resolveBestThirdPlaceSlot(team, currentRank);
-
-		return ImmutableTeamStatusDto.builder()
-				.group(standing.getGroup())
-				.team(standing.getTeam())
-				.currentRank(currentRank)
-				.played(standing.getPlayed())
-				.won(standing.getWon())
-				.drawn(standing.getDrawn())
-				.lost(standing.getLost())
-				.goalsFor(standing.getGoalsFor())
-				.goalsAgainst(standing.getGoalsAgainst())
-				.goalDifference(standing.getGoalDifference())
-				.teamConductScore(standing.getTeamConductScore())
-				.points(standing.getPoints())
-				.bestThirdPlaceSlot(bestThirdPlaceSlot)
-				.status(status)
+		TeamStatus model = TeamStatus.Builder.newBuilder()
+				.withGroup(standing.getGroup())
+				.withTeam(standing.getTeam())
+				.withCurrentRank(currentRank)
+				.withPlayed(standing.getPlayed())
+				.withWon(standing.getWon())
+				.withDrawn(standing.getDrawn())
+				.withLost(standing.getLost())
+				.withGoalsFor(standing.getGoalsFor())
+				.withGoalsAgainst(standing.getGoalsAgainst())
+				.withGoalDifference(standing.getGoalDifference())
+				.withTeamConductScore(standing.getTeamConductScore())
+				.withPoints(standing.getPoints())
+				.withBestThirdPlaceSlot(resolveBestThirdPlaceSlot(team, currentRank))
+				.withStatus(resolveStatus(currentRank))
 				.build();
+
+		return domainDtoConverter.toTeamStatusDto(model);
 	}
 
-	private static TeamStatus resolveStatus(boolean qualified, int currentRank) {
-		if (qualified) {
-			return TeamStatus.QUALIFIED;
+	private static com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus resolveStatus(
+			int currentRank) {
+		if (currentRank == 1 || currentRank == 2) {
+			return com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus.QUALIFIED;
 		}
 		if (currentRank == 4) {
-			return TeamStatus.ELIMINATED;
+			return com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus.ELIMINATED;
 		}
-		return TeamStatus.STILL_ALIVE;
+		return com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus.STILL_ALIVE;
 	}
 
 	private Integer resolveBestThirdPlaceSlot(Team team, int currentRank) {
