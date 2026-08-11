@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/standings")
+@RequestMapping("/api/v1/standings")
 public class StandingsController {
 
 	private final GroupStageStandingsService groupStageStandingsService;

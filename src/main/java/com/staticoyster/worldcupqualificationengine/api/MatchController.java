@@ -18,7 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/matches")
+@RequestMapping("/api/v1/matches")
 public class MatchController {
 
 	private static final Logger log = LoggerFactory.getLogger(MatchController.class);
