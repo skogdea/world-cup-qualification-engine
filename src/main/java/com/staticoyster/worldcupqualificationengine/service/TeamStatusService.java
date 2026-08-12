@@ -1,5 +1,9 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.staticoyster.worldcupqualificationengine.domain.constants.QualificationConstants;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamStatusDto;
@@ -8,9 +12,6 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatusModel;
 import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class TeamStatusService {

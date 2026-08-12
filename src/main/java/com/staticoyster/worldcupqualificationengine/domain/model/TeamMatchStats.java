@@ -1,8 +1,8 @@
 package com.staticoyster.worldcupqualificationengine.domain.model;
 
-import com.staticoyster.worldcupqualificationengine.domain.enums.FairPlayEvent;
-
 import java.util.Objects;
+
+import com.staticoyster.worldcupqualificationengine.domain.enums.FairPlayEvent;
 
 public class TeamMatchStats {
 

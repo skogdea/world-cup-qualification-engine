@@ -1,29 +1,31 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
-import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
-import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
-import com.staticoyster.worldcupqualificationengine.service.MatchService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.client.MockRestServiceServer;
-import org.springframework.web.client.RestClient;
-import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.json.JsonMapper;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.client.MockRestServiceServer;
+import org.springframework.web.client.RestClient;
+
+import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
+import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
+import com.staticoyster.worldcupqualificationengine.service.MatchService;
+
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 class FifaMatchAndCardsClientTest {
 
@@ -125,10 +127,10 @@ class FifaMatchAndCardsClientTest {
 	void importFirstStageResultsReadsNumericCalendarIds() throws IOException {
 		String calendar = """
 				{
-				  "Results": [
-				    {"IdMatch": 400021443, "IdStage": 289273, "MatchStatus": 0},
-				    {"IdMatch": 400021441, "IdStage": 289273, "MatchStatus": 1}
-				  ]
+				"Results": [
+					{"IdMatch": 400021443, "IdStage": 289273, "MatchStatus": 0},
+					{"IdMatch": 400021441, "IdStage": 289273, "MatchStatus": 1}
+				]
 				}
 				""";
 		String live = classpath("fixtures/fifa/live_match_400021443.json")
@@ -154,10 +156,10 @@ class FifaMatchAndCardsClientTest {
 	void importFirstStageResultsContinuesAfterOneMatchFailure() throws IOException {
 		String calendar = """
 				{
-				  "Results": [
-				    {"IdMatch": "400021443", "IdStage": "289273", "MatchStatus": 0},
-				    {"IdMatch": "400021441", "IdStage": "289273", "MatchStatus": 0}
-				  ]
+				"Results": [
+					{"IdMatch": "400021443", "IdStage": "289273", "MatchStatus": 0},
+					{"IdMatch": "400021441", "IdStage": "289273", "MatchStatus": 0}
+				]
 				}
 				""";
 		String liveOk = classpath("fixtures/fifa/live_match_400021443.json");

@@ -1,12 +1,12 @@
 package com.staticoyster.worldcupqualificationengine.repository;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
+import java.util.List;
+import java.util.Optional;
+
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-
-import java.util.List;
-import java.util.Optional;
+import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 
 public interface MatchRepository {
 

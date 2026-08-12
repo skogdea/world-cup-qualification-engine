@@ -1,14 +1,15 @@
 package com.staticoyster.worldcupqualificationengine.api;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
-import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
-import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import com.staticoyster.worldcupqualificationengine.service.RoundOf32Service;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.service.RoundOf32Service;
 
 @RestController
 @RequestMapping("/api/v1/qualification")

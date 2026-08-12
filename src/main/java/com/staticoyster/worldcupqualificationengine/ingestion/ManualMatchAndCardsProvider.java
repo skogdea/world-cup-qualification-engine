@@ -1,20 +1,21 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
+import org.springframework.stereotype.Component;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.service.MatchService;
-import org.springframework.stereotype.Component;
 
 @Component
 public class ManualMatchAndCardsProvider implements MatchAndCardsProvider {
 
 	private final MatchService matchService;
 
-    public ManualMatchAndCardsProvider(MatchService matchService) {
-        this.matchService = matchService;
-    }
+	public ManualMatchAndCardsProvider(MatchService matchService) {
+		this.matchService = matchService;
+	}
 
-    @Override
+	@Override
 	public MatchDto ingest(MatchDto matchDto) {
 		validate(matchDto);
 		return matchService.updateMatchResult(matchDto);
