@@ -1,16 +1,17 @@
 package com.staticoyster.worldcupqualificationengine.repository;
 
-import com.staticoyster.worldcupqualificationengine.domain.model.Match;
-import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
-import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
-import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.springframework.stereotype.Repository;
+
+import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
+import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 
 @Repository
 public class InMemoryMatchRepository implements MatchRepository {

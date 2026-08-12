@@ -1,9 +1,9 @@
 package com.staticoyster.worldcupqualificationengine.domain.model;
 
-import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
 public class QualificationResult {
 

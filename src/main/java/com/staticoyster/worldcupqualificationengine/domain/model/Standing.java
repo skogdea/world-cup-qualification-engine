@@ -1,9 +1,9 @@
 package com.staticoyster.worldcupqualificationengine.domain.model;
 
+import java.util.Objects;
+
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-
-import java.util.Objects;
 
 public class Standing {
 

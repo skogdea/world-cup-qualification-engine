@@ -1,10 +1,10 @@
 package com.staticoyster.worldcupqualificationengine.domain.model;
 
+import java.util.Objects;
+
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.enums.TeamStatus;
-
-import java.util.Objects;
 
 /**
  * Group-stage qualification status for a team. Standing lines stay on {@link Standing};

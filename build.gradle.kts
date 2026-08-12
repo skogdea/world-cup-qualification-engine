@@ -1,7 +1,9 @@
 plugins {
 	java
+	checkstyle
 	id("org.springframework.boot") version "4.1.0"
 	id("io.spring.dependency-management") version "1.1.7"
+	id("com.diffplug.spotless") version "8.9.0"
 }
 
 group = "com.staticoyster"
@@ -15,6 +17,23 @@ java {
 
 repositories {
 	mavenCentral()
+}
+
+checkstyle {
+	toolVersion = "10.21.4"
+	configDirectory = rootProject.layout.projectDirectory.dir("linter/checkstyle")
+	maxWarnings = 0
+}
+
+spotless {
+	java {
+		target("src/*/java/**/*.java")
+		importOrder("\\#", "java", "javax", "jakarta", "org", "com", "tools")
+		removeUnusedImports()
+		trimTrailingWhitespace()
+		endWithNewline()
+		leadingSpacesToTabs()
+	}
 }
 
 val immutablesVersion = "2.10.1"

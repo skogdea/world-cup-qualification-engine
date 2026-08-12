@@ -1,17 +1,19 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
-import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Service;
-import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.json.JsonMapper;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Service;
+
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
+
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 /**
  * Loads {@code seed/fifa/fifa_mens_world_ranking.json} and exposes FIFA ranks for tie-breakers.

@@ -1,12 +1,13 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
-import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
-import org.springframework.stereotype.Service;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
+import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 
 @Service
 public class GroupStageStandingsService {
