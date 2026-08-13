@@ -1,6 +1,6 @@
 package com.staticoyster.worldcupqualificationengine.api;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.service.RoundOf32Service;
@@ -21,7 +21,7 @@ public class QualificationController {
 	}
 
 	@GetMapping
-	public QualificationResultDto getQualificationSnapshot() {
+	public QualificationDto getQualificationSnapshot() {
 		return roundOf32Service.getQualificationSnapshotDto();
 	}
 

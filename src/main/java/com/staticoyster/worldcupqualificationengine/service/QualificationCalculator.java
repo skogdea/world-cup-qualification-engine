@@ -1,11 +1,11 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
 import com.staticoyster.worldcupqualificationengine.domain.constants.QualificationConstants;
-import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
+import com.staticoyster.worldcupqualificationengine.domain.model.Qualification;
 import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +30,7 @@ public class QualificationCalculator {
 		this.fifaWorldRankingService = fifaWorldRankingService;
 	}
 
-	public QualificationResultDto calculateQualification() {
+	public QualificationDto calculateQualification() {
 		Map<Group, List<StandingDto>> standingsDtoByGroup = groupStageStandingsService.calculateAllGroupStandingsDto();
 
 		List<Team> groupWinners = new ArrayList<>();
@@ -53,9 +53,9 @@ public class QualificationCalculator {
 				.limit(QualificationConstants.BEST_THIRD_PLACE_SLOTS)
 				.toList();
 
-		// QualificationResult (domain model) still holds Standing; convert only at that boundary.
-		return domainDtoConverter.toQualificationResultDto(
-				new QualificationResult(groupWinners, runnersUp, domainDtoConverter.toStandings(bestThirds)));
+		// Qualification (domain model) still holds Standing; convert only at that boundary.
+		return domainDtoConverter.toQualificationDto(
+				new Qualification(groupWinners, runnersUp, domainDtoConverter.toStandings(bestThirds)));
 	}
 
 	/** All third-placed teams, ranked by FIFA third-place criteria (not limited to advancing slots). */

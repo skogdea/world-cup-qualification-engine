@@ -1,17 +1,17 @@
 package com.staticoyster.worldcupqualificationengine.service.config;
 
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
-import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableStandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamMatchStatsDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
-import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamMatchStatsDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamStatusDto;
 import com.staticoyster.worldcupqualificationengine.domain.model.Match;
-import com.staticoyster.worldcupqualificationengine.domain.model.QualificationResult;
+import com.staticoyster.worldcupqualificationengine.domain.model.Qualification;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatusModel;
@@ -153,8 +153,8 @@ public class DomainDtoConverter {
 				.build();
 	}
 
-	public QualificationResultDto toQualificationResultDto(QualificationResult model) {
-		return ImmutableQualificationResultDto.builder()
+	public QualificationDto toQualificationDto(Qualification model) {
+		return ImmutableQualificationDto.builder()
 				.groupWinners(model.getGroupWinners())
 				.runnersUp(model.getRunnersUp())
 				.bestThirdPlaceStandings(toStandingDtos(model.getBestThirdPlaceStandings()))
