@@ -41,7 +41,6 @@ val immutablesVersion = "2.10.1"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
 	implementation("org.springframework.boot:spring-boot-starter-json")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	implementation("org.springframework.boot:spring-boot-starter-restclient:4.1.0")
 
@@ -49,7 +48,6 @@ dependencies {
 	annotationProcessor("org.immutables:value:$immutablesVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
-	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
 }
 
 tasks.withType<Test> {
