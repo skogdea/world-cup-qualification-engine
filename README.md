@@ -36,7 +36,7 @@ MatchAndCardsProvider
                     (group rank + best-third rank → status)
 ```
 
-`DataSourceAutoConfiguration` and JPA Hibernate auto-config are excluded. Match results (with home/away stats) are the source of truth; standings apply FIFA-style ordering including fair-play / team conduct and FIFA world ranking for remaining ties.
+No JPA or datasource dependency — persistence is in-memory only. Match results (with home/away stats) are the source of truth; standings apply FIFA-style ordering including fair-play / team conduct and FIFA world ranking for remaining ties.
 
 On the `dev` profile, startup tries live FIFA first-stage import, then falls back to classpath seed JSON if the repository is still empty.
 
