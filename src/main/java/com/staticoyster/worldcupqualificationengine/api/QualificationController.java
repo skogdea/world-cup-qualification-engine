@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.service.RoundOf32Service;
@@ -22,7 +22,7 @@ public class QualificationController {
 	}
 
 	@GetMapping
-	public QualificationResultDto getQualificationSnapshot() {
+	public QualificationDto getQualificationSnapshot() {
 		return roundOf32Service.getQualificationSnapshotDto();
 	}
 

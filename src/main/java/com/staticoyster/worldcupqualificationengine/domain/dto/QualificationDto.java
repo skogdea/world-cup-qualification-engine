@@ -11,10 +11,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableQualificationResultDto.class)
-@JsonDeserialize(as = ImmutableQualificationResultDto.class)
+@JsonSerialize(as = ImmutableQualificationDto.class)
+@JsonDeserialize(as = ImmutableQualificationDto.class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public interface QualificationResultDto {
+public interface QualificationDto {
 
 	@JsonProperty("group_winners")
 	List<Team> getGroupWinners();

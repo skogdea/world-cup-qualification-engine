@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationResultDto;
+import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
@@ -25,7 +25,7 @@ public class RoundOf32Service {
 		return qualificationCalculator.calculateQualification().getQualifiedTeams();
 	}
 
-	public QualificationResultDto getQualificationSnapshotDto() {
+	public QualificationDto getQualificationSnapshotDto() {
 		return qualificationCalculator.calculateQualification();
 	}
 

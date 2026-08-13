@@ -5,14 +5,14 @@ import java.util.List;
 
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
-public class QualificationResult {
+public class Qualification {
 
 	private final List<Team> groupWinners;
 	private final List<Team> runnersUp;
 	private final List<Standing> bestThirdPlaceStandings;
 	private final List<Team> qualifiedTeams;
 
-	public QualificationResult(
+	public Qualification(
 			List<Team> groupWinners,
 			List<Team> runnersUp,
 			List<Standing> bestThirdPlaceStandings) {
