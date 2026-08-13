@@ -1,8 +1,9 @@
 package com.staticoyster.worldcupqualificationengine.api.config;
 
-import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
+
+import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
 /** Path/query {@link Team} binding by FIFA code: {@code irn} / {@code IRN} → {@link Team#IR_IRAN}. */
 @Component

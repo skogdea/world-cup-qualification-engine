@@ -1,5 +1,11 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClient;
+import org.springframework.web.client.RestClientException;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamMatchStatsDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
@@ -9,11 +15,7 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
 import com.staticoyster.worldcupqualificationengine.service.MatchService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestClient;
-import org.springframework.web.client.RestClientException;
+
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -216,6 +218,7 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 					case YELLOW_CARD -> yellowCards++;
 					case SECOND_YELLOW_RED -> secondYellowReds++;
 					case DIRECT_RED -> directReds++;
+					default -> throw new IllegalStateException("Unexpected fair-play event: " + event);
 				}
 			}
 		}

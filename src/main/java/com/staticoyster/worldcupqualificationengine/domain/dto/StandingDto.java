@@ -1,12 +1,13 @@
 package com.staticoyster.worldcupqualificationengine.domain.dto;
 
+import org.immutables.value.Value;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import org.immutables.value.Value;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableStandingDto.class)

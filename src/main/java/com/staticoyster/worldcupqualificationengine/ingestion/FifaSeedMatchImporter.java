@@ -1,18 +1,20 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableTeamMatchStatsDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.TeamMatchStatsDto;
-import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.json.JsonMapper;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.io.InputStream;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 /**
  * This class is the seed loader or parser.

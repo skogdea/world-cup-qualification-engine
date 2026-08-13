@@ -1,6 +1,5 @@
 package com.staticoyster.worldcupqualificationengine.ingestion;
 
-import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
@@ -8,6 +7,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
+
+import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
 
 /**
  * Dev bootstrap: prefer live FIFA; when FIFA is unavailable, load seed via the manual adapter → MatchService.
@@ -42,7 +43,8 @@ public class SeedDataBootstrap implements ApplicationRunner {
 		catch (RuntimeException exception) {
 			if (!matchRepository.findAll().isEmpty()) {
 				log.warn(
-						"Live FIFA import failed after persisting some matches ({}); keeping live data, skipping seed fallback",
+						"Live FIFA import failed after persisting some matches ({}); "
+								+ "keeping live data, skipping seed fallback",
 						exception.getMessage());
 				return;
 			}

@@ -1,9 +1,7 @@
 package com.staticoyster.worldcupqualificationengine.api;
 
-import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
-import com.staticoyster.worldcupqualificationengine.ingestion.FifaMatchAndCardsClient;
-import com.staticoyster.worldcupqualificationengine.ingestion.ManualMatchAndCardsProvider;
-import com.staticoyster.worldcupqualificationengine.service.MatchService;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -15,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
+import com.staticoyster.worldcupqualificationengine.domain.dto.MatchDto;
+import com.staticoyster.worldcupqualificationengine.ingestion.FifaMatchAndCardsClient;
+import com.staticoyster.worldcupqualificationengine.ingestion.ManualMatchAndCardsProvider;
+import com.staticoyster.worldcupqualificationengine.service.MatchService;
 
 @RestController
 @RequestMapping("/api/v1/matches")

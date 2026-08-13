@@ -1,5 +1,12 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
 import com.staticoyster.worldcupqualificationengine.domain.constants.QualificationConstants;
 import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
@@ -7,12 +14,6 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.domain.model.Qualification;
 import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class QualificationCalculator {

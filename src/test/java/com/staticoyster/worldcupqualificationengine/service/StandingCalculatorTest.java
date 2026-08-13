@@ -1,5 +1,16 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchStatus;
@@ -8,17 +19,8 @@ import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
 import com.staticoyster.worldcupqualificationengine.repository.InMemoryMatchRepository;
 import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
 import tools.jackson.databind.json.JsonMapper;
-
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StandingCalculatorTest {
 

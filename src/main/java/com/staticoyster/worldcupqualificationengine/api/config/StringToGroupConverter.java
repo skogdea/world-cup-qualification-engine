@@ -1,10 +1,11 @@
 package com.staticoyster.worldcupqualificationengine.api.config;
 
-import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
+import java.util.Locale;
+
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import java.util.Locale;
+import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 
 /** Path/query {@link Group} binding: {@code f} and {@code F} both resolve to {@link Group#F}. */
 @Component

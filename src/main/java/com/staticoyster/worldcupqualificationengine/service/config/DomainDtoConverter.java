@@ -1,5 +1,9 @@
 package com.staticoyster.worldcupqualificationengine.service.config;
 
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableMatchDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableQualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.ImmutableStandingDto;
@@ -15,9 +19,6 @@ import com.staticoyster.worldcupqualificationengine.domain.model.Qualification;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamMatchStats;
 import com.staticoyster.worldcupqualificationengine.domain.model.TeamStatusModel;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 /**
  * Shared model ↔ DTO mapping for the service layer.

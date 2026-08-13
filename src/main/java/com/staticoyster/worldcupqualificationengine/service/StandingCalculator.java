@@ -1,5 +1,16 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.EnumMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Group;
 import com.staticoyster.worldcupqualificationengine.domain.enums.MatchPoints;
@@ -9,16 +20,6 @@ import com.staticoyster.worldcupqualificationengine.domain.model.Match;
 import com.staticoyster.worldcupqualificationengine.domain.model.Standing;
 import com.staticoyster.worldcupqualificationengine.repository.MatchRepository;
 import com.staticoyster.worldcupqualificationengine.service.config.DomainDtoConverter;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.EnumMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 public class StandingCalculator {

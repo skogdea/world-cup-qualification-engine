@@ -1,11 +1,12 @@
 package com.staticoyster.worldcupqualificationengine.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.staticoyster.worldcupqualificationengine.domain.dto.QualificationDto;
 import com.staticoyster.worldcupqualificationengine.domain.dto.StandingDto;
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class RoundOf32Service {
