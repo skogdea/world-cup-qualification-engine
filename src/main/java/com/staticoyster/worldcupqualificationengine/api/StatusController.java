@@ -20,8 +20,8 @@ public class StatusController {
 	}
 
 	@GetMapping("/teams/{team}")
-	public TeamStatusDto getTeamStatus(@PathVariable("team") Team team) {
-		return teamStatusService.getTeamStatus(team);
+	public TeamStatusDto getTeamStatus(@PathVariable("team") String team) {
+		return teamStatusService.getTeamStatus(Team.fromCode(team));
 	}
 
 }

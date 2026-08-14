@@ -36,7 +36,7 @@ spotless {
 	}
 }
 
-val immutablesVersion = "2.10.1"
+val immutablesVersion = "2.12.2"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")

@@ -55,4 +55,8 @@ public class InMemoryMatchRepository implements MatchRepository {
 				.toList();
 	}
 
+	public void clear() {
+		matchesById.clear();
+	}
+
 }
