@@ -138,7 +138,8 @@ class ApiIntegrationTest {
 
 	private static String matchJson(String matchId, String home, String away, int homeScore, int awayScore) {
 		return String.format(
-				"{\"match_id\":\"%s\",\"home\":\"%s\",\"away\":\"%s\",\"home_score\":%d,\"away_score\":%d,\"match_status\":\"PAST\"}",
+				"{\"match_id\":\"%s\",\"home\":\"%s\",\"away\":\"%s\","
+						+ "\"home_score\":%d,\"away_score\":%d,\"match_status\":\"PAST\"}",
 				matchId, home, away, homeScore, awayScore);
 	}
 
