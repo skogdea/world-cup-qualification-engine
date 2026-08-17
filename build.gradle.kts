@@ -41,7 +41,6 @@ val immutablesVersion = "2.12.2"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
 	implementation("org.springframework.boot:spring-boot-starter-json")
-	implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	implementation("org.springframework.boot:spring-boot-starter-restclient:4.1.0")
 
 	compileOnly("org.immutables:value:$immutablesVersion")
