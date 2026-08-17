@@ -175,7 +175,7 @@ public class StandingCalculator {
 		// H2H Pts → H2H GD → H2H GF → overall GD → overall GF → TCS → FIFA ranking
 		// https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/groups-how-teams-qualify-tie-breakers
 		List<Standing> sorted = new ArrayList<>(tied);
-		sorted.sort((left, right) -> { // Todo: .sort(a, b)
+		sorted.sort((left, right) -> {
 			int[] leftH2h = h2h.get(left.getTeam());
 			int[] rightH2h = h2h.get(right.getTeam());
 			// Compare H2H Pts:
