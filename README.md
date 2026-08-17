@@ -60,7 +60,7 @@ On the `dev` profile, startup tries live FIFA first-stage import, then falls bac
 
 ## API (`/api/v1`)
 
-Use FIFA **3-letter codes** in paths (e.g. `IRN`), not enum names. Groups are `A`–`L` (case-insensitive).
+JSON bodies use **enum names** (`MEXICO`, `IR_IRAN`), not FIFA 3-letter codes. Team **paths** use FIFA codes (e.g. `/status/teams/IRN`). Groups are `A`–`L` (case-insensitive).
 
 ### Matches
 
