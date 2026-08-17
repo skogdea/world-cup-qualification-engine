@@ -39,7 +39,7 @@ public class FifaSeedMatchImporter {
 	public int importFromClasspath(String resourcePath) {
 		try (InputStream inputStream = new ClassPathResource(resourcePath).getInputStream()) {
 			JsonNode matches = jsonMapper.readTree(inputStream).path("matches");
-			if (!matches.isArray()) { // Todo
+			if (!matches.isArray()) {
 				throw new IllegalArgumentException("Expected 'matches' array in seed file: " + resourcePath);
 			}
 

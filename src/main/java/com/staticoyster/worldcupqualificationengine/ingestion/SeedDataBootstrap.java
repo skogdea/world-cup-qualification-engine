@@ -40,7 +40,7 @@ public class SeedDataBootstrap implements ApplicationRunner {
 			int imported = fifaMatchAndCardsClient.importFirstStageResults();
 			log.info("Imported {} matches from live FIFA", imported);
 		}
-		catch (RuntimeException exception) {
+		catch (IllegalStateException exception) {
 			if (!matchRepository.findAll().isEmpty()) {
 				log.warn(
 						"Live FIFA import failed after persisting some matches ({}); "
