@@ -19,14 +19,10 @@ public class StatusController {
 		this.teamStatusService = teamStatusService;
 	}
 
-	/**
-	 * Path is a FIFA 3-letter code ({@code IRN}), resolved by {@link Team#fromCode(String)}.
-	 * Do not bind {@code @PathVariable Team}: a throwing {@code Converter} falls back to
-	 * {@code Enum.valueOf}, so {@code IR_IRAN} would incorrectly return 200.
-	 */
+	/** Path is the {@link Team} enum name ({@code IR_IRAN}), not a FIFA 3-letter code ({@code IRN}). */
 	@GetMapping("/teams/{team}")
-	public TeamStatusDto getTeamStatus(@PathVariable("team") String team) {
-		return teamStatusService.getTeamStatus(Team.fromCode(team));
+	public TeamStatusDto getTeamStatus(@PathVariable("team") Team team) {
+		return teamStatusService.getTeamStatus(team);
 	}
 
 }

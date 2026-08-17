@@ -110,26 +110,31 @@ class ApiIntegrationTest {
 	}
 
 	@Test
-	void teamStatusUsesFifaCodeAndRejectsEnumName() throws Exception {
+	void teamStatusUsesEnumNameAndRejectsFifaCode() throws Exception {
 		mockMvc.perform(put("/api/v1/matches/result")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(matchJson("it-a-1", "MEXICO", "SOUTH_AFRICA", 2, 0)))
 				.andExpect(status().isOk());
 
-		mockMvc.perform(get("/api/v1/status/teams/MEX"))
+		mockMvc.perform(get("/api/v1/status/teams/MEXICO"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.team").value("MEXICO"))
 				.andExpect(jsonPath("$.group").value("A"))
 				.andExpect(jsonPath("$.current_rank").value(1))
 				.andExpect(jsonPath("$.team_status").value("QUALIFIED"));
 
-		mockMvc.perform(get("/api/v1/status/teams/irn"))
+		mockMvc.perform(get("/api/v1/status/teams/IR_IRAN"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.team").value("IR_IRAN"))
 				.andExpect(jsonPath("$.group").value("G"));
 
-		mockMvc.perform(get("/api/v1/status/teams/IR_IRAN"))
-				.andExpect(status().isBadRequest());
+		mockMvc.perform(get("/api/v1/status/teams/ir_iran"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.team").value("IR_IRAN"));
+
+		mockMvc.perform(get("/api/v1/status/teams/IRN"))
+				.andExpect(status().isBadRequest())
+				.andExpect(content().string(containsString("enum name")));
 	}
 
 	@Test

@@ -11,7 +11,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 public class ApiExceptionHandler {
 
 	static final String USE_ENUM_NAME =
-			"Use the enum name (e.g. MEXICO), not a FIFA 3-letter code.";
+			"Use the enum name (e.g. MEXICO, IR_IRAN), not a FIFA 3-letter code.";
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException exception) {
