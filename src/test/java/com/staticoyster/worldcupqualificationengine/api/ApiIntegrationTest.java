@@ -1,6 +1,7 @@
 package com.staticoyster.worldcupqualificationengine.api;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.not;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -63,6 +64,32 @@ class ApiIntegrationTest {
 		mockMvc.perform(get("/api/v1/matches"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$[0].match_id").value("it-a-1"));
+	}
+
+	@Test
+	void putMatchResultFallsBackWhenFifaThrowsIllegalArgumentException() throws Exception {
+		when(fifaMatchAndCardsClient.ingest(any(MatchDto.class)))
+				.thenThrow(new IllegalArgumentException("Unknown FIFA team (code=XXX, name=null)"));
+
+		mockMvc.perform(put("/api/v1/matches/result")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(matchJson("it-a-1", "MEXICO", "SOUTH_AFRICA", 2, 0)))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.match_id").value("it-a-1"))
+				.andExpect(jsonPath("$.home_score").value(2));
+	}
+
+	@Test
+	void putMatchResultFallsBackWhenFifaThrowsUnwrappedJacksonError() throws Exception {
+		when(fifaMatchAndCardsClient.ingest(any(MatchDto.class)))
+				.thenThrow(new RuntimeException("Unrecognized token in FIFA payload"));
+
+		mockMvc.perform(put("/api/v1/matches/result")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(matchJson("it-a-1", "MEXICO", "SOUTH_AFRICA", 2, 0)))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.match_id").value("it-a-1"))
+				.andExpect(jsonPath("$.home").value("MEXICO"));
 	}
 
 	@Test
@@ -147,10 +174,36 @@ class ApiIntegrationTest {
 	}
 
 	@Test
-	void invalidGroupPathReturns400() throws Exception {
+	void invalidGroupPathReturns400WithoutTeamGuidance() throws Exception {
 		mockMvc.perform(get("/api/v1/standings/groups/Z"))
 				.andExpect(status().isBadRequest())
-				.andExpect(content().string(containsString("enum name")));
+				.andExpect(content().string(containsString("group")))
+				.andExpect(content().string(containsString("Z")))
+				.andExpect(content().string(not(containsString("MEXICO"))))
+				.andExpect(content().string(not(containsString("FIFA"))));
+	}
+
+	@Test
+	void malformedJsonBodyReturns400WithoutTeamGuidance() throws Exception {
+		mockMvc.perform(put("/api/v1/matches/result")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content("{"))
+				.andExpect(status().isBadRequest())
+				.andExpect(content().string(containsString("Invalid JSON body")))
+				.andExpect(content().string(not(containsString("MEXICO"))))
+				.andExpect(content().string(not(containsString("FIFA"))));
+	}
+
+	@Test
+	void invalidMatchStatusJsonReturns400WithoutTeamGuidance() throws Exception {
+		mockMvc.perform(put("/api/v1/matches/result")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(matchJson("it-a-1", "MEXICO", "SOUTH_AFRICA", 2, 0)
+						.replace("PAST", "FINISHED")))
+				.andExpect(status().isBadRequest())
+				.andExpect(content().string(containsString("Invalid JSON body")))
+				.andExpect(content().string(not(containsString("MEXICO"))))
+				.andExpect(content().string(not(containsString("FIFA"))));
 	}
 
 	private static String matchJson(String matchId, String home, String away, int homeScore, int awayScore) {
