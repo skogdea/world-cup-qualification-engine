@@ -40,14 +40,25 @@ public class MatchService {
 		if (home.getGroup() != away.getGroup()) {
 			throw new IllegalArgumentException("home and away must be in the same group");
 		}
+		String matchId = matchDto.getMatchId();
+		if (matchId == null || matchId.isBlank()) {
+			throw new IllegalArgumentException("matchId is required");
+		}
 
-		Match match = matchRepository.findByHomeAndAway(home, away)
-				.orElseGet(() -> Match.Builder.newBuilder() // Lazy execution, find-or-create pattern
-						.withMatchId(matchDto.getMatchId())
+		Match match = matchRepository.findById(matchId)
+				.or(() -> matchRepository.findByHomeAndAway(home, away))
+				.orElseGet(() -> Match.Builder.newBuilder()
+						.withMatchId(matchId)
 						.withHome(home)
 						.withAway(away)
 						.build());
 
+		// Prefer the request/FIFA matchId; repository save re-keys the same instance.
+		if (!matchId.equals(match.getMatchId())) {
+			match.setMatchId(matchId);
+		}
+		match.setHome(home);
+		match.setAway(away);
 		match.setHomeScore(matchDto.getHomeScore());
 		match.setAwayScore(matchDto.getAwayScore());
 		match.setMatchStatus(MatchStatus.PAST);
