@@ -53,6 +53,9 @@ class MatchServiceTest {
 
 		assertEquals("400021443", saved.getMatchId());
 		assertEquals(2, saved.getHomeScore());
+		assertTrue(matchRepository.findById("400021443").isPresent());
+		assertTrue(matchRepository.findById("seed-1").isEmpty());
+		assertEquals(1, matchRepository.findAll().size());
 		assertTrue(matchRepository.findByHomeAndAway(Team.MEXICO, Team.SOUTH_AFRICA).isPresent());
 		assertEquals(2, matchRepository.findByHomeAndAway(Team.MEXICO, Team.SOUTH_AFRICA).get().getHomeScore());
 	}
