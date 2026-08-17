@@ -95,7 +95,7 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				matchService.updateMatchResult(fetchAndMap(matchId));
 				imported++;
 			}
-			catch (RuntimeException exception) {
+			catch (IllegalStateException | IllegalArgumentException exception) {
 				failed++;
 				log.warn("Skipping FIFA match {}: {}", matchId, exception.getMessage());
 			}
