@@ -1,9 +1,11 @@
 package com.staticoyster.worldcupqualificationengine.api;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -131,9 +133,19 @@ class ApiIntegrationTest {
 	}
 
 	@Test
+	void putMatchResultRejectsFifaCodeInJsonBody() throws Exception {
+		mockMvc.perform(put("/api/v1/matches/result")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(matchJson("it-a-1", "MEX", "RSA", 2, 0)))
+				.andExpect(status().isBadRequest())
+				.andExpect(content().string(containsString("enum name")));
+	}
+
+	@Test
 	void invalidGroupPathReturns400() throws Exception {
 		mockMvc.perform(get("/api/v1/standings/groups/Z"))
-				.andExpect(status().isBadRequest());
+				.andExpect(status().isBadRequest())
+				.andExpect(content().string(containsString("enum name")));
 	}
 
 	private static String matchJson(String matchId, String home, String away, int homeScore, int awayScore) {

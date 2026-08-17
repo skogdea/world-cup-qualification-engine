@@ -57,7 +57,7 @@ public class MatchController {
 		try {
 			return fifaMatchAndCardsClient.ingest(matchDto);
 		}
-		catch (RuntimeException exception) {
+		catch (IllegalStateException exception) {
 			log.warn("FIFA ingest failed for match {}; falling back to manual provider: {}",
 					matchDto != null ? matchDto.getMatchId() : null,
 					exception.getMessage());
