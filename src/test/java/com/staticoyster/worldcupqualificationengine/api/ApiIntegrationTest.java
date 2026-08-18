@@ -137,7 +137,7 @@ class ApiIntegrationTest {
 	}
 
 	@Test
-	void teamStatusUsesEnumNameAndRejectsFifaCode() throws Exception {
+	void teamStatusAcceptsEnumNameAndFifaCode() throws Exception {
 		mockMvc.perform(put("/api/v1/matches/result")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(matchJson("it-a-1", "MEXICO", "SOUTH_AFRICA", 2, 0)))
@@ -160,16 +160,27 @@ class ApiIntegrationTest {
 				.andExpect(jsonPath("$.team").value("IR_IRAN"));
 
 		mockMvc.perform(get("/api/v1/status/teams/IRN"))
-				.andExpect(status().isBadRequest())
-				.andExpect(content().string(containsString("enum name")));
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.team").value("IR_IRAN"))
+				.andExpect(jsonPath("$.group").value("G"));
 	}
 
 	@Test
-	void putMatchResultRejectsFifaCodeInJsonBody() throws Exception {
+	void putMatchResultAcceptsFifaCodeInJsonBodyAndRespondsWithEnumNames() throws Exception {
 		mockMvc.perform(put("/api/v1/matches/result")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(matchJson("it-a-1", "MEX", "RSA", 2, 0)))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.match_id").value("it-a-1"))
+				.andExpect(jsonPath("$.home").value("MEXICO"))
+				.andExpect(jsonPath("$.away").value("SOUTH_AFRICA"));
+	}
+
+	@Test
+	void unknownTeamPathReturns400WithTeamGuidance() throws Exception {
+		mockMvc.perform(get("/api/v1/status/teams/NOT_A_TEAM"))
 				.andExpect(status().isBadRequest())
+				.andExpect(content().string(containsString("team")))
 				.andExpect(content().string(containsString("enum name")));
 	}
 

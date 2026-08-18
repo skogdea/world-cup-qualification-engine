@@ -7,13 +7,22 @@ import org.springframework.stereotype.Component;
 
 import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 
-/** Path/query {@link Team} binding by enum name: {@code ir_iran} / {@code IR_IRAN} → {@link Team#IR_IRAN}. */
+/**
+ * Path/query {@link Team} binding by enum name or FIFA code:
+ * {@code ir_iran} / {@code IR_IRAN} / {@code IRN} → {@link Team#IR_IRAN}.
+ */
 @Component
 public class StringToTeamConverter implements Converter<String, Team> {
 
 	@Override
 	public Team convert(String source) {
-		return Team.valueOf(source.trim().toUpperCase(Locale.ROOT));
+		String normalized = source.trim().toUpperCase(Locale.ROOT);
+		try {
+			return Team.valueOf(normalized);
+		}
+		catch (IllegalArgumentException ignored) {
+			return Team.fromCode(normalized);
+		}
 	}
 
 }

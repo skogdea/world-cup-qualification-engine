@@ -14,8 +14,8 @@ import tools.jackson.databind.exc.MismatchedInputException;
 @RestControllerAdvice
 public class ApiExceptionHandler {
 
-	static final String USE_ENUM_NAME =
-			"Use the enum name (e.g. MEXICO, IR_IRAN), not a FIFA 3-letter code.";
+	static final String USE_TEAM_IDENTIFIER =
+			"Use the Team enum name (e.g. MEXICO, IR_IRAN) or FIFA 3-letter code (e.g. MEX, IRN).";
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException exception) {
@@ -26,7 +26,7 @@ public class ApiExceptionHandler {
 	public ResponseEntity<String> handleUnreadable(HttpMessageNotReadableException exception) {
 		String body = "Invalid JSON body.";
 		if (isTeamEnumFailure(exception)) {
-			body += " " + USE_ENUM_NAME;
+			body += " " + USE_TEAM_IDENTIFIER;
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
 	}
@@ -39,7 +39,7 @@ public class ApiExceptionHandler {
 		}
 		String body = "Invalid value for " + exception.getName() + ": " + exception.getValue();
 		if (Team.class.equals(exception.getRequiredType())) {
-			body += ". " + USE_ENUM_NAME;
+			body += ". " + USE_TEAM_IDENTIFIER;
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
 	}
@@ -52,7 +52,8 @@ public class ApiExceptionHandler {
 				return true;
 			}
 			String message = current.getMessage();
-			if (message != null && message.contains(teamType)) {
+			if (message != null
+					&& (message.contains(teamType) || message.contains("Unknown FIFA team code"))) {
 				return true;
 			}
 			if (current.getCause() == current) {
