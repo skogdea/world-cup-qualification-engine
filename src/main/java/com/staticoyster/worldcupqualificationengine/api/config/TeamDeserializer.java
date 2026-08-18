@@ -20,7 +20,7 @@ public class TeamDeserializer extends ValueDeserializer<Team> {
 	@Override
 	public Team deserialize(JsonParser parser, DeserializationContext context) {
 		String raw = parser.getString();
-		if (raw == null || raw.isBlank()) {
+		if (raw == null) {
 			return null;
 		}
 		String normalized = raw.trim().toUpperCase(Locale.ROOT);
@@ -28,7 +28,12 @@ public class TeamDeserializer extends ValueDeserializer<Team> {
 			return Team.valueOf(normalized);
 		}
 		catch (IllegalArgumentException ignored) {
-			return Team.fromCode(normalized);
+			try {
+				return Team.fromCode(normalized);
+			}
+			catch (IllegalArgumentException exception) {
+				return (Team) context.handleWeirdStringValue(Team.class, raw, exception.getMessage());
+			}
 		}
 	}
 
