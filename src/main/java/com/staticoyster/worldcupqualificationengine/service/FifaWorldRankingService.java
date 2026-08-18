@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.core.io.ClassPathResource;
@@ -56,12 +55,16 @@ public class FifaWorldRankingService {
 			}
 
 			Map<Team, Integer> ranks = new EnumMap<>(Team.class);
-			Map<String, Team> teamByCode = teamByFifaCode();
 			for (JsonNode entry : rankings) {
 				String fifaCode = entry.path("fifaCode").stringValue();
-				Team team = teamByCode.get(fifaCode);
-				if (team != null) {
-					ranks.put(team, entry.path("rank").intValue());
+				if (fifaCode == null || fifaCode.isBlank()) {
+					continue;
+				}
+				try {
+					ranks.put(Team.fromCode(fifaCode), entry.path("rank").intValue());
+				}
+				catch (IllegalArgumentException ignored) {
+					// Ranking file includes nations outside the 48-team tournament field.
 				}
 			}
 			return ranks;
@@ -69,14 +72,6 @@ public class FifaWorldRankingService {
 		catch (IOException exception) {
 			throw new IllegalStateException("Failed to read FIFA ranking file: " + resourcePath, exception);
 		}
-	}
-
-	private static Map<String, Team> teamByFifaCode() {
-		Map<String, Team> byCode = new HashMap<>();
-		for (Team team : Team.values()) {
-			byCode.put(team.getCode(), team);
-		}
-		return byCode;
 	}
 
 }
