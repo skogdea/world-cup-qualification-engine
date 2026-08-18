@@ -16,6 +16,7 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
 import com.staticoyster.worldcupqualificationengine.service.MatchService;
 
+import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -87,7 +88,7 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				matchService.updateMatchResult(fetchAndMap(matchId));
 				imported++;
 			}
-			catch (RuntimeException exception) {
+			catch (IllegalStateException | IllegalArgumentException exception) {
 				failed++;
 				log.warn("Skipping FIFA match {}: {}", matchId, exception.getMessage());
 			}
@@ -122,7 +123,14 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 			throw new IllegalStateException("FIFA match not found: " + matchId);
 		}
 
-		JsonNode root = jsonMapper.readTree(body);
+		JsonNode root;
+		try {
+			root = jsonMapper.readTree(body);
+		}
+		catch (JacksonException exception) {
+			throw new IllegalStateException(
+					"FIFA match payload is not valid JSON for match " + matchId, exception);
+		}
 		if (root == null || root.isNull() || root.path("IdMatch").isMissingNode()) {
 			throw new IllegalStateException("FIFA match payload missing IdMatch for: " + matchId);
 		}
@@ -232,10 +240,11 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				stringOrNull(teamNode.path("IdCountry")),
 				stringOrNull(teamNode.path("Abbreviation")));
 		if (code != null) {
-			for (Team team : Team.values()) {
-				if (team.getCode().equalsIgnoreCase(code)) {
-					return team;
-				}
+			try {
+				return Team.fromCode(code);
+			}
+			catch (IllegalArgumentException ignored) {
+				// Fall through to ShortClubName matching.
 			}
 		}
 
