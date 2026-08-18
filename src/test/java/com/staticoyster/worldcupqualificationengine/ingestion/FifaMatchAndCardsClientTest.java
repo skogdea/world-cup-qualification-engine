@@ -124,6 +124,20 @@ class FifaMatchAndCardsClientTest {
 	}
 
 	@Test
+	void fetchAndMapFailsWhenFifaReturnsMalformedJson() {
+		mockServer.expect(requestTo(
+						"https://api.fifa.com/api/v3/live/football/allmatches"
+								+ "?idCompetition=17&idSeason=285023&idMatch=400021441"))
+				.andRespond(withSuccess("{not-json", MediaType.APPLICATION_JSON));
+
+		IllegalStateException exception = assertThrows(
+				IllegalStateException.class,
+				() -> client.fetchAndMap("400021441"));
+		assertEquals("FIFA match payload is not valid JSON for match 400021441", exception.getMessage());
+		mockServer.verify();
+	}
+
+	@Test
 	void importFirstStageResultsReadsNumericCalendarIds() throws IOException {
 		String calendar = """
 				{
@@ -144,6 +158,38 @@ class FifaMatchAndCardsClientTest {
 						"https://api.fifa.com/api/v3/live/football/allmatches"
 								+ "?idCompetition=17&idSeason=285023&idMatch=400021443"))
 				.andRespond(withSuccess(live, MediaType.APPLICATION_JSON));
+
+		int imported = client.importFirstStageResults();
+
+		assertEquals(1, imported);
+		assertEquals(List.of("400021443"), matchService.persistedMatchIds);
+		mockServer.verify();
+	}
+
+	@Test
+	void importFirstStageResultsContinuesAfterMalformedJsonPayload() throws IOException {
+		String calendar = """
+				{
+				"Results": [
+					{"IdMatch": "400021441", "IdStage": "289273", "MatchStatus": 0},
+					{"IdMatch": "400021443", "IdStage": "289273", "MatchStatus": 0}
+				]
+				}
+				""";
+		String liveOk = classpath("fixtures/fifa/live_match_400021443.json");
+
+		mockServer.expect(requestTo(
+						"https://api.fifa.com/api/v3/calendar/matches"
+								+ "?idCompetition=17&idSeason=285023&count=200"))
+				.andRespond(withSuccess(calendar, MediaType.APPLICATION_JSON));
+		mockServer.expect(requestTo(
+						"https://api.fifa.com/api/v3/live/football/allmatches"
+								+ "?idCompetition=17&idSeason=285023&idMatch=400021441"))
+				.andRespond(withSuccess("{not-json", MediaType.APPLICATION_JSON));
+		mockServer.expect(requestTo(
+						"https://api.fifa.com/api/v3/live/football/allmatches"
+								+ "?idCompetition=17&idSeason=285023&idMatch=400021443"))
+				.andRespond(withSuccess(liveOk, MediaType.APPLICATION_JSON));
 
 		int imported = client.importFirstStageResults();
 
