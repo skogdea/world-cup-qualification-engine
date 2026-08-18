@@ -36,7 +36,7 @@ MatchAndCardsProvider
                     (group rank + best-third rank → status)
 ```
 
-No JPA or datasource dependency — persistence is in-memory only. Match results (with home/away stats) are the source of truth; standings apply FIFA-style ordering including fair-play / team conduct and FIFA world ranking for remaining ties.
+Persistence is in-memory only. Match results (with home/away stats) are the source of truth; standings apply FIFA-style ordering including fair-play / team conduct and FIFA world ranking for remaining ties.
 
 On the `dev` profile, startup tries live FIFA first-stage import, then falls back to `seed/fifa/wc2026_first_stage_discipline_stats.json` if the repository is still empty. `seed/fifa/fifa_mens_world_ranking.json` is loaded on every profile for remaining tie-breakers.
 
@@ -60,9 +60,9 @@ On the `dev` profile, startup tries live FIFA first-stage import, then falls bac
 
 ## API (`/api/v1`)
 
-JSON bodies and team **paths** use **enum names** (`MEXICO`, `IR_IRAN`), not FIFA 3-letter codes anymore (`MEX`, `IRN`). Groups are `A`–`L` (case-insensitive). Team paths accept mixed case (`ir_iran`). Match JSON uses snake_case fields (`match_id`, `home_score`, `match_status`).
+Team **inputs** (paths and JSON) accept **enum names or FIFA 3-letter codes** (`MEXICO` / `MEX`, `IR_IRAN` / `IRN`, case-insensitive). JSON **responses** always use enum names (`MEXICO`, `IR_IRAN`). Groups are `A`–`L` (case-insensitive). Match JSON uses snake_case fields (`match_id`, `home_score`, `match_status`).
 
-Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` and `ResponseStatusException`, not from wrapping every method in `ResponseEntity`.
+Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` and `ResponseStatusException`.
 
 ### Matches
 
@@ -70,7 +70,7 @@ Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` 
 |--------|------|-------------|
 | `GET` | `/api/v1/matches` | List all matches |
 | `GET` | `/api/v1/matches/{matchId}` | Get one match (`404` if missing) |
-| `PUT` | `/api/v1/matches/result` | Update a match (`home`/`away` enum names). Prefers live FIFA; if that fails, persists the request body |
+| `PUT` | `/api/v1/matches/result` | Update a match. Prefers live FIFA; if that fails, persists the request body |
 
 ### Standings
 
@@ -91,9 +91,9 @@ Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` 
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `GET` | `/api/v1/status/teams/{team}` | Status for one team (e.g. `/api/v1/status/teams/IR_IRAN`) |
+| `GET` | `/api/v1/status/teams/{team}` | Status for one team (e.g. `/api/v1/status/teams/IR_IRAN` or `/IRN`) |
 
-`ApiExceptionHandler` returns `400` for invalid path enums (`/status/teams/IRN`, `/standings/groups/Z`) and for unreadable match JSON, including FIFA codes in `home`/`away` (`"MEX"`). Missing matches return `404`. The error hint “Use the enum name (e.g. MEXICO, IR_IRAN)” is added only on `Team` failures.
+`ApiExceptionHandler` returns `400` for unknown values — e.g. `/standings/groups/Z` (no such group; groups are only `A`–`L`) vs `/status/teams/NOT_A_TEAM` (not an enum name or FIFA code). Unreadable match JSON also returns `400`. Missing matches return `404`. Team failures get a hint to use an enum name or FIFA code.
 
 ## Project Layout
 
