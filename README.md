@@ -38,7 +38,7 @@ MatchAndCardsProvider
 
 No JPA or datasource dependency — persistence is in-memory only. Match results (with home/away stats) are the source of truth; standings apply FIFA-style ordering including fair-play / team conduct and FIFA world ranking for remaining ties.
 
-On the `dev` profile, startup tries live FIFA first-stage import, then falls back to classpath seed JSON if the repository is still empty.
+On the `dev` profile, startup tries live FIFA first-stage import, then falls back to `seed/fifa/wc2026_first_stage_discipline_stats.json` if the repository is still empty. `seed/fifa/fifa_mens_world_ranking.json` is loaded on every profile for remaining tie-breakers.
 
 ## Quick Start
 
@@ -60,7 +60,9 @@ On the `dev` profile, startup tries live FIFA first-stage import, then falls bac
 
 ## API (`/api/v1`)
 
-JSON bodies use **enum names** (`MEXICO`, `IR_IRAN`), not FIFA 3-letter codes. Team **paths** use FIFA codes (e.g. `/status/teams/IRN`). Groups are `A`–`L` (case-insensitive).
+JSON bodies and team **paths** use **enum names** (`MEXICO`, `IR_IRAN`), not FIFA 3-letter codes anymore (`MEX`, `IRN`). Groups are `A`–`L` (case-insensitive). Team paths accept mixed case (`ir_iran`). Match JSON uses snake_case fields (`match_id`, `home_score`, `match_status`).
+
+Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` and `ResponseStatusException`, not from wrapping every method in `ResponseEntity`.
 
 ### Matches
 
@@ -68,7 +70,7 @@ JSON bodies use **enum names** (`MEXICO`, `IR_IRAN`), not FIFA 3-letter codes. T
 |--------|------|-------------|
 | `GET` | `/api/v1/matches` | List all matches |
 | `GET` | `/api/v1/matches/{matchId}` | Get one match (`404` if missing) |
-| `PUT` | `/api/v1/matches/result` | Update a match result (`MatchDto` body; FIFA ingest preferred, manual fallback) |
+| `PUT` | `/api/v1/matches/result` | Update a match (`home`/`away` enum names). Prefers live FIFA; if that fails, persists the request body |
 
 ### Standings
 
@@ -89,9 +91,9 @@ JSON bodies use **enum names** (`MEXICO`, `IR_IRAN`), not FIFA 3-letter codes. T
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `GET` | `/api/v1/status/teams/{team}` | Status for one team (e.g. `/api/v1/status/teams/IRN`) |
+| `GET` | `/api/v1/status/teams/{team}` | Status for one team (e.g. `/api/v1/status/teams/IR_IRAN`) |
 
-Invalid path enums return `400`.
+`ApiExceptionHandler` returns `400` for invalid path enums (`/status/teams/IRN`, `/standings/groups/Z`) and for unreadable match JSON, including FIFA codes in `home`/`away` (`"MEX"`). Missing matches return `404`. The error hint “Use the enum name (e.g. MEXICO, IR_IRAN)” is added only on `Team` failures.
 
 ## Project Layout
 
@@ -104,7 +106,10 @@ src/main/java/.../
   service/       match, standings, qualification, team status, ranking
 src/main/resources/
   application*.properties
-  seed/fifa/     fixture + ranking JSON
+  seed/fifa/wc2026_first_stage_discipline_stats.json  # match seed (dev fallback)
+  seed/fifa/fifa_mens_world_ranking.json              # tie-break ranks
+src/test/resources/fixtures/fifa/
+  live_match_400021443.json                           # live FIFA snapshot for tests
 linter/checkstyle/
 .github/workflows/gradle-build.yaml
 ```
@@ -123,7 +128,7 @@ GitHub Actions **Java CI** runs `./gradlew build` on push and pull requests to `
 | Property | Role |
 |----------|------|
 | `spring.profiles.default` | Defaults to `dev` for IDE / bare `bootRun` |
-| `app.seed.enabled` | Seed bootstrap (`true` on `dev`) |
+| `app.seed.enabled` | Dev match-seed bootstrap (`true` on `dev`; ranking JSON loads regardless) |
 | `app.fifa.base-url` | FIFA API base URL |
 | `app.fifa.id-competition` / `id-season` / `id-stage-first` | Competition identifiers for live ingest |
 
