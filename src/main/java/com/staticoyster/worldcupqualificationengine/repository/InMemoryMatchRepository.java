@@ -23,6 +23,7 @@ public class InMemoryMatchRepository implements MatchRepository {
 		if (match.getMatchId() == null || match.getMatchId().isBlank()) {
 			throw new IllegalArgumentException("matchId is required");
 		}
+		matchesById.entrySet().removeIf(entry -> entry.getValue() == match);
 		matchesById.put(match.getMatchId(), match);
 		return match;
 	}

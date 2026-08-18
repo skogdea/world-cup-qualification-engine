@@ -1,10 +1,5 @@
 package com.staticoyster.worldcupqualificationengine.domain.enums;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
 public enum Team {
 
 	MEXICO("MEX", "Mexico", Group.A),
@@ -67,16 +62,6 @@ public enum Team {
 	GHANA("GHA", "Ghana", Group.L),
 	PANAMA("PAN", "Panama", Group.L);
 
-	private static final Map<String, Team> BY_CODE;
-
-	static {
-		Map<String, Team> byCode = new HashMap<>();
-		for (Team team : values()) {
-			byCode.put(team.code, team);
-		}
-		BY_CODE = Collections.unmodifiableMap(byCode);
-	}
-
 	private final String code;
 	private final String name;
 	private final Group group;
@@ -97,18 +82,6 @@ public enum Team {
 
 	public Group getGroup() {
 		return group;
-	}
-
-	/** Resolves a FIFA 3-letter code (case-insensitive), e.g. {@code IRN} → {@link #IR_IRAN}. */
-	public static Team fromCode(String code) {
-		if (code == null || code.isBlank()) {
-			throw new IllegalArgumentException("FIFA team code is required");
-		}
-		Team team = BY_CODE.get(code.trim().toUpperCase(Locale.ROOT));
-		if (team == null) {
-			throw new IllegalArgumentException("Unknown FIFA team code: " + code);
-		}
-		return team;
 	}
 
 }
