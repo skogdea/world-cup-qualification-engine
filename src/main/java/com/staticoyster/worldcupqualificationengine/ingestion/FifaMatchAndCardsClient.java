@@ -232,10 +232,11 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				stringOrNull(teamNode.path("IdCountry")),
 				stringOrNull(teamNode.path("Abbreviation")));
 		if (code != null) {
-			for (Team team : Team.values()) {
-				if (team.getCode().equalsIgnoreCase(code)) {
-					return team;
-				}
+			try {
+				return Team.fromCode(code);
+			}
+			catch (IllegalArgumentException ignored) {
+				// Fall through to ShortClubName matching.
 			}
 		}
 
