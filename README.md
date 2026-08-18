@@ -36,9 +36,9 @@ MatchAndCardsProvider
                     (group rank + best-third rank → status)
 ```
 
-Persistence is in-memory only. Match results (with home/away stats) are the source of truth; standings apply FIFA-style ordering including fair-play / team conduct and FIFA world ranking for remaining ties.
+Persistence is in-memory only. Match results (with home/away stats) are the source of truth. Standings, qualification, and team status are computed from `PAST` matches currently stored — they are not held until the group stage is finished. Tie-breakers follow FIFA order: head-to-head (points, GD, GF), then overall GD/GF, team conduct (fair play), then FIFA world ranking.
 
-On the `dev` profile, startup tries live FIFA first-stage import, then falls back to `seed/fifa/wc2026_first_stage_discipline_stats.json` if the repository is still empty. `seed/fifa/fifa_mens_world_ranking.json` is loaded on every profile for remaining tie-breakers.
+On the `dev` profile, startup tries live FIFA first-stage import. If that fails and the repository is still empty, it loads `seed/fifa/wc2026_first_stage_discipline_stats.json`. Seed is skipped after a partial live import so FIFA rows are not overwritten. `seed/fifa/fifa_mens_world_ranking.json` is loaded on every profile for remaining tie-breakers.
 
 ## Quick Start
 
@@ -70,7 +70,7 @@ Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` 
 |--------|------|-------------|
 | `GET` | `/api/v1/matches` | List all matches |
 | `GET` | `/api/v1/matches/{matchId}` | Get one match (`404` if missing) |
-| `PUT` | `/api/v1/matches/result` | Update a match. Prefers live FIFA; if that fails, persists the request body |
+| `PUT` | `/api/v1/matches/result` | Create or update a match (`PAST`). Prefers live FIFA for `match_id`; if that fails, persists the request body |
 
 ### Standings
 
@@ -83,9 +83,9 @@ Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` 
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `GET` | `/api/v1/qualification` | Full qualification snapshot |
-| `GET` | `/api/v1/qualification/round-of-32` | Teams advancing to the Round of 32 |
-| `GET` | `/api/v1/qualification/best-third-place` | Advancing best third-place sides |
+| `GET` | `/api/v1/qualification` | Qualification snapshot from current standings |
+| `GET` | `/api/v1/qualification/round-of-32` | Current Round of 32 field (top two per group plus eight best thirds) |
+| `GET` | `/api/v1/qualification/best-third-place` | Current advancing best third-place sides |
 
 ### Status
 
@@ -93,7 +93,7 @@ Controllers return DTOs (`200`). Error statuses come from `ApiExceptionHandler` 
 |--------|------|-------------|
 | `GET` | `/api/v1/status/teams/{team}` | Status for one team (e.g. `/api/v1/status/teams/IR_IRAN` or `/IRN`) |
 
-`ApiExceptionHandler` returns `400` for unknown values — e.g. `/standings/groups/Z` (no such group; groups are only `A`–`L`) vs `/status/teams/NOT_A_TEAM` (not an enum name or FIFA code). Unreadable match JSON also returns `400`. Missing matches return `404`. Team failures get a hint to use an enum name or FIFA code.
+`ApiExceptionHandler` returns `400` for unknown values — e.g. `/standings/groups/Z` (no such group; groups are only `A`–`L`) vs `/status/teams/NOT_A_TEAM` (not an enum name or FIFA code). Unreadable match JSON (including blank `home`/`away`) also returns `400`. Home and away in different groups returns `400`. Missing matches return `404`. Team failures get a hint to use an enum name or FIFA code.
 
 ## Project Layout
 
