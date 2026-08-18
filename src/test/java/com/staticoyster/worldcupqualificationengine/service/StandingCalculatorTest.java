@@ -37,6 +37,28 @@ class StandingCalculatorTest {
 	}
 
 	@Test
+	void doesNotDoubleCountWhenSavedMatchIsReKeyed() {
+		Match match = Match.Builder.newBuilder()
+				.withMatchId("seed-1")
+				.withHome(Team.MEXICO)
+				.withAway(Team.SOUTH_AFRICA)
+				.withHomeScore(2)
+				.withAwayScore(0)
+				.withMatchStatus(MatchStatus.PAST)
+				.build();
+		matchRepository.save(match);
+		match.setMatchId("400021443");
+		matchRepository.save(match);
+
+		Map<Team, StandingDto> byTeam = standingsByTeam(Group.A);
+
+		assertEquals(1, byTeam.get(Team.MEXICO).getPlayed());
+		assertEquals(3, byTeam.get(Team.MEXICO).getPoints());
+		assertEquals(1, byTeam.get(Team.SOUTH_AFRICA).getPlayed());
+		assertEquals(0, byTeam.get(Team.SOUTH_AFRICA).getPoints());
+	}
+
+	@Test
 	void accumulatesTeamConductScoreFromMatchHomeAndAwayStats() {
 		matchRepository.save(Match.Builder.newBuilder()
 				.withMatchId("g-a-1")
