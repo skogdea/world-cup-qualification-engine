@@ -19,9 +19,10 @@ public class StatusController {
 		this.teamStatusService = teamStatusService;
 	}
 
+	/** Path accepts the {@link Team} enum name ({@code IR_IRAN}) or FIFA code ({@code IRN}). */
 	@GetMapping("/teams/{team}")
-	public TeamStatusDto getTeamStatus(@PathVariable("team") String team) {
-		return teamStatusService.getTeamStatus(Team.fromCode(team));
+	public TeamStatusDto getTeamStatus(@PathVariable("team") Team team) {
+		return teamStatusService.getTeamStatus(team);
 	}
 
 }

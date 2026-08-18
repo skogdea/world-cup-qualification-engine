@@ -16,6 +16,7 @@ import com.staticoyster.worldcupqualificationengine.domain.enums.Team;
 import com.staticoyster.worldcupqualificationengine.ingestion.config.FifaApiProperties;
 import com.staticoyster.worldcupqualificationengine.service.MatchService;
 
+import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -23,19 +24,11 @@ import tools.jackson.databind.json.JsonMapper;
  * Live FIFA adapter: fetches match score + bookings from {@code api.fifa.com}, maps to {@link MatchDto},
  * then persists through {@link MatchService}.
  *
- * <p><b>Live API vs {@code wc2026_bookings_raw.json}</b> — the seed file is a <em>normalized</em> view,
- * not a wire-format dump. Live FIFA uses PascalCase property names; the seed uses camelCase aliases
- * plus denormalized fields. For HTTP parsing, live names are authoritative:
- * <ul>
- *   <li>match id: live {@code IdMatch} ↔ seed {@code idMatch}</li>
- *   <li>booking card: live {@code Card} ↔ seed {@code cardCode}</li>
- *   <li>player/coach: live {@code IdPlayer}/{@code IdCoach} ↔ seed {@code idPlayer}/{@code idCoach}</li>
- *   <li>minute/period/reason: live {@code Minute}/{@code Period}/{@code Reason} ↔ seed lower-camel</li>
- *   <li>seed-only: {@code team}, {@code side}, {@code personKey}, {@code player}</li>
- *   <li>live-only: {@code IdTeam}, {@code IdStaff}, {@code IdEvent}, {@code EventNumber}</li>
- *   <li>score/teams: live nested {@code HomeTeam}/{@code AwayTeam} (+ {@code Score}, {@code Bookings})
- *       ↔ seed flat {@code home}/{@code away}/{@code score}/{@code bookings}</li>
- * </ul>
+ * <p>Classpath seed is {@code seed/fifa/wc2026_first_stage_discipline_stats.json}, loaded by
+ * {@link FifaSeedMatchImporter} — not this class. That file is aggregated fair-play totals
+ * ({@code home}/{@code away} card counts), not a FIFA wire dump. This client parses live PascalCase
+ * fields only: {@code IdMatch}, {@code MatchStatus}, nested {@code HomeTeam}/{@code AwayTeam}
+ * ({@code Score}, {@code Bookings}), and numeric {@code Bookings[].Card}.
  */
 @Component
 public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
@@ -95,7 +88,7 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				matchService.updateMatchResult(fetchAndMap(matchId));
 				imported++;
 			}
-			catch (RuntimeException exception) {
+			catch (IllegalStateException | IllegalArgumentException exception) {
 				failed++;
 				log.warn("Skipping FIFA match {}: {}", matchId, exception.getMessage());
 			}
@@ -130,7 +123,14 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 			throw new IllegalStateException("FIFA match not found: " + matchId);
 		}
 
-		JsonNode root = jsonMapper.readTree(body);
+		JsonNode root;
+		try {
+			root = jsonMapper.readTree(body);
+		}
+		catch (JacksonException exception) {
+			throw new IllegalStateException(
+					"FIFA match payload is not valid JSON for match " + matchId, exception);
+		}
 		if (root == null || root.isNull() || root.path("IdMatch").isMissingNode()) {
 			throw new IllegalStateException("FIFA match payload missing IdMatch for: " + matchId);
 		}
@@ -208,7 +208,7 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 
 		if (bookings != null && bookings.isArray()) {
 			for (JsonNode booking : bookings) {
-				// Live field is "Card" (seed alias is "cardCode")
+				// Live FIFA field is numeric Card, not the seed file's aggregated card counts.
 				JsonNode cardNode = booking.path("Card");
 				if (!cardNode.isNumber()) {
 					throw new IllegalStateException("FIFA booking missing numeric Card field: " + booking);
@@ -240,10 +240,11 @@ public class FifaMatchAndCardsClient implements MatchAndCardsProvider {
 				stringOrNull(teamNode.path("IdCountry")),
 				stringOrNull(teamNode.path("Abbreviation")));
 		if (code != null) {
-			for (Team team : Team.values()) {
-				if (team.getCode().equalsIgnoreCase(code)) {
-					return team;
-				}
+			try {
+				return Team.fromCode(code);
+			}
+			catch (IllegalArgumentException ignored) {
+				// Fall through to ShortClubName matching.
 			}
 		}
 

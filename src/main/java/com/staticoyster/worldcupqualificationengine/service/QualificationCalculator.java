@@ -39,15 +39,7 @@ public class QualificationCalculator {
 		List<StandingDto> thirdPlaceStandings = new ArrayList<>();
 
 		for (List<StandingDto> groupStandings : standingsDtoByGroup.values()) {
-			if (groupStandings.size() >= 1) { // Todo: don't understand
-				groupWinners.add(groupStandings.get(0).getTeam());
-			}
-			if (groupStandings.size() >= 2) {
-				runnersUp.add(groupStandings.get(1).getTeam());
-			}
-			if (groupStandings.size() >= 3) {
-				thirdPlaceStandings.add(groupStandings.get(2));
-			}
+			collectQualificationPlaces(groupStandings, groupWinners, runnersUp, thirdPlaceStandings);
 		}
 
 		List<StandingDto> bestThirds = rankThirdPlaceTeams(thirdPlaceStandings).stream()
@@ -69,6 +61,26 @@ public class QualificationCalculator {
 			}
 		}
 		return rankThirdPlaceTeams(thirdPlaceStandings);
+	}
+
+	/**
+	 * FIFA 2026: 1st and 2nd always advance; 3rd is a candidate for the eight best-third slots.
+	 * Groups may be short while fixtures are unfinished, so each place is taken only if present.
+	 */
+	private static void collectQualificationPlaces(
+			List<StandingDto> groupStandings,
+			List<Team> groupWinners,
+			List<Team> runnersUp,
+			List<StandingDto> thirdPlaceStandings) {
+		if (!groupStandings.isEmpty()) {
+			groupWinners.add(groupStandings.get(0).getTeam());
+		}
+		if (groupStandings.size() >= 2) {
+			runnersUp.add(groupStandings.get(1).getTeam());
+		}
+		if (groupStandings.size() >= 3) {
+			thirdPlaceStandings.add(groupStandings.get(2));
+		}
 	}
 
 	/**
